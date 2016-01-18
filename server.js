@@ -5,9 +5,13 @@ var app = express();
 var PORT = 3000;
 var routes = require('./routes/routes.js');
 var db = require('./db.js');
-routes(app);
+var bodyParser = require('body-parser');
 
-db.sequelize.sync().then(function() {
+app.use(bodyParser.json());
+routes(app, db);
+
+db.sequelize.sync({force: true}).then(function() {
+//db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
         console.log('Express listening on port ' + PORT + '...');
     });

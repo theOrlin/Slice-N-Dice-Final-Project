@@ -12,6 +12,7 @@ db.measurement = sequelize.import(__dirname + '/models/measurement.js');
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db.measurement.hasOne(db.ingredient, {foreignKey: 'measurement_id'});
 db.ingredient.belongsTo(db.measurement, {foreignKey: 'measurement_id'});
 
 module.exports = db;
