@@ -9,10 +9,14 @@ var db = {};
 
 db.ingredient = sequelize.import(__dirname + '/models/ingredient.js');
 db.measurement = sequelize.import(__dirname + '/models/measurement.js');
+db.meal = sequelize.import(__dirname + '/models/meal.js');
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.measurement.hasOne(db.ingredient, {foreignKey: 'measurement_id'});
 db.ingredient.belongsTo(db.measurement, {foreignKey: 'measurement_id'});
+
+db.ingredient.belongsToMany(db.meal, {through: 'Ingredient_Meal', foreignKey: 'ingredient_id'});
+db.meal.belongsToMany(db.ingredient, {through: 'Ingredient_Meal', foreignKey: 'meal_id'});
 
 module.exports = db;
