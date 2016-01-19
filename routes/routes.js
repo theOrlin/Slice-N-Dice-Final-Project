@@ -9,7 +9,7 @@ module.exports = function(app, db) {
 
     app.post('/measurement', function(req, res) {
         var body = _.pick(req.body, 'name');
-        //console.log(req.body);
+
         db.measurement.create(body)
             .then(function(measurement) {
                 res.json(measurement);
@@ -34,26 +34,39 @@ module.exports = function(app, db) {
         var body = _.pick(req.body, 'name');
 
         db.meal.create(body)
-        .then(function(meal) {
-            res.json(meal);
-        }, function(error) {
-            res.status(500).send('Unable to create meal.');
-        });
+            .then(function(meal) {
+                res.json(meal);
+            }, function(error) {
+                res.status(500).send('Unable to create meal.');
+            });
+    });
+
+    app.get('/meals', function(req, res) {
+        //var return
     });
 
     app.get('/meals/:id', function(req, res) {
         var mealId = parseInt(req.params.id, 10);
+        var mealName = '';
+
         db.meal.findById(mealId)
-        .then(function(meal) {
-            if (meal) {
-                res.json(meal);
-            }
-            else {
-                res.status(404).send('No such meal.');
-            }
-        }, function(error){
-            res.status(500).send('Unable to retrieve meal with id ' + mealId  + '.');
-        });
+            .then(function(meal) {
+                if (meal) {
+                    mealName = meal.name;
+                    return meal.getIngredients();
+                }
+                else {
+                    res.status(404).send('No such meal.');
+                }
+            }, function(error) {
+                res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
+            })
+            .then(function(mealIngredients) {
+                var returnObject = {};
+                returnObject.mealName = mealName;
+                returnObject.ingredientsList = mealIngredients;
+                res.json(returnObject);
+            });
     });
 
     app.put('/meals/:id', function(req, res) {
@@ -63,20 +76,20 @@ module.exports = function(app, db) {
             .then(function(meal) {
                 if (meal) {
                     db.ingredient.findById(body.id)
-                    .then(function(ingredient) {
-                        return meal.addIngredient(ingredient);
-                    }, function(error) {
-                        res.status(404).send('No such ingredient.');
-                    });
+                        .then(function(ingredient) {
+                            return meal.addIngredient(ingredient);
+                        }, function(error) {
+                            res.status(404).send('No such ingredient.');
+                        });
                 }
                 else {
                     res.status(404).send('No such meal.');
                 }
-            }, function(error){
-                res.status(500).send('Unable to retrieve meal with id ' + mealId  + '.');
+            }, function(error) {
+                res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
             })
-        .then(function(ingredient) {
-            res.json(ingredient);
-        });
+            .then(function(ingredient) {
+                res.json(ingredient);
+            });
     });
 };
