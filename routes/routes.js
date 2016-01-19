@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('underscore');
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 module.exports = function(app, db) {
     app.get('/', function(req, res) {
         res.send('Welcome home!');
@@ -53,6 +53,30 @@ module.exports = function(app, db) {
             }
         }, function(error){
             res.status(500).send('Unable to retrieve meal with id ' + mealId  + '.');
+        });
+    });
+
+    app.put('/meals/:id', function(req, res) {
+        var mealId = parseInt(req.params.id, 10);
+        var body = _.pick(req.body, 'id');
+        db.meal.findById(mealId)
+            .then(function(meal) {
+                if (meal) {
+                    db.ingredient.findById(body.id)
+                    .then(function(ingredient) {
+                        return meal.addIngredient(ingredient);
+                    }, function(error) {
+                        res.status(404).send('No such ingredient.');
+                    });
+                }
+                else {
+                    res.status(404).send('No such meal.');
+                }
+            }, function(error){
+                res.status(500).send('Unable to retrieve meal with id ' + mealId  + '.');
+            })
+        .then(function(ingredient) {
+            res.json(ingredient);
         });
     });
 };
