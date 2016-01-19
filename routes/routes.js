@@ -15,7 +15,7 @@ module.exports = function(app, db) {
                 res.json(measurement);
             }, function(error) {
                 console.log(error);
-                res.status(400).send();
+                res.status(500).send('Unable to create measurement.');
             });
     });
 
@@ -26,7 +26,33 @@ module.exports = function(app, db) {
             .then(function(ingredient) {
                 res.json(ingredient);
             }, function(error) {
-                res.status(500).send();
+                res.status(500).send('Unable to create ingredient.');
             });
+    });
+
+    app.post('/meals', function(req, res) {
+        var body = _.pick(req.body, 'name');
+
+        db.meal.create(body)
+        .then(function(meal) {
+            res.json(meal);
+        }, function(error) {
+            res.status(500).send('Unable to create meal.');
+        });
+    });
+
+    app.get('/meals/:id', function(req, res) {
+        var mealId = parseInt(req.params.id, 10);
+        db.meal.findById(mealId)
+        .then(function(meal) {
+            if (meal) {
+                res.json(meal);
+            }
+            else {
+                res.status(404).send('No such meal.');
+            }
+        }, function(error){
+            res.status(500).send('Unable to retrieve meal with id ' + mealId  + '.');
+        });
     });
 };
