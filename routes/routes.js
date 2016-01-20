@@ -7,6 +7,8 @@ module.exports = function(app, db) {
         res.send('Welcome home!');
     });
 
+    //Measurement
+
     app.post('/measurement', function(req, res) {
         var body = _.pick(req.body, 'name');
 
@@ -19,6 +21,8 @@ module.exports = function(app, db) {
             });
     });
 
+    //Ingredient
+
     app.post('/ingredients', function(req, res) {
         var body = _.pick(req.body, 'name', 'calories', 'fat', 'carbs', 'protein', 'portionSize', 'measurement_id');
 
@@ -29,6 +33,8 @@ module.exports = function(app, db) {
                 res.status(500).send('Unable to create ingredient.');
             });
     });
+
+    //Meal
 
     app.post('/meals', function(req, res) {
         var body = _.pick(req.body, 'name');
@@ -72,6 +78,7 @@ module.exports = function(app, db) {
     app.put('/meals/:id', function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var body = _.pick(req.body, 'id');
+
         db.meal.findById(mealId)
             .then(function(meal) {
                 if (meal) {
@@ -90,6 +97,19 @@ module.exports = function(app, db) {
             })
             .then(function(ingredient) {
                 res.json(ingredient);
+            });
+    });
+
+    //User
+
+    app.post('/users', function(req, res) {
+        var body = _.pick(req.body, 'email', 'password');
+
+        db.user.create(body)
+            .then(function(user) {
+                res.json(user);
+            }, function(error) {
+                res.status(400).json(error);
             });
     });
 };
