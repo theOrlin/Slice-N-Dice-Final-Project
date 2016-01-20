@@ -10,6 +10,7 @@ var db = {};
 db.ingredient = sequelize.import(__dirname + '/models/ingredient.js');
 db.measurement = sequelize.import(__dirname + '/models/measurement.js');
 db.meal = sequelize.import(__dirname + '/models/meal.js');
+db.user = sequelize.import(__dirname + '/models/user.js');
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
@@ -18,5 +19,7 @@ db.ingredient.belongsTo(db.measurement, {foreignKey: 'measurement_id'});
 
 db.ingredient.belongsToMany(db.meal, {through: 'Ingredient_Meal', foreignKey: 'ingredient_id'});
 db.meal.belongsToMany(db.ingredient, {through: 'Ingredient_Meal', foreignKey: 'meal_id'});
+
+db.user.hasMany(db.meal, {foreignKey: 'user_id'});
 
 module.exports = db;
