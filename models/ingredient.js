@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.FLOAT,
             allowNull: false
         },
-        carbs: {
+        carbohydrates: {
             type: DataTypes.FLOAT,
             allowNull: false
         },
