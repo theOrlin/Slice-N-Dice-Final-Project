@@ -122,9 +122,15 @@ module.exports = function(app, db) {
 
         db.user.authenticate(body)
             .then(function(user) {
-                res.json(user.toPublicJSON());
+                var token = user.generateToken('authentication');
+                if (token) {
+                    res.header('Auth', user.generateToken('authentication')).json(user.toPublicJSON());
+                }
+                else {
+                    res.status(401).send('Authentication failed.');
+                }
             }, function(error) {
-                return res.status(401).send('Authentication failed.');
+                res.status(401).send('Authentication failed.');
             });
     });
 };
