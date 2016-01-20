@@ -107,7 +107,7 @@ module.exports = function(app, db) {
 
         db.user.create(body)
             .then(function(user) {
-                res.json(user);
+                res.json(user.toPublicJSON());
             }, function(error) {
                 res.status(400).json(error);
             });

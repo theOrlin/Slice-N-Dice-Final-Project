@@ -41,6 +41,12 @@ module.exports = function(sequelize, DataTypes) {
                     user.email = user.email.toLowerCase();
                 }
             }
+        },
+        instanceMethods: {
+            toPublicJSON: function() {
+                var json = this.toJSON(); //instance
+                return _.pick(json, 'id', 'email', 'password', 'createdAt', 'updatedAt');
+            }
         }
     });
 };
