@@ -46,7 +46,13 @@ module.exports = function(app, db) {
 
         db.meal.create(body)
             .then(function(meal) {
-                res.json(meal);
+                req.user.addMeal(meal) //user comes from middleware
+                    .then(function() {
+                        return meal.reload();
+                    })
+                    .then(function(meal) {
+                        res.json(meal.toJSON());
+                    });
             }, function(error) {
                 res.status(500).send('Unable to create meal.');
             });

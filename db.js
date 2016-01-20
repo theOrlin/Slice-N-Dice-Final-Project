@@ -20,6 +20,7 @@ db.ingredient.belongsTo(db.measurement, {foreignKey: 'measurement_id'});
 db.ingredient.belongsToMany(db.meal, {through: 'Ingredient_Meal', foreignKey: 'ingredient_id'});
 db.meal.belongsToMany(db.ingredient, {through: 'Ingredient_Meal', foreignKey: 'meal_id'});
 
+db.meal.belongsTo(db.meal, {foreignKey: 'user_id'});
 db.user.hasMany(db.meal, {foreignKey: 'user_id'});
 
 module.exports = db;
