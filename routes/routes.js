@@ -4,14 +4,17 @@ var _ = require('underscore');
 var bcrypt = require('bcryptjs');
 //var bodyParser = require('body-parser');
 
+
 module.exports = function(app, db) {
+    var middleware = require('../middleware.js')(db);
+
     app.get('/', function(req, res) {
         res.send('Welcome home!');
     });
 
     //Measurement
 
-    app.post('/measurement', function(req, res) {
+    app.post('/measurement', middleware.requireAuthentication, function(req, res) {
         var body = _.pick(req.body, 'name');
 
         db.measurement.create(body)
@@ -25,8 +28,8 @@ module.exports = function(app, db) {
 
     //Ingredient
 
-    app.post('/ingredients', function(req, res) {
-        var body = _.pick(req.body, 'name', 'calories', 'fat', 'carbs', 'protein', 'portionSize', 'measurement_id');
+    app.post('/ingredients', middleware.requireAuthentication, function(req, res) {
+        var body = _.pick(req.body, 'name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize', 'measurement_id');
 
         db.ingredient.create(body)
             .then(function(ingredient) {
@@ -38,7 +41,7 @@ module.exports = function(app, db) {
 
     //Meal
 
-    app.post('/meals', function(req, res) {
+    app.post('/meals', middleware.requireAuthentication, function(req, res) {
         var body = _.pick(req.body, 'name');
 
         db.meal.create(body)
@@ -49,11 +52,11 @@ module.exports = function(app, db) {
             });
     });
 
-    app.get('/meals', function(req, res) {
+    app.get('/meals', middleware.requireAuthentication, function(req, res) {
         //var return
     });
 
-    app.get('/meals/:id', function(req, res) {
+    app.get('/meals/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var mealName = '';
 
@@ -77,7 +80,7 @@ module.exports = function(app, db) {
             });
     });
 
-    app.put('/meals/:id', function(req, res) {
+    app.put('/meals/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var body = _.pick(req.body, 'id');
 
