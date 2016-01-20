@@ -1,7 +1,9 @@
 'use strict';
 
 var _ = require('underscore');
+var bcrypt = require('bcryptjs');
 //var bodyParser = require('body-parser');
+
 module.exports = function(app, db) {
     app.get('/', function(req, res) {
         res.send('Welcome home!');
@@ -110,6 +112,19 @@ module.exports = function(app, db) {
                 res.json(user.toPublicJSON());
             }, function(error) {
                 res.status(400).json(error);
+            });
+    });
+
+    //User Login
+
+    app.post('/users/login', function(req, res) {
+        var body = _.pick(req.body, 'email', 'password');
+
+        db.user.authenticate(body)
+            .then(function(user) {
+                res.json(user.toPublicJSON());
+            }, function(error) {
+                return res.status(401).send('Authentication failed.');
             });
     });
 };
