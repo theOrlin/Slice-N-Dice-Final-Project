@@ -15,6 +15,7 @@ module.exports = function(app, db) {
     //Measurement
 
     app.post('/measurement', middleware.requireAuthentication, function(req, res) {
+    //app.post('/measurement', function(req, res) {
         var body = _.pick(req.body, 'name');
 
         db.measurement.create(body)
@@ -28,7 +29,17 @@ module.exports = function(app, db) {
 
     //Ingredient
 
+    app.get('/ingredients', function(req, res) {
+        db.ingredient.findAll({include: [db.measurement]})
+            .then(function(ingredients) {
+                res.json(ingredients);
+            }, function(error) {
+                res.status(500).send(error);
+            });
+    });
+
     app.post('/ingredients', middleware.requireAuthentication, function(req, res) {
+    //app.post('/ingredients', function(req, res) {
         var body = _.pick(req.body, 'name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize', 'measurement_id');
 
         db.ingredient.create(body)
@@ -59,17 +70,28 @@ module.exports = function(app, db) {
     });
 
     app.get('/meals', middleware.requireAuthentication, function(req, res) {
-        //var return
+        req.user.getMeals(
+            {
+                include: [{model: db.ingredient, include: [db.measurement]}]
+            })
+            .then(function(meals) {
+                res.json(meals);
+            });
     });
 
     app.get('/meals/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var mealName = '';
-
-        db.meal.findById(mealId)
+        req.user.getMeal(
+            {
+                where: {
+                    'id': mealId
+                }
+            })
+            //db.meal.findById(mealId)
             .then(function(meal) {
                 if (meal) {
-                    mealName = meal.name;
+                    //mealName = meal.name;
                     return meal.getIngredients();
                 }
                 else {
@@ -79,10 +101,11 @@ module.exports = function(app, db) {
                 res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
             })
             .then(function(mealIngredients) {
-                var returnObject = {};
-                returnObject.mealName = mealName;
-                returnObject.ingredientsList = mealIngredients;
-                res.json(returnObject);
+                //var returnObject = {};
+                //returnObject.mealName = mealName;
+                //returnObject.ingredientsList = mealIngredients;
+                //res.json(returnObject);
+                res.json(mealIngredients);
             });
     });
 
@@ -156,12 +179,12 @@ module.exports = function(app, db) {
 
         app.delete('/users/login', middleware.requireAuthentication, function(req, res) {
             req.token.destroy()
-            .then(function(){
-                res.status(204).send();
-            })
-            .catch(function() {
-                res.status(500).send();
-            });
+                .then(function() {
+                    res.status(204).send();
+                })
+                .catch(function() {
+                    res.status(500).send();
+                });
         });
     });
 };
