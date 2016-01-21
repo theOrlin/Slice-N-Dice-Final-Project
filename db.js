@@ -11,6 +11,7 @@ db.ingredient = sequelize.import(__dirname + '/models/ingredient.js');
 db.measurement = sequelize.import(__dirname + '/models/measurement.js');
 db.meal = sequelize.import(__dirname + '/models/meal.js');
 db.user = sequelize.import(__dirname + '/models/user.js');
+db.token = sequelize.import(__dirname + '/models/token.js');
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
