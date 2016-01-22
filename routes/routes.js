@@ -30,11 +30,29 @@ module.exports = function(app, db) {
     //Ingredient
 
     app.get('/ingredients', function(req, res) {
-        db.ingredient.findAll({ include: [db.measurement] })
+        var searchQuery = req.query;
+        var where = {};
+
+        if (searchQuery.hasOwnProperty('find') && searchQuery.find.length > 0) {
+            where.name = {
+                $like: '%' + searchQuery.find + '%'
+            };
+        }
+
+        db.ingredient.findAll({
+                attributes: ['id', 'name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize'],
+                where: where,
+                include: [{ model: db.measurement, attributes: ['id', 'name'] }]
+            })
             .then(function(ingredients) {
-                res.json(ingredients);
+                if (ingredients) {
+                    res.json(ingredients);
+                }
+                else {
+                    res.status(404).send('No ingredients found');
+                }
             }, function(error) {
-                res.status(500).send(error);
+                res.status(500).send();
             });
     });
 
@@ -76,11 +94,11 @@ module.exports = function(app, db) {
                 attributes: ['name'],
                 include: [
                     {
-                        model: db.ingredient, include: [
-                        { model: db.measurement, attributes: ['name'] },
-                        { model: db.ingredientMeals, attributes: ['quantity'] }
-                    ],
-                        //attributes: ['name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize']
+                        model: db.ingredient,
+                        attributes: ['name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize'],
+                        include: [
+                            { model: db.measurement, attributes: ['name'] }
+                        ]
                     }
                 ]
             })

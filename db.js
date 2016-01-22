@@ -22,11 +22,11 @@ db.ingredient.belongsTo(db.measurement, { foreignKey: 'measurement_id' });
 db.ingredient.belongsToMany(db.meal, { through: db.ingredientMeals});
 db.meal.belongsToMany(db.ingredient, { through: db.ingredientMeals});
 
-db.meal.hasMany(db.ingredientMeals);
-db.ingredient.hasOne(db.ingredientMeals);
+//db.meal.hasMany(db.ingredientMeals);
+//db.ingredient.hasOne(db.ingredientMeals);
 
-db.ingredientMeals.belongsTo(db.meal);
-db.ingredientMeals.belongsTo(db.ingredient);
+//db.ingredientMeals.belongsTo(db.meal);
+//db.ingredientMeals.belongsTo(db.ingredient);
 
 db.meal.belongsTo(db.meal, { foreignKey: 'user_id' });
 db.user.hasMany(db.meal, { foreignKey: 'user_id' });
