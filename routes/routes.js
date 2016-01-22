@@ -15,7 +15,7 @@ module.exports = function(app, db) {
     //Measurement
 
     app.post('/measurement', middleware.requireAuthentication, function(req, res) {
-    //app.post('/measurement', function(req, res) {
+        //app.post('/measurement', function(req, res) {
         var body = _.pick(req.body, 'name');
 
         db.measurement.create(body)
@@ -30,7 +30,7 @@ module.exports = function(app, db) {
     //Ingredient
 
     app.get('/ingredients', function(req, res) {
-        db.ingredient.findAll({include: [db.measurement]})
+        db.ingredient.findAll({ include: [db.measurement] })
             .then(function(ingredients) {
                 res.json(ingredients);
             }, function(error) {
@@ -39,7 +39,7 @@ module.exports = function(app, db) {
     });
 
     app.post('/ingredients', middleware.requireAuthentication, function(req, res) {
-    //app.post('/ingredients', function(req, res) {
+        //app.post('/ingredients', function(req, res) {
         var body = _.pick(req.body, 'name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize', 'measurement_id');
 
         db.ingredient.create(body)
@@ -70,9 +70,19 @@ module.exports = function(app, db) {
     });
 
     app.get('/meals', middleware.requireAuthentication, function(req, res) {
+        var meals = {};
         req.user.getMeals(
             {
-                include: [{model: db.ingredient, include: [db.measurement]}]
+                attributes: ['name'],
+                include: [
+                    {
+                        model: db.ingredient, include: [
+                        { model: db.measurement, attributes: ['name'] },
+                        { model: db.ingredientMeals, attributes: ['quantity'] }
+                    ],
+                        attributes: ['name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize']
+                    }
+                ]
             })
             .then(function(meals) {
                 res.json(meals);
@@ -111,14 +121,14 @@ module.exports = function(app, db) {
 
     app.put('/meals/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
-        var body = _.pick(req.body, 'id');
+        var body = _.pick(req.body, 'id', 'quantity');
 
         db.meal.findById(mealId)
             .then(function(meal) {
                 if (meal) {
                     db.ingredient.findById(body.id)
                         .then(function(ingredient) {
-                            return meal.addIngredient(ingredient);
+                            return meal.addIngredient(ingredient, { quantity: body.quantity });
                         }, function(error) {
                             res.status(404).send('No such ingredient.');
                         });
