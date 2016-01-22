@@ -80,7 +80,7 @@ module.exports = function(app, db) {
                         { model: db.measurement, attributes: ['name'] },
                         { model: db.ingredientMeals, attributes: ['quantity'] }
                     ],
-                        attributes: ['name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize']
+                        //attributes: ['name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize']
                     }
                 ]
             })
