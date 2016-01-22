@@ -110,17 +110,17 @@ module.exports = function(app, db) {
     app.get('/meals/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var mealName = '';
-        req.user.getMeal(
+        req.user.getMeals(
             {
                 where: {
                     'id': mealId
                 }
             })
             //db.meal.findById(mealId)
-            .then(function(meal) {
-                if (meal) {
+            .then(function(meals) {
+                if (meals.length > 0) {
                     //mealName = meal.name;
-                    return meal.getIngredients();
+                    return meals[0].getIngredients();
                 }
                 else {
                     res.status(404).send('No such meal.');
@@ -141,12 +141,17 @@ module.exports = function(app, db) {
         var mealId = parseInt(req.params.id, 10);
         var body = _.pick(req.body, 'id', 'quantity');
 
-        db.meal.findById(mealId)
-            .then(function(meal) {
-                if (meal) {
+        req.user.getMeals(
+            {
+                where: {
+                    'id': mealId
+                }
+            })
+            .then(function(meals) {
+                if (meals.length > 0) {
                     db.ingredient.findById(body.id)
                         .then(function(ingredient) {
-                            return meal.addIngredient(ingredient, { quantity: body.quantity });
+                            return meals[0].addIngredient(ingredient, { quantity: body.quantity });
                         }, function(error) {
                             res.status(404).send('No such ingredient.');
                         });
@@ -159,6 +164,61 @@ module.exports = function(app, db) {
             })
             .then(function(ingredient) {
                 res.json(ingredient);
+            });
+    });
+
+    //app.delete('/meals/:id', function(req, res) {
+    app.delete('/meals/:id', middleware.requireAuthentication, function(req, res) {
+        var mealId = parseInt(req.params.id, 10);
+
+        req.user.getMeals(
+            {
+                where: {
+                    'id': mealId
+                }
+            })
+            .then(function(meals) {
+                if (meals.length > 0) {
+                    meals[0].destroy(meals[0])
+                        .then(function() {
+                            res.status(204).send();
+                        });
+                }
+                else {
+                    res.status(404).send('User has no such meal.');
+                }
+            }, function(error) {
+                res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
+            });
+    });
+
+    app.delete('/meals/:id/:ingredientId', middleware.requireAuthentication, function(req, res) {
+        var mealId = parseInt(req.params.id, 10);
+        var ingredientId = parseInt(req.params.ingredientId, 10);
+
+        req.user.getMeals(
+            {
+                where: {
+                    'id': mealId
+                }
+            })
+            .then(function(meals) {
+                if (meals.length > 0) {
+                    db.ingredientMeals.destroy({
+                            where: {
+                                mealId: mealId,
+                                ingredientId: ingredientId
+                            }
+                        })
+                        .then(function() {
+                            res.status(204).send();
+                        });
+                }
+                else {
+                    res.status(404).send('User has no such meal.');
+                }
+            }, function(error) {
+                res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
             });
     });
 
