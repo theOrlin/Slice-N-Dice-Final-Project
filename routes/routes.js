@@ -129,10 +129,6 @@ module.exports = function(app, db) {
                 res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
             })
             .then(function(mealIngredients) {
-                //var returnObject = {};
-                //returnObject.mealName = mealName;
-                //returnObject.ingredientsList = mealIngredients;
-                //res.json(returnObject);
                 res.json(mealIngredients);
             });
     });
@@ -273,6 +269,12 @@ module.exports = function(app, db) {
                 .catch(function() {
                     res.status(500).send();
                 });
+        });
+
+        //Frontend
+
+        app.get('*', function(req, res) {
+            res.sendfile('./public/index.html'); // load our public/index.html file
         });
     });
 };
