@@ -2,15 +2,12 @@
 
 var _ = require('underscore');
 var bcrypt = require('bcryptjs');
+var path = require('path');
 //var bodyParser = require('body-parser');
 
 
 module.exports = function(app, db) {
     var middleware = require('../middleware.js')(db);
-
-    app.get('/', function(req, res) {
-        res.send('Welcome home!');
-    });
 
     //Measurement
 
@@ -258,23 +255,22 @@ module.exports = function(app, db) {
             .catch(function(error) {
                 res.status(401).send('Authentication failed.');
             });
-
-        //Logout
-
-        app.delete('/users/login', middleware.requireAuthentication, function(req, res) {
-            req.token.destroy()
-                .then(function() {
-                    res.status(204).send();
-                })
-                .catch(function() {
-                    res.status(500).send();
-                });
-        });
-
-        //Frontend
-
-        app.get('*', function(req, res) {
-            res.sendfile('./public/index.html'); // load our public/index.html file
-        });
     });
+
+    //Logout
+
+    app.delete('/users/login', middleware.requireAuthentication, function(req, res) {
+        req.token.destroy()
+            .then(function() {
+                res.status(204).send();
+            })
+            .catch(function() {
+                res.status(500).send();
+            });
+    });
+
+    app.get('/*', function(req, res) {
+        res.sendFile('index.html', {root: path.join(__dirname + '/../public/')});
+    });
+
 };
