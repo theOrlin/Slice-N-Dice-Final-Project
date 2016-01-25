@@ -18,8 +18,8 @@ app.use('/js/controllers/',express.static(__dirname + '/public/js/controllers/')
 
 routes(app, db);
 
-db.sequelize.sync({force: true}).then(function() {
-//db.sequelize.sync().then(function() {
+//db.sequelize.sync({force: true}).then(function() {
+db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
         console.log('Express listening on port ' + PORT + '...');
     });

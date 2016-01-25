@@ -22,6 +22,11 @@
                 controller: 'LoginController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+            .when('/getingredients', {
+                templateUrl: 'views/ingredients.html',
+                controller: 'IngredientsController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             .otherwise({ redirectTo: '/' });
     }
 

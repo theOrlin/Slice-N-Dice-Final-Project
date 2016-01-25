@@ -1,0 +1,23 @@
+<table class="table table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>Fat</th>
+        <th>Carbs</th>
+        <th>Protein</th>
+        <th>Serving size</th>
+        <th>Measuring Unit</th>
+    </tr>
+    <tr ng-repeat="ingredient in vm.ingredients">
+        <td>{{ingredient.name}}</td>
+        <td>{{ingredient.calories}}</td>
+        <td>{{ingredient.fat}}</td>
+        <td>{{ingredient.carbohydrates}}</td>
+        <td>{{ingredient.protein}}</td>
+        <td>{{ingredient.portionSize}}</td>
+        <td>{{ingredient.measurement.name}}</td>
+    </tr>
+</table>
+<!--<div ng-repeat="model in v  track by $index">-->
+    <!--{{model.name}}-->
+<!--</div>-->
