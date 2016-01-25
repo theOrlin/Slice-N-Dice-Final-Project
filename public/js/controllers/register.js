@@ -4,6 +4,13 @@
     function RegisterController() {
         var vm = this;
 
+        vm.register = function(user, registerForm) {
+            if(registerForm.$invalid) {
+                return;
+            }
+
+            
+        };
 
     }
 

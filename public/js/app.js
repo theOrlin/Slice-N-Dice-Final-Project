@@ -1,8 +1,10 @@
 (function() {
     'use strict';
 
-    function config($routeProvider) {
+    function config($routeProvider, $locationProvider) {
         var CONTROLLER_VIEW_MODEL_NAME = 'vm';
+
+        $locationProvider.html5Mode(true);
 
         $routeProvider
             .when('/', {
@@ -15,11 +17,16 @@
                 controller: 'RegisterController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'LoginController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             .otherwise({ redirectTo: '/' });
     }
 
     angular.module('foodApp.controllers', []);
 
     angular.module('foodApp', ['ngRoute', 'foodApp.controllers'])
-        .config(['$routeProvider', config]);
+        .config(['$routeProvider', '$locationProvider', config]);
 })();

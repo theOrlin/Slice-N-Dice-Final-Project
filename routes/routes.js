@@ -251,6 +251,7 @@ module.exports = function(app, db) {
             })
             .then(function(tokenInstance) {
                 res.header('Auth', tokenInstance.get('token')).json(userInstance.toPublicJSON());
+                //res.json(tokenInstance.get('token'));
             })
             .catch(function(error) {
                 res.status(401).send('Authentication failed.');

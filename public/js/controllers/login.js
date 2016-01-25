@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-    function HomeController() {
+    function LoginController() {
         var vm = this;
     }
     angular.module('foodApp.controllers')
-        .controller('HomeController', [HomeController]);
+        .controller('LoginController', [LoginController]);
 })();
