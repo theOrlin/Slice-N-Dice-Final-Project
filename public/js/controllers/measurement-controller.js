@@ -8,10 +8,10 @@
         vm.submit = function() {
             measurementService.addMeasurement(vm.measurement);
         };
-
     };
 
     MeasurementController.$inject = ['measurementService'];
+
     angular.module('foodApp.controllers')
         .controller('MeasurementController', MeasurementController);
 })();

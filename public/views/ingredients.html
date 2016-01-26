@@ -15,11 +15,12 @@
         <td>{{ingredient.fat * (quantity / ingredient.portionSize) | number:1}}</td>
         <td>{{ingredient.carbohydrates * (quantity / ingredient.portionSize) | number:1}}</td>
         <td>{{ingredient.protein * (quantity / ingredient.portionSize) | number:1}}</td>
-        <td><input type="text" value="{{ingredient.portionSize * (quantity / ingredient.portionSize)}}" ng-model="quantity"></td>
+        <td><input type="text" value="{{ingredient.portionSize * (quantity / ingredient.portionSize)}}"
+                   ng-model="quantity"></td>
         <td>{{ingredient.measurement.name}}</td>
         <!--<td>{{ingredient.portionSize * (quantity / ingredient.portionSize) | number:1}}</td>-->
     </tr>
 </table>
 <!--<div ng-repeat="model in v  track by $index">-->
-    <!--{{model.name}}-->
+<!--{{model.name}}-->
 <!--</div>-->

@@ -7,14 +7,14 @@
 
         vm.submit = function() {
             authService.login(vm.user)
-            .success(function(data, status, headers, config) {
-                localStorage.setItem('auth_token', headers('Auth'));
-                //console.log(headers('Auth'));
-                $location.path('/');
-            })
-            .error(function(error) {
+                .success(function(data, status, headers, config) {
+                    localStorage.setItem('auth_token', headers('Auth'));
+                    //console.log(headers('Auth'));
+                    $location.path('/');
+                })
+                .error(function(error) {
 
-            });
+                });
         };
     }
 

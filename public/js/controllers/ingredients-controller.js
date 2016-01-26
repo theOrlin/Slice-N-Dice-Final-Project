@@ -6,12 +6,12 @@
 
         function init() {
             ingredientsService.getIngredients()
-            .success(function(ingredients) {
-                vm.ingredients = ingredients.slice();
-            })
-            .error(function(data, status, headers, config) {
-               console.log(status);
-            });
+                .success(function(ingredients) {
+                    vm.ingredients = ingredients.slice();
+                })
+                .error(function(data, status, headers, config) {
+                    console.log(status);
+                });
         }
 
         init();
