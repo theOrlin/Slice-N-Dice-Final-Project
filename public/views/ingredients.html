@@ -7,15 +7,17 @@
         <th>Protein</th>
         <th>Serving size</th>
         <th>Measuring Unit</th>
+        <th>Quantity</th>
     </tr>
-    <tr ng-repeat="ingredient in vm.ingredients">
+    <tr ng-repeat="ingredient in vm.ingredients" ng-init="quantity=ingredient.portionSize">
         <td>{{ingredient.name}}</td>
-        <td>{{ingredient.calories}}</td>
-        <td>{{ingredient.fat}}</td>
-        <td>{{ingredient.carbohydrates}}</td>
-        <td>{{ingredient.protein}}</td>
-        <td>{{ingredient.portionSize}}</td>
+        <td>{{ingredient.calories * (quantity / ingredient.portionSize) | number:1}}</td>
+        <td>{{ingredient.fat * (quantity / ingredient.portionSize) | number:1}}</td>
+        <td>{{ingredient.carbohydrates * (quantity / ingredient.portionSize) | number:1}}</td>
+        <td>{{ingredient.protein * (quantity / ingredient.portionSize) | number:1}}</td>
+        <td>{{ingredient.portionSize * (quantity / ingredient.portionSize) | number:1}}</td>
         <td>{{ingredient.measurement.name}}</td>
+        <td><input type="text" value="{{ingredient.portionSize * (quantity / ingredient.portionSize)}}" ng-model="quantity"></td>
     </tr>
 </table>
 <!--<div ng-repeat="model in v  track by $index">-->
