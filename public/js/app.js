@@ -27,6 +27,11 @@
                 controller: 'IngredientsController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+            .when('/addmeasurement', {
+                templateUrl: 'views/measurement.html',
+                controller: 'MeasurementController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             .otherwise({ redirectTo: '/' });
     }
 
