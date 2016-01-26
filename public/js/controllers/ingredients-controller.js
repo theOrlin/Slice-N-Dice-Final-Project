@@ -8,7 +8,6 @@
             ingredientsService.getIngredients()
             .success(function(ingredients) {
                 vm.ingredients = ingredients.slice();
-                console.log(vm.ingredients);
             })
             .error(function(data, status, headers, config) {
                console.log(status);
