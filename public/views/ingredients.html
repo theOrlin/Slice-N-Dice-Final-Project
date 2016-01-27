@@ -1,3 +1,4 @@
+<!--<input type="text" ng-model="selected" typeahead="state for state in getStates($viewValue)">-->
 <table class="table table-hover">
     <tr>
         <th>Name</th>
@@ -21,6 +22,9 @@
         <!--<td>{{ingredient.portionSize * (quantity / ingredient.portionSize) | number:1}}</td>-->
     </tr>
 </table>
+<input type="text" ng-model="vm.selectedIngredient" uib-typeahead="ingredient as ingredient.name for ingredient in vm.ingredients">
+<button class="btn btn-primary" ng-click="vm.log()">Log</button>
+
 <!--<div ng-repeat="model in v  track by $index">-->
 <!--{{model.name}}-->
 <!--</div>-->

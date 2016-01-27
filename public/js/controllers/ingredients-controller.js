@@ -15,6 +15,19 @@
         }
 
         init();
+        vm.log = function() {
+            console.log(vm.selectedIngredient);
+        };
+        //vm.getIngredientsByName = function(ingredientName) {
+        //    ingredientsService.getIngredientByName(ingredientName)
+        //    .then(function(response) {
+        //        vm.ingredients = response;
+        //    }, function(error){
+        //
+        //    });
+        //};
+
+
     }
 
     IngredientsController.$inject = ['ingredientsService'];

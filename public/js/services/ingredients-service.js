@@ -10,6 +10,10 @@
             //console.log(ingredient);
             return $http.post('/api/ingredient', ingredient);
         };
+
+        this.getIngredientByName = function(name) {
+            return $http.get('/api/ingredients?find=' + name);
+        };
     };
 
     ingredientsService.$inject = ['$http'];
