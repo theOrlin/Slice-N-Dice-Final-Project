@@ -1,0 +1,66 @@
+<form class="form-horizontal" name="measurementForm" novalidate>
+    <fieldset>
+        <legend>Add New Ingredient</legend>
+        <div class="form-group">
+            <label for="ingredientName" class="col-lg-2 control-label">Ingredient Name</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="ingredientName" placeholder="ingredient name" type="text"
+                       required="required"
+                       ng-model="vm.ingredient.name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ingredientCalories" class="col-lg-2 control-label">Ingredient Calories</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="ingredientCalories" placeholder="ingredient calories" type="text"
+                       required="required"
+                       ng-model="vm.ingredient.calories">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ingredientFat" class="col-lg-2 control-label">Ingredient Fat</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="ingredientFat" placeholder="ingredient fat" type="text"
+                       required="required"
+                       ng-model="vm.ingredient.fat">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ingredientCarbs" class="col-lg-2 control-label">Ingredient Carbohydrates</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="ingredientCarbs" placeholder="ingredient carbs" type="text"
+                       required="required"
+                       ng-model="vm.ingredient.carbohydrates">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ingredientProtein" class="col-lg-2 control-label">Ingredient Protein</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="ingredientProtein" placeholder="ingredient protein" type="text"
+                       required="required"
+                       ng-model="vm.ingredient.protein">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ingredientPortionSize" class="col-lg-2 control-label">Ingredient Portion Size</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="ingredientPortionSize" placeholder="portion size" type="text"
+                       required="required"
+                       ng-model="vm.ingredient.portionSize">
+            </div>
+        </div>
+        <div>
+            <label for="measurementSelect" class="col-lg-2 control-label">Measurement Unit</label>
+            <select name="measurementSelect" id="measurementSelect"
+                    ng-options="option.name for option in vm.ingredients track by option.id"
+                    ng-model="vm.ingredient.measurement_id">
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <!--<button class="btn btn-primary" ng-click="vm.register(user, registrationForm)" ng-disabled="registrationForm.$invalid || user.password != user.confirmPassword">Log In</button>-->
+                <button class="btn btn-primary" ng-click="vm.addIngredient()">Add Measurement</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

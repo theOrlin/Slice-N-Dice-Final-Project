@@ -7,7 +7,7 @@
         function init() {
             ingredientsService.getIngredients()
                 .success(function(ingredients) {
-                    vm.ingredients = ingredients.slice();
+                    vm.ingredients = ingredients;
                 })
                 .error(function(data, status, headers, config) {
                     console.log(status);

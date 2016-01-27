@@ -29,12 +29,12 @@
             })
             .when('/addmeasurement', {
                 templateUrl: 'views/measurement.html',
-                controller: 'MeasurementController',
+                controller: 'MeasurementsController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
             .when('/addingredient', {
-                templateUrl: 'views/ingredient.html',
-                controller: 'IngredientController',
+                templateUrl: 'views/add-ingredient.html',
+                controller: 'AddIngredientController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
             .otherwise({ redirectTo: '/' });
