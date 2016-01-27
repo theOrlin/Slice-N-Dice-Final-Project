@@ -37,6 +37,11 @@
                 controller: 'AddIngredientController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+            .when('/getmeals', {
+                templateUrl: 'views/meals.html',
+                controller: 'MealsController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             .otherwise({ redirectTo: '/' });
     }
 
