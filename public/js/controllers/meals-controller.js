@@ -5,14 +5,17 @@
         var vm = this;
         vm.meals = [];
 
-        vm.getMeals = function() {
+        function init() {
             mealsService.getMeals()
-                .then(function(meals) {
-                    vm.meals = meals;
-                }, function(error) {
-                    console.log(error);
-                });
-        };
+            .success(function(meals){
+                vm.meals = meals;
+            })
+            .error(function(error){
+
+            });
+        }
+
+        init();
     };
 
     MealsController.$inject = ['mealsService'];
