@@ -3,7 +3,7 @@
 
     var ingredientsService = function($http) {
         this.getIngredients = function() {
-            return $http.get('/ingredients');
+            return $http.get('/api/ingredients');
         };
     };
 

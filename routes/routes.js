@@ -10,8 +10,18 @@ module.exports = function(app, db) {
     var middleware = require('../middleware.js')(db);
 
     //Measurement
+    app.get('/api/measurements', function(req, res) {
+        db.measurement.findAll({
+            attributes: ['id', 'name']
+        })
+        .then(function(measurements){
+            res.json(measurements);
+        }, function(error){
+            res.status(404).send('Unable to find measurements.');
+        });
+    });
 
-    app.post('/measurement', middleware.requireAuthentication, function(req, res) {
+    app.post('/api/measurement', middleware.requireAuthentication, function(req, res) {
         //app.post('/measurement', function(req, res) {
         var body = _.pick(req.body, 'name');
 
@@ -26,7 +36,7 @@ module.exports = function(app, db) {
 
     //Ingredient
 
-    app.get('/ingredients', function(req, res) {
+    app.get('/api/ingredients', function(req, res) {
         var searchQuery = req.query;
         var where = {};
 
@@ -53,7 +63,7 @@ module.exports = function(app, db) {
             });
     });
 
-    app.post('/ingredients', middleware.requireAuthentication, function(req, res) {
+    app.post('/api/ingredient', middleware.requireAuthentication, function(req, res) {
         //app.post('/ingredients', function(req, res) {
         var body = _.pick(req.body, 'name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize', 'measurement_id');
 
@@ -67,7 +77,7 @@ module.exports = function(app, db) {
 
     //Meal
 
-    app.post('/meals', middleware.requireAuthentication, function(req, res) {
+    app.post('/api/meal', middleware.requireAuthentication, function(req, res) {
         var body = _.pick(req.body, 'name');
 
         db.meal.create(body)
@@ -84,7 +94,7 @@ module.exports = function(app, db) {
             });
     });
 
-    app.get('/meals', middleware.requireAuthentication, function(req, res) {
+    app.get('/api/meals', middleware.requireAuthentication, function(req, res) {
         var meals = {};
         req.user.getMeals(
             {
@@ -104,7 +114,7 @@ module.exports = function(app, db) {
             });
     });
 
-    app.get('/meals/:id', middleware.requireAuthentication, function(req, res) {
+    app.get('/api/meals/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var mealName = '';
         req.user.getMeals(
@@ -130,7 +140,7 @@ module.exports = function(app, db) {
             });
     });
 
-    app.put('/meals/:id', middleware.requireAuthentication, function(req, res) {
+    app.put('/api/meals/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var body = _.pick(req.body, 'id', 'quantity');
 
@@ -161,7 +171,7 @@ module.exports = function(app, db) {
     });
 
     //app.delete('/meals/:id', function(req, res) {
-    app.delete('/meals/:id', middleware.requireAuthentication, function(req, res) {
+    app.delete('/api/meals/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
 
         req.user.getMeals(
@@ -185,7 +195,7 @@ module.exports = function(app, db) {
             });
     });
 
-    app.delete('/meals/:id/:ingredientId', middleware.requireAuthentication, function(req, res) {
+    app.delete('/api/meals/:id/:ingredientId', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var ingredientId = parseInt(req.params.ingredientId, 10);
 
@@ -217,7 +227,7 @@ module.exports = function(app, db) {
 
     //User
 
-    app.post('/users', function(req, res) {
+    app.post('/api/users', function(req, res) {
         var body = _.pick(req.body, 'email', 'password');
 
         db.user.create(body)
@@ -230,7 +240,7 @@ module.exports = function(app, db) {
 
     //User Login
 
-    app.post('/users/login', function(req, res) {
+    app.post('/api/users/login', function(req, res) {
         var body = _.pick(req.body, 'email', 'password');
         var userInstance;
 
@@ -260,7 +270,7 @@ module.exports = function(app, db) {
 
     //Logout
 
-    app.delete('/users/login', middleware.requireAuthentication, function(req, res) {
+    app.delete('/api/users/login', middleware.requireAuthentication, function(req, res) {
         req.token.destroy()
             .then(function() {
                 res.status(204).send();

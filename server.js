@@ -13,7 +13,7 @@ app.use('/lib',express.static(__dirname + '/public/lib'));
 app.use('/js',express.static(__dirname + '/public/js'));
 app.use('/views',express.static(__dirname + '/public/views'));
 app.use('/css',express.static(__dirname + '/public/css'));
-app.use('/js/controllers/',express.static(__dirname + '/public/js/controllers/'));
+//app.use('/js/controllers/',express.static(__dirname + '/public/js/controllers/'));
 
 
 routes(app, db);

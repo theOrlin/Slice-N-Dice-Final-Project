@@ -3,7 +3,7 @@
 
     var authService = function($http) {
         this.login = function(user) {
-            return $http.post('/users/login', { email: user.email, password: user.password });
+            return $http.post('/api/users/login', { email: user.email, password: user.password });
         };
     };
 
