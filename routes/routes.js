@@ -98,7 +98,7 @@ module.exports = function(app, db) {
         var meals = {};
         req.user.getMeals(
             {
-                attributes: ['name'],
+                attributes: ['name', 'id'],
                 include: [
                     {
                         model: db.ingredient,
