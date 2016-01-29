@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="foodApp">
 <head>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <base href="/"/>
     <meta charset="UTF-8">
     <title>Food App Home Page</title>
@@ -23,7 +23,7 @@
             <li data-ng-hide="token"><a ng-href="/addmeasurement">Add Measurement</a></li>
             <li data-ng-hide="token"><a ng-href="/addingredient">Add Ingredient</a></li>
             <li data-ng-hide="token"><a ng-href="/addmeal">Add Meal</a></li>
-            <li data-ng-hide="token"><a ng-href="/getmeals">All Meals</a></li>
+            <li data-ng-hide="token"><a ng-href="/meals">All Meals</a></li>
             <li data-ng-hide="token"><a ng-href="/login">Log in</a></li>
             <li data-ng-hide="token"><a ng-href="/register">Register</a></li>
             <li data-ng-show="token"><a ng-click="logout()">Logout</a></li>
@@ -46,6 +46,7 @@
     <script src="js/controllers/measurements-controller.js"></script>
     <script src="js/controllers/meals-controller.js"></script>
     <script src="js/controllers/add-meal-controller.js"></script>
+    <script src="js/controllers/meal-controller.js"></script>
     <script src="js/services/ingredients-service.js"></script>
     <script src="js/services/auth-service.js"></script>
     <script src="js/services/auth-interceptor-service.js"></script>

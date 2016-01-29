@@ -96,6 +96,7 @@ module.exports = function(app, db) {
 
     app.get('/api/meals', middleware.requireAuthentication, function(req, res) {
         var meals = {};
+
         req.user.getMeals(
             {
                 attributes: ['name', 'id'],
@@ -114,34 +115,42 @@ module.exports = function(app, db) {
             });
     });
 
-    app.get('/api/meals/:id', middleware.requireAuthentication, function(req, res) {
+    app.get('/api/meal/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
-        var mealName = '';
         var fullMeal = {};
+
         req.user.getMeals(
             {
                 where: {
                     'id': mealId
-                }
+                },
+                attributes: ['name', 'id'],
+                include: [
+                    {
+                        model: db.ingredient,
+                        attributes: ['name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize'],
+                        include: [
+                            { model: db.measurement, attributes: ['name'] }
+                        ]
+                    }
+                ]
             })
-            //db.meal.findById(mealId)
             .then(function(meals) {
                 if (meals.length > 0) {
-                    mealName = meals[0].name;
-                    return meals[0].getIngredients();
+                    fullMeal.name = meals[0].name;
+                    res.json(meals[0]);
+                    //return meals[0].getIngredients();
                 }
                 else {
                     res.status(404).send('No such meal.');
                 }
             }, function(error) {
                 res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
-            })
-            .then(function(mealIngredients) {
-                fullMeal.name = mealName;
-                fullMeal.ingredients = mealIngredients;
-                console.log(fullMeal);
-                res.json(fullMeal);
             });
+            //.then(function(mealIngredients) {
+            //    fullMeal.ingredients = mealIngredients;
+            //    res.json(fullMeal);
+            //});
     });
 
     app.put('/api/meals/:id', middleware.requireAuthentication, function(req, res) {

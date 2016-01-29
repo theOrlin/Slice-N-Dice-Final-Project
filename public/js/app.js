@@ -37,12 +37,12 @@
                 controller: 'AddIngredientController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
-            .when('/getmeals', {
+            .when('/meals', {
                 templateUrl: 'views/meals.html',
                 controller: 'MealsController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
-            .when('/getmeal:id', {
+            .when('/meal/:id', {
                 templateUrl: 'views/meal.html',
                 controller: 'MealController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
