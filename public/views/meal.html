@@ -27,7 +27,7 @@
             <td>{{vm.selectedIngredient.protein * (vm.tempQuantity / vm.selectedIngredient.portionSize) | number:1}}</td>
             <td><input type="text" ng-model="vm.tempQuantity"></td>
             <td>{{vm.selectedIngredient.measurement.name}}</td>
-            <td></td>
+            <td><button class="btn btn-primary" ng-click="vm.addIngredient(vm.selectedIngredient, vm.tempQuantity)">Add</button></td>
             <!--<td>{{ingredient.portionSize * (quantity / ingredient.portionSize) | number:1}}</td>-->
         </tr>
         <tr ng-repeat="ingredient in vm.meal.ingredients" ng-init="quantity=ingredient.ingredientMeals.quantity">
