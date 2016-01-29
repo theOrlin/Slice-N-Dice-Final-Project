@@ -14,8 +14,8 @@
             return $http.get('api/meal/' + id);
         };
 
-        this.addIngredient = function(mealId, ingredientId) {
-            return $http.post('/api/meals/' + mealId, {id: ingredientId});
+        this.addIngredient = function(mealId, ingredientId, ingredientQuantity) {
+            return $http.put('/api/meals/' + mealId, {id: ingredientId, quantity: ingredientQuantity});
         };
     };
 

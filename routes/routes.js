@@ -128,7 +128,7 @@ module.exports = function(app, db) {
                 include: [
                     {
                         model: db.ingredient,
-                        attributes: ['name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize'],
+                        attributes: ['id', 'name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize'],
                         include: [
                             { model: db.measurement, attributes: ['name'] }
                         ]
