@@ -117,6 +117,7 @@ module.exports = function(app, db) {
     app.get('/api/meals/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var mealName = '';
+        var fullMeal = {};
         req.user.getMeals(
             {
                 where: {
@@ -126,7 +127,7 @@ module.exports = function(app, db) {
             //db.meal.findById(mealId)
             .then(function(meals) {
                 if (meals.length > 0) {
-                    //mealName = meal.name;
+                    mealName = meals[0].name;
                     return meals[0].getIngredients();
                 }
                 else {
@@ -136,7 +137,10 @@ module.exports = function(app, db) {
                 res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
             })
             .then(function(mealIngredients) {
-                res.json(mealIngredients);
+                fullMeal.name = mealName;
+                fullMeal.ingredients = mealIngredients;
+                console.log(fullMeal);
+                res.json(fullMeal);
             });
     });
 

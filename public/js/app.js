@@ -42,6 +42,11 @@
                 controller: 'MealsController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+            .when('/getmeal:id', {
+                templateUrl: 'views/meal.html',
+                controller: 'MealController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             .when('/addmeal', {
                 templateUrl: 'views/add-meal.html',
                 controller: 'AddMealController',

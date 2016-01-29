@@ -11,14 +11,13 @@
             <th>Quantity</th>
             <th>Measuring Unit</th>
         </tr>
-        <tr ng-repeat="ingredient in meal.ingredients" ng-init="quantity=ingredient.portionSize">
+        <tr ng-repeat="ingredient in meal.ingredients" ng-init="quantity=ingredient.ingredientMeals.quantity">
             <td>{{ingredient.name}}</td>
             <td>{{ingredient.calories * (quantity / ingredient.portionSize) | number:0}}</td>
             <td>{{ingredient.fat * (quantity / ingredient.portionSize) | number:1}}</td>
             <td>{{ingredient.carbohydrates * (quantity / ingredient.portionSize) | number:1}}</td>
             <td>{{ingredient.protein * (quantity / ingredient.portionSize) | number:1}}</td>
-            <td><input type="text" value="{{ingredient.portionSize * (quantity / ingredient.portionSize)}}"
-                       ng-model="quantity"></td>
+            <td><input type="text" value="{{ingredient.portionSize * (quantity / ingredient.portionSize)}}" ng-model="quantity"></td>
             <td>{{ingredient.measurement.name}}</td>
             <!--<td>{{ingredient.portionSize * (quantity / ingredient.portionSize) | number:1}}</td>-->
         </tr>
