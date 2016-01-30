@@ -51,6 +51,16 @@
                 });
         };
 
+        vm.deleteIngredientFromMeal = function(ingredientId) {
+            mealsService.deleteIngredientFromMeal(vm.mealId, ingredientId)
+                .success(function() {
+                    init();
+                })
+                .error(function(error) {
+
+                });
+        };
+
         vm.recalculateValues = function(newQuantity, index) {
             newQuantity = parseInt(newQuantity);
             var originalIngredient = vm.originalMeal.ingredients[index];

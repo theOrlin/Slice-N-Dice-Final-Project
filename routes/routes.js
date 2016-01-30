@@ -153,7 +153,7 @@ module.exports = function(app, db) {
             //});
     });
 
-    app.put('/api/meals/:id', middleware.requireAuthentication, function(req, res) {
+    app.put('/api/meal/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var body = _.pick(req.body, 'id', 'quantity');
 
@@ -208,7 +208,7 @@ module.exports = function(app, db) {
             });
     });
 
-    app.delete('/api/meals/:id/:ingredientId', middleware.requireAuthentication, function(req, res) {
+    app.delete('/api/meal/:id/:ingredientId', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var ingredientId = parseInt(req.params.ingredientId, 10);
 

@@ -15,7 +15,11 @@
         };
 
         this.addIngredient = function(mealId, ingredientId, ingredientQuantity) {
-            return $http.put('/api/meals/' + mealId, {id: ingredientId, quantity: ingredientQuantity});
+            return $http.put('/api/meal/' + mealId, {id: ingredientId, quantity: ingredientQuantity});
+        };
+
+        this.deleteIngredientFromMeal = function(mealId, ingredientId) {
+            return $http.delete('/api/meal/' + mealId + '/' + ingredientId);
         };
 
         this.calculateValues = function(meal) {
