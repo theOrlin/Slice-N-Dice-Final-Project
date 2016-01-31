@@ -10,8 +10,7 @@
             mealsService.getMeal(vm.mealId)
                 .success(function(meal) {
                     vm.originalMeal = meal;
-                    vm.originalMeal.sums = {};
-                    vm.calculateSums(vm.originalMeal);
+                    mealsService.calculateSums(meal);
                 })
                 .error(function(error) {
 
@@ -38,6 +37,7 @@
         vm.addIngredient = function(ingredient, quantity) {
             mealsService.addIngredient(vm.mealId, ingredient.id, quantity)
                 .success(function(response) {
+                    console.log(response);
                     vm.selectedIngredient = null;
                     init();
                 });
