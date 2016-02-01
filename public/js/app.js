@@ -27,6 +27,11 @@
                 controller: 'IngredientsController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+            .when('/editingredient/:id', {
+                templateUrl: 'views/edit-ingredient.html',
+                controller: 'EditIngredientController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             .when('/addmeasurement', {
                 templateUrl: 'views/measurement.html',
                 controller: 'MeasurementsController',
@@ -50,6 +55,11 @@
             .when('/addmeal', {
                 templateUrl: 'views/add-meal.html',
                 controller: 'AddMealController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
+            .when('/renamemeal/:id', {
+                templateUrl: 'views/rename-meal.html',
+                controller: 'RenameMealController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
             .otherwise({ redirectTo: '/' });

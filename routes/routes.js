@@ -99,7 +99,7 @@ module.exports = function(app, db) {
                         .then(function(ingredient) {
                             res.json(ingredient);
                         }, function(error) {
-                            res.status(500).send(error);
+                            res.status(500).send('Unable to update ingredient. Did you check the name for duplicates?');
                         });
                 }
                 else {
@@ -201,7 +201,7 @@ module.exports = function(app, db) {
             //});
     });
 
-    app.put('/api/meal/:id', middleware.requireAuthentication, function(req, res) {
+    app.post('/api/meal/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
         var body = _.pick(req.body, 'id', 'quantity');
 

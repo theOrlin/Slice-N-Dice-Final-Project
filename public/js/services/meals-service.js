@@ -15,7 +15,7 @@
         };
 
         this.addIngredient = function(mealId, ingredientId, ingredientQuantity) {
-            return $http.put('/api/meal/' + mealId, {id: ingredientId, quantity: ingredientQuantity});
+            return $http.post('/api/meal/' + mealId, {id: ingredientId, quantity: ingredientQuantity});
         };
 
         this.deleteIngredientFromMeal = function(mealId, ingredientId) {

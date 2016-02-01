@@ -11,7 +11,7 @@
         <th>Measuring Unit</th>
     </tr>
     <tr ng-repeat="ingredient in vm.ingredients" ng-init="quantity=ingredient.portionSize">
-        <td>{{ingredient.name}}</td>
+        <td><a href="/editingredient/{{ingredient.id}}">{{ingredient.name}}</a></td>
         <td>{{ingredient.calories * (quantity / ingredient.portionSize) | number:0}}</td>
         <td>{{ingredient.fat * (quantity / ingredient.portionSize) | number:1}}</td>
         <td>{{ingredient.carbohydrates * (quantity / ingredient.portionSize) | number:1}}</td>

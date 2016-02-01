@@ -62,7 +62,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="ingredient in vm.originalMeal.ingredients">
-                <td>{{ingredient.name}}</td>
+                <td><a href="/editingredient/{{ingredient.id}}">{{ingredient.name}}</a></td>
                 <td>{{ingredient.calories * (ingredient.ingredientMeals.quantity / ingredient.portionSize) |
                     number:0}}
                 </td>

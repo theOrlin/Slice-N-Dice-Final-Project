@@ -14,6 +14,14 @@
         this.getIngredientByName = function(name) {
             return $http.get('/api/ingredients?find=' + name);
         };
+
+        this.getIngredientById = function(id) {
+            return $http.get('/api/ingredient/' + id);
+        };
+
+        this.updateIngredient = function(id, updatedIngredient) {
+            return $http.put('/api/ingredient/' + id, updatedIngredient);
+        }
     };
 
     ingredientsService.$inject = ['$http'];
