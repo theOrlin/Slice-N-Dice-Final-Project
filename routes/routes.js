@@ -63,6 +63,54 @@ module.exports = function(app, db) {
             });
     });
 
+    app.get('/api/ingredient/:id', function(req, res) {
+        var ingredientId = parseInt(req.params.id, 10);
+        db.ingredient.findById(ingredientId)
+        .then(function(ingredient){
+            if (ingredient) {
+                res.json(ingredient);
+            }
+            else {
+                res.status(404).send('No ingredient with this id found.');
+            }
+
+        }, function(error){
+            res.status(500).send('Error retrieving ingredient');
+        });
+    });
+
+    app.put('/api/ingredient/:id', function(req, res) {
+        var ingredientId = parseInt(req.params.id, 10);
+
+        db.ingredient.findById(ingredientId)
+            .then(function(ingredient){
+                if (ingredient) {
+                    var body = _.pick(req.body, 'name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize', 'measurement_id');
+
+                    ingredient.update({
+                        name: body.name,
+                        calories: body.calories,
+                        fat: body.fat,
+                        carbohydrates: body.carbohydrates,
+                        protein: body.protein,
+                        portionSize: body.portionSize,
+                        measurement_id: body.measurement_id
+                    })
+                        .then(function(ingredient) {
+                            res.json(ingredient);
+                        }, function(error) {
+                            res.status(500).send(error);
+                        });
+                }
+                else {
+                    res.status(404).send('No ingredient with this id found.');
+                }
+
+            }, function(error){
+                res.status(500).send('Error retrieving ingredient');
+            });
+    });
+
     app.post('/api/ingredient', middleware.requireAuthentication, function(req, res) {
         //app.post('/ingredients', function(req, res) {
         var body = _.pick(req.body, 'name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize', 'measurement_id');
