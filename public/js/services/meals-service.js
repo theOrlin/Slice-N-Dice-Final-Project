@@ -2,6 +2,10 @@
     'use strict';
 
     var mealsService = function($http) {
+        this.getMeal = function(mealId) {
+            return $http.get('api/meal/' + mealId);
+        };
+
         this.getMeals = function() {
             return $http.get('/api/meals');
         };
@@ -10,12 +14,8 @@
             return $http.post('/api/meal', { name: meal.name });
         };
 
-        this.getMeal = function(id) {
-            return $http.get('api/meal/' + id);
-        };
-
         this.addIngredient = function(mealId, ingredientId, ingredientQuantity) {
-            return $http.post('/api/meal/' + mealId, {id: ingredientId, quantity: ingredientQuantity});
+            return $http.post('/api/meal/' + mealId, { id: ingredientId, quantity: ingredientQuantity });
         };
 
         this.deleteIngredientFromMeal = function(mealId, ingredientId) {
@@ -38,6 +38,10 @@
                 meal.sums.carbohydrates += ingredient.carbohydrates * ratio;
                 meal.sums.protein += ingredient.protein * ratio;
             }
+        };
+
+        this.renameMeal = function(mealId, mealName) {
+            return $http.put('api/meal/' + mealId, { name: mealName });
         };
     };
 

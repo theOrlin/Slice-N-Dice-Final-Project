@@ -12,13 +12,13 @@ module.exports = function(app, db) {
     //Measurement
     app.get('/api/measurements', function(req, res) {
         db.measurement.findAll({
-            attributes: ['id', 'name']
-        })
-        .then(function(measurements){
-            res.json(measurements);
-        }, function(error){
-            res.status(404).send('Unable to find measurements.');
-        });
+                attributes: ['id', 'name']
+            })
+            .then(function(measurements) {
+                res.json(measurements);
+            }, function(error) {
+                res.status(404).send('Unable to find measurements.');
+            });
     });
 
     app.post('/api/measurement', middleware.requireAuthentication, function(req, res) {
@@ -66,36 +66,36 @@ module.exports = function(app, db) {
     app.get('/api/ingredient/:id', function(req, res) {
         var ingredientId = parseInt(req.params.id, 10);
         db.ingredient.findById(ingredientId)
-        .then(function(ingredient){
-            if (ingredient) {
-                res.json(ingredient);
-            }
-            else {
-                res.status(404).send('No ingredient with this id found.');
-            }
+            .then(function(ingredient) {
+                if (ingredient) {
+                    res.json(ingredient);
+                }
+                else {
+                    res.status(404).send('No ingredient with this id found.');
+                }
 
-        }, function(error){
-            res.status(500).send('Error retrieving ingredient');
-        });
+            }, function(error) {
+                res.status(500).send('Error retrieving ingredient');
+            });
     });
 
-    app.put('/api/ingredient/:id', function(req, res) {
+    app.put('/api/ingredient/:id', middleware.requireAuthentication, function(req, res) {
         var ingredientId = parseInt(req.params.id, 10);
 
         db.ingredient.findById(ingredientId)
-            .then(function(ingredient){
+            .then(function(ingredient) {
                 if (ingredient) {
                     var body = _.pick(req.body, 'name', 'calories', 'fat', 'carbohydrates', 'protein', 'portionSize', 'measurement_id');
 
                     ingredient.update({
-                        name: body.name,
-                        calories: body.calories,
-                        fat: body.fat,
-                        carbohydrates: body.carbohydrates,
-                        protein: body.protein,
-                        portionSize: body.portionSize,
-                        measurement_id: body.measurement_id
-                    })
+                            name: body.name,
+                            calories: body.calories,
+                            fat: body.fat,
+                            carbohydrates: body.carbohydrates,
+                            protein: body.protein,
+                            portionSize: body.portionSize,
+                            measurement_id: body.measurement_id
+                        })
                         .then(function(ingredient) {
                             res.json(ingredient);
                         }, function(error) {
@@ -106,7 +106,7 @@ module.exports = function(app, db) {
                     res.status(404).send('No ingredient with this id found.');
                 }
 
-            }, function(error){
+            }, function(error) {
                 res.status(500).send('Error retrieving ingredient');
             });
     });
@@ -195,10 +195,39 @@ module.exports = function(app, db) {
             }, function(error) {
                 res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
             });
-            //.then(function(mealIngredients) {
-            //    fullMeal.ingredients = mealIngredients;
-            //    res.json(fullMeal);
-            //});
+        //.then(function(mealIngredients) {
+        //    fullMeal.ingredients = mealIngredients;
+        //    res.json(fullMeal);
+        //});
+    });
+
+    app.put('/api/meal/:id', middleware.requireAuthentication, function(req, res) {
+        var mealId = parseInt(req.params.id, 10);
+        var body = _.pick(req.body, 'name');
+
+        req.user.getMeals(
+            {
+                where: {
+                    'id': mealId
+                }
+            })
+            .then(function(meals) {
+                if (meals.length > 0) {
+                    meals[0].update({
+                        name: body.name
+                    })
+                    .then(function(response){
+                        res.json(response);
+                    }, function(error){
+                        res.status(500).send('Unable to rename meal with id ' + mealId + '.');
+                    });
+                }
+                else {
+                    res.status(404).send('No such meal.');
+                }
+            }, function(error) {
+                res.status(500).send('Unable to retrieve meal with id ' + mealId + '.');
+            });
     });
 
     app.post('/api/meal/:id', middleware.requireAuthentication, function(req, res) {
@@ -342,7 +371,7 @@ module.exports = function(app, db) {
     });
 
     app.get('/*', function(req, res) {
-        res.sendFile('index.html', {root: path.join(__dirname + '/../public/')});
+        res.sendFile('index.html', { root: path.join(__dirname + '/../public/') });
     });
 
 };

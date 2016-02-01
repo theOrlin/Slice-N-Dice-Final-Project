@@ -7,21 +7,20 @@
         function init() {
 
             ingredientsService.getIngredientById(vm.ingredientId)
-            .success(function(ingredient) {
-                vm.ingredient = ingredient;
-                vm.checkedIngredientId = ingredient.id;
-            })
-            .error(function(data, status, headers, config){
+                .success(function(ingredient) {
+                    vm.ingredient = ingredient;
+                    vm.checkedIngredientId = ingredient.id;
+                })
+                .error(function(data, status, headers, config) {
 
-            });
+                });
 
             measurementsService.getMeasurements()
                 .success(function(measurements) {
                     vm.measurements = measurements;
                     for (var i = 0; i < measurements.length; i++) {
                         var measurement = measurements[i];
-                        if (measurement.id === vm.ingredient.measurement_id)
-                        {
+                        if (measurement.id === vm.ingredient.measurement_id) {
                             vm.selectedMeasurement = measurement;
                         }
                     }
@@ -52,8 +51,8 @@
                 });
         };
 
-        vm.log = function() {
-            console.log(typeof vm.selectedMeasurement.id);
+        vm.cancel = function() {
+            $window.history.back();
         };
     };
 
