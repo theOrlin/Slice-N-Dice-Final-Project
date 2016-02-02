@@ -50,6 +50,16 @@
                 });
         };
 
+        vm.deleteMeal = function(mealId) {
+            mealsService.deleteMeal(mealId)
+            .success(function(){
+                init();
+            })
+            .error(function(error){
+
+            });
+        };
+
         vm.calculateTotals = function() {
             vm.totals = {
                 calories: 0,
@@ -57,6 +67,7 @@
                 carbohydrates: 0,
                 protein: 0
             };
+
             vm.meals.forEach(function(meal) {
                 vm.totals.calories += meal.sums.calories;
                 vm.totals.fat += meal.sums.fat;

@@ -6,7 +6,11 @@
     <h5>Protein: {{vm.totals.protein | number:1}}</h5>
 </div>
 <div ng-repeat="meal in vm.meals">
-    <h3><a href="/meal/{{meal.id}}">{{meal.name}}</a></h3>
+    <h3><a href="/meal/{{meal.id}}">{{meal.name}}</a>
+        <button class="btn btn-warning"
+                ng-click="vm.deleteMeal(meal.id)">Delete Meal
+        </button>
+    </h3>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -53,15 +57,15 @@
                 </td>
             </tr>
             <!--<tr ng-repeat="ingredient in meal.ingredients" ng-init="quantity=ingredient.ingredientMeals.quantity">-->
-                <!--<td>{{ingredient.name}}</td>-->
-                <!--<td>{{ingredient.calories * (quantity / ingredient.portionSize) | number:0}}</td>-->
-                <!--<td>{{ingredient.fat * (quantity / ingredient.portionSize) | number:1}}</td>-->
-                <!--<td>{{ingredient.carbohydrates * (quantity / ingredient.portionSize) | number:1}}</td>-->
-                <!--<td>{{ingredient.protein * (quantity / ingredient.portionSize) | number:1}}</td>-->
-                <!--<td><input type="text" value="{{ingredient.portionSize * (quantity / ingredient.portionSize)}}"-->
-                           <!--ng-model="quantity"></td>-->
-                <!--<td>{{ingredient.measurement.name}}</td>-->
-                <!--&lt;!&ndash;<td>{{ingredient.portionSize * (quantity / ingredient.portionSize) | number:1}}</td>&ndash;&gt;-->
+            <!--<td>{{ingredient.name}}</td>-->
+            <!--<td>{{ingredient.calories * (quantity / ingredient.portionSize) | number:0}}</td>-->
+            <!--<td>{{ingredient.fat * (quantity / ingredient.portionSize) | number:1}}</td>-->
+            <!--<td>{{ingredient.carbohydrates * (quantity / ingredient.portionSize) | number:1}}</td>-->
+            <!--<td>{{ingredient.protein * (quantity / ingredient.portionSize) | number:1}}</td>-->
+            <!--<td><input type="text" value="{{ingredient.portionSize * (quantity / ingredient.portionSize)}}"-->
+            <!--ng-model="quantity"></td>-->
+            <!--<td>{{ingredient.measurement.name}}</td>-->
+            <!--&lt;!&ndash;<td>{{ingredient.portionSize * (quantity / ingredient.portionSize) | number:1}}</td>&ndash;&gt;-->
             <!--</tr>-->
         </tbody>
         <tfoot>

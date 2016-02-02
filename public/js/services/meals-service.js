@@ -43,6 +43,10 @@
         this.renameMeal = function(mealId, mealName) {
             return $http.put('api/meal/' + mealId, { name: mealName });
         };
+
+        this.deleteMeal = function(mealId) {
+            return $http.delete('api/meal/' + mealId);
+        };
     };
 
     mealsService.$inject = ['$http'];

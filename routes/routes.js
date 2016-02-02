@@ -261,7 +261,7 @@ module.exports = function(app, db) {
     });
 
     //app.delete('/meals/:id', function(req, res) {
-    app.delete('/api/meals/:id', middleware.requireAuthentication, function(req, res) {
+    app.delete('/api/meal/:id', middleware.requireAuthentication, function(req, res) {
         var mealId = parseInt(req.params.id, 10);
 
         req.user.getMeals(
