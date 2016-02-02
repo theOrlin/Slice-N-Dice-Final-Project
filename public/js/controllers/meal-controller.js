@@ -12,8 +12,8 @@
                     vm.originalMeal = meal.data;
 
                     mealsService.calculateSums(meal.data);
-                }, function(data, status, headers, config, statusText) {
-                    Notification.error(statusText);
+                }, function(data) {
+                    Notification.error(data.statusText);
                 });
         }
 

@@ -370,6 +370,12 @@ module.exports = function(app, db) {
             });
     });
 
+    //Check login
+
+    app.get('/api/users/check', middleware.requireAuthentication, function(req, res) {
+        res.json('OK');
+    });
+
     app.get('/*', function(req, res) {
         res.sendFile('index.html', { root: path.join(__dirname + '/../public/') });
     });

@@ -9,6 +9,10 @@
         this.logout = function() {
             return $http.delete('/api/users/login');
         };
+
+        this.checkForLogin = function() {
+            return $http.get('/api/users/check');
+        };
     };
 
     authService.$inject = ['$http'];
