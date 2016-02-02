@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="foodApp">
+<html lang="en" ng-app="foodApp" ng-cloak ng-controller="MainController as tvm">
 <head>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <base href="/"/>
@@ -18,15 +18,23 @@
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-            <!--<li data-ng-show="token"><a ng-href="/restricted">Restricted area</a></li>-->
+            <li data-ng-show="token"><a ng-href="/restricted">Restricted area</a></li>
             <li data-ng-hide="token"><a ng-href="/getingredients">Ingredients</a></li>
-            <li data-ng-hide="token"><a ng-href="/addmeasurement">Add Measurement</a></li>
-            <li data-ng-hide="token"><a ng-href="/addingredient">Add Ingredient</a></li>
-            <li data-ng-hide="token"><a ng-href="/addmeal">Add Meal</a></li>
-            <li data-ng-hide="token"><a ng-href="/meals">All Meals</a></li>
-            <li data-ng-hide="token"><a ng-href="/login">Log in</a></li>
-            <li data-ng-hide="token"><a ng-href="/register">Register</a></li>
-            <li data-ng-hide="token"><a ng-href="/logout">Logout</a></li>
+            <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addmeasurement">Add Measurement</a></li>
+            <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addingredient">Add Ingredient</a></li>
+            <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addmeal">Add Meal</a></li>
+            <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/meals">All Meals</a></li>
+            <li data-ng-hide="tvm.globalUserIsAuthenticated"><a ng-href="/login">Log in</a></li>
+            <li data-ng-hide="tvm.globalUserIsAuthenticated"><a ng-href="/register">Register</a></li>
+            <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/logout">Logout</a></li>
+            <!--<li><a ng-href="/getingredients">Ingredients</a></li>-->
+            <!--<li><a ng-href="/addmeasurement">Add Measurement</a></li>-->
+            <!--<li><a ng-href="/addingredient">Add Ingredient</a></li>-->
+            <!--<li><a ng-href="/addmeal">Add Meal</a></li>-->
+            <!--<li><a ng-href="/meals">All Meals</a></li>-->
+            <!--<li><a ng-href="/login">Log in</a></li>-->
+            <!--<li><a ng-href="/register">Register</a></li>-->
+            <!--<li><a ng-href="/logout">Logout</a></li>-->
         </ul>
     </div>
     <div class="container" ng-view>
@@ -38,6 +46,7 @@
     <script src="lib/angular-animate.js"></script>
     <script src="lib/ui-bootstrap-tpls-1.1.1.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/controllers/main-controller.js"></script>
     <script src="js/controllers/home-controller.js"></script>
     <script src="js/controllers/register-controller.js"></script>
     <script src="js/controllers/login-controller.js"></script>

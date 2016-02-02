@@ -1,4 +1,6 @@
 (function() {
+    'use strict';
+
     var EditIngredientController = function(measurementsService, ingredientsService, $location, $routeParams, $window) {
         var vm = this;
         vm.ingredientId = $routeParams.id;
