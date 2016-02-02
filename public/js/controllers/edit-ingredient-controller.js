@@ -22,6 +22,7 @@
                         var measurement = measurements[i];
                         if (measurement.id === vm.ingredient.measurement_id) {
                             vm.selectedMeasurement = measurement;
+                            break;
                         }
                     }
                 })
