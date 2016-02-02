@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var EditIngredientController = function(measurementsService, ingredientsService, $location, $routeParams, $window) {
+    var EditIngredientController = function(measurementsService, ingredientsService, $location, $routeParams, $window, Notification) {
         var vm = this;
         vm.ingredientId = $routeParams.id;
         vm.ingredient = {};
@@ -9,27 +9,25 @@
         function init() {
 
             ingredientsService.getIngredientById(vm.ingredientId)
-                .success(function(ingredient) {
-                    vm.ingredient = ingredient;
-                    vm.checkedIngredientId = ingredient.id;
-                })
-                .error(function(data, status, headers, config) {
-
+                .then(function(ingredient) {
+                    vm.ingredient = ingredient.data;
+                    vm.verifiedIngredientId = vm.ingredient.id;
+                }, function(data) {
+                    Notification.error(data.statusText);
                 });
 
             measurementsService.getMeasurements()
-                .success(function(measurements) {
-                    vm.measurements = measurements;
-                    for (var i = 0; i < measurements.length; i++) {
-                        var measurement = measurements[i];
+                .then(function(measurements) {
+                    vm.measurements = measurements.data;
+                    for (var i = 0; i < measurements.data.length; i++) {
+                        var measurement = measurements.data[i];
                         if (measurement.id === vm.ingredient.measurement_id) {
                             vm.selectedMeasurement = measurement;
                             break;
                         }
                     }
-                })
-                .error(function(data, status, headers, config) {
-                    console.log(status);
+                }, function(data) {
+                    Notification.error(data.statusText);
                 });
         }
 
@@ -39,18 +37,19 @@
             var ingredientToSave = {
                 name: vm.ingredient.name,
                 calories: parseInt(vm.ingredient.calories),
-                fat: parseInt(vm.ingredient.fat),
-                carbohydrates: parseInt(vm.ingredient.carbohydrates),
-                protein: parseInt(vm.ingredient.protein),
-                portionSize: parseInt(vm.ingredient.portionSize),
-                measurement_id: parseInt(vm.selectedMeasurement.id)
+                fat: parseFloat(vm.ingredient.fat),
+                carbohydrates: parseFloat(vm.ingredient.carbohydrates),
+                protein: parseFloat(vm.ingredient.protein),
+                portionSize: parseFloat(vm.ingredient.portionSize),
+                measurement_id: parseFloat(vm.selectedMeasurement.id)
             };
 
-            ingredientsService.updateIngredient(vm.checkedIngredientId, ingredientToSave)
-                .then(function(ingredient) {
+            ingredientsService.updateIngredient(vm.verifiedIngredientId, ingredientToSave)
+                .then(function() {
+                    Notification.info('Saved.');
                     $window.history.back();
-                }, function(error) {
-                    console.log(error);
+                }, function(data) {
+                    Notification.error(data.statusText);
                 });
         };
 
@@ -59,7 +58,7 @@
         };
     };
 
-    EditIngredientController.$inject = ['measurementsService', 'ingredientsService', '$location', '$routeParams', '$window'];
+    EditIngredientController.$inject = ['measurementsService', 'ingredientsService', '$location', '$routeParams', '$window', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('EditIngredientController', EditIngredientController);

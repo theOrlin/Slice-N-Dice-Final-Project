@@ -1,36 +1,33 @@
 (function() {
     'use strict';
 
-    function IngredientsController(ingredientsService, $http) {
+    function IngredientsController(ingredientsService, Notification) {
         var vm = this;
 
         function init() {
             ingredientsService.getIngredients()
-                .success(function(ingredients) {
-                    vm.ingredients = ingredients;
-                })
-                .error(function(data, status, headers, config) {
-                    console.log(status);
+                .then(function(ingredients) {
+                    vm.ingredients = ingredients.data;
+                }, function(data) {
+                    Notification.error(data.statusText);
                 });
         }
 
         init();
+
         vm.log = function() {
             console.log(vm.selectedIngredient);
         };
 
         vm.getIngredientsByName = function(ingredientName) {
-            //return $http.get('/api/ingredients?find=' + ingredientName);
             return ingredientsService.getIngredientByName(ingredientName)
-            .then(function(response){
-                return response.data;
-            });
+                .then(function(response) {
+                    return response.data;
+                });
         };
-
-
     }
 
-    IngredientsController.$inject = ['ingredientsService', '$http'];
+    IngredientsController.$inject = ['ingredientsService', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('IngredientsController', IngredientsController);

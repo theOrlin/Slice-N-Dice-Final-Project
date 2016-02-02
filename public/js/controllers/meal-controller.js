@@ -1,19 +1,19 @@
 (function() {
     'use strict';
 
-    var MealController = function(mealsService, $routeParams, ingredientsService) {
+    var MealController = function(mealsService, $routeParams, ingredientsService, Notification) {
         var vm = this;
         vm.mealId = $routeParams.id;
         vm.selectedIngredient = null;
 
         function init() {
             mealsService.getMeal(vm.mealId)
-                .success(function(meal) {
-                    vm.originalMeal = meal;
-                    mealsService.calculateSums(meal);
-                })
-                .error(function(error) {
+                .then(function(meal) {
+                    vm.originalMeal = meal.data;
 
+                    mealsService.calculateSums(meal.data);
+                }, function(data, status, headers, config, statusText) {
+                    Notification.error(statusText);
                 });
         }
 
@@ -36,20 +36,22 @@
 
         vm.addIngredient = function(ingredient, quantity) {
             mealsService.addIngredient(vm.mealId, ingredient.id, quantity)
-                .success(function(response) {
-                    console.log(response);
+                .then(function(response) {
                     vm.selectedIngredient = null;
+
+                    Notification.info('Added.');
                     init();
+                }, function(data, status, headers, config, statusText) {
+                    Notification.error(statusText);
                 });
         };
 
         vm.deleteIngredientFromMeal = function(ingredientId) {
             mealsService.deleteIngredientFromMeal(vm.mealId, ingredientId)
-                .success(function() {
+                .then(function() {
                     init();
-                })
-                .error(function(error) {
-
+                }, function(data) {
+                    Notification.error(data.statusText);
                 });
         };
 
@@ -58,7 +60,7 @@
         };
     };
 
-    MealController.$inject = ['mealsService', '$routeParams', 'ingredientsService'];
+    MealController.$inject = ['mealsService', '$routeParams', 'ingredientsService', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('MealController', MealController);

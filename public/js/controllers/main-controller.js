@@ -8,7 +8,6 @@
 
         vm.updateLoginStatus = function(isLoggedIn) {
             vm.globalUserIsAuthenticated = isLoggedIn;
-            console.log(vm.globalUserIsAuthenticated);
         };
     };
 

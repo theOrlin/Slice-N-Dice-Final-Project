@@ -1,18 +1,19 @@
 (function() {
     'use strict';
 
-    function LogoutController(authService, $location, $scope) {
+    function LogoutController(authService, $location, $scope, Notification) {
         var vm = this;
 
         vm.logout = function() {
             authService.logout()
-                .success(function(data, status, headers, config) {
+                .data(function() {
                     localStorage.removeItem('auth_token');
                     $scope.tvm.updateLoginStatus(false);
-                })
-                .error(function(error) {
-
+                    Notification.info('Logged out.');
+                }, function(data) {
+                    Notification.error(data.statusText);
                 });
+
             $location.path('/');
         };
 
@@ -20,7 +21,7 @@
     }
 
 
-    LogoutController.$inject = ['authService', '$location', '$scope'];
+    LogoutController.$inject = ['authService', '$location', '$scope', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('LogoutController', LogoutController);

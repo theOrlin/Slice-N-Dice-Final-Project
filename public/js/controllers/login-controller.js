@@ -1,26 +1,25 @@
 (function() {
     'use strict';
 
-    function LoginController(authService, $location, $scope) {
+    function LoginController(authService, $location, $scope, Notification) {
         var vm = this;
         vm.user = {};
 
-        vm.submit = function() {
+        vm.login = function() {
             authService.login(vm.user)
-                .success(function(data, status, headers, config) {
-                    localStorage.setItem('auth_token', headers('Auth'));
+                .then(function(data, status, headers, config) {
+                    localStorage.setItem('auth_token', data.headers('Auth'));
                     $scope.tvm.updateLoginStatus(true);
-                    //console.log(headers('Auth'));
+                    Notification.success('Logged in.');
                     $location.path('/');
-                })
-                .error(function(error) {
-
+                }, function(data) {
+                    Notification.error(data.statusText);
                 });
         };
     }
 
 
-    LoginController.$inject = ['authService', '$location', '$scope'];
+    LoginController.$inject = ['authService', '$location', '$scope', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('LoginController', LoginController);

@@ -1,17 +1,16 @@
 (function() {
     'use strict';
 
-    function AddIngredientController(measurementsService, ingredientsService, $location) {
+    function AddIngredientController(measurementsService, ingredientsService, $location, Notification) {
         var vm = this;
         vm.ingredient = {};
 
         function init() {
             measurementsService.getMeasurements()
-                .success(function(ingredients) {
-                    vm.ingredients = ingredients;
-                })
-                .error(function(data, status, headers, config) {
-                    console.log(status);
+                .then(function(ingredients) {
+                    vm.ingredients = ingredients.data;
+                }, function(data) {
+                    Notification.error(data.statusText);
                 });
         }
 
@@ -28,15 +27,16 @@
                 measurement_id: parseInt(vm.ingredient.measurement_id.id)
             };
             ingredientsService.addIngr(ingredientToAdd)
-            .then(function(ingredient) {
-                $location.path('/getingredients');
-            }, function(error) {
-                console.log(error);
-            });
+                .then(function(ingredient) {
+                    Notification.info('Added.');
+                    $location.path('/getingredients');
+                }, function(data) {
+                    Notification.error(data.statusText);
+                });
         };
     }
 
-    AddIngredientController.$inject = ['measurementsService', 'ingredientsService', '$location'];
+    AddIngredientController.$inject = ['measurementsService', 'ingredientsService', '$location', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('AddIngredientController', AddIngredientController);

@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var MealsController = function(mealsService) {
+    var MealsController = function(mealsService, Notification) {
         var vm = this;
         vm.meals = [];
         vm.totals = {
@@ -13,16 +13,17 @@
 
         function init() {
             mealsService.getMeals()
-                .success(function(meals) {
-                    vm.meals = meals;
+                .then(function(meals) {
+                    vm.meals = meals.data;
+
                     vm.meals.forEach(function(meal) {
                         mealsService.calculateSums(meal);
                     });
                     vm.calculateTotals();
-                })
-                .error(function(error) {
-
+                }, function(data, status, headers, config, statusText) {
+                    Notification.error(statusText);
                 });
+
         }
 
         init();
@@ -34,30 +35,33 @@
 
         vm.addIngredient = function(mealId, ingredient, quantity) {
             mealsService.addIngredient(mealId, ingredient.id, quantity)
-                .success(function(response) {
+                .then(function(response) {
                     vm.selectedIngredient = null;
+
+                    Notification.info('Added.');
                     init();
+                }, function(data, status, headers, config, statusText) {
+                    Notification.error(statusText);
                 });
         };
 
         vm.deleteIngredientFromMeal = function(mealId, ingredientId) {
             mealsService.deleteIngredientFromMeal(mealId, ingredientId)
-                .success(function() {
+                .then(function() {
                     init();
-                })
-                .error(function(error) {
-
+                }, function(data, status, headers, config, statusText) {
+                    Notification.error(statusText);
                 });
         };
 
         vm.deleteMeal = function(mealId) {
             mealsService.deleteMeal(mealId)
-            .success(function(){
-                init();
-            })
-            .error(function(error){
-
-            });
+                .then(function() {
+                    Notification.info('Deleted.');
+                    init();
+                }, function(data) {
+                    Notification.error(data.statusText);
+                });
         };
 
         vm.calculateTotals = function() {
@@ -77,7 +81,7 @@
         };
     };
 
-    MealsController.$inject = ['mealsService'];
+    MealsController.$inject = ['mealsService', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('MealsController', MealsController);
