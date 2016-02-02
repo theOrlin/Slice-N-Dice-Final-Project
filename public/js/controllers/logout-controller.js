@@ -6,7 +6,7 @@
 
         vm.logout = function() {
             authService.logout()
-                .data(function() {
+                .then(function(data) {
                     localStorage.removeItem('auth_token');
                     $scope.tvm.updateLoginStatus(false);
                     Notification.info('Logged out.');

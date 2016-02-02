@@ -7,7 +7,9 @@
         vm.globalUserIsAuthenticated = localStorage.getItem('auth_token') !== null;
 
         vm.updateLoginStatus = function(isLoggedIn) {
-            vm.globalUserIsAuthenticated = isLoggedIn;
+            if (typeof isLoggedIn === 'boolean') {
+                vm.globalUserIsAuthenticated = isLoggedIn;
+            }
         };
     };
 
