@@ -1,0 +1,23 @@
+<table class="table table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>Fat</th>
+        <th>Carbs</th>
+        <th>Protein</th>
+        <!--<th>Serving size</th>-->
+        <th>Quantity</th>
+        <th>Measuring Unit</th>
+    </tr>
+    <tr>
+        <td ng-if="tvm.globalUserIsAuthenticated"><a href="/editingredient/{{vm.ingredient.id}}">{{vm.ingredient.name}}</a></td>
+        <td ng-if="!tvm.globalUserIsAuthenticated">{{vm.ingredient.name}}</td>
+        <td>{{vm.ingredient.calories * (vm.quantity / vm.ingredient.portionSize) | number:0}}</td>
+        <td>{{vm.ingredient.fat * (vm.quantity / vm.ingredient.portionSize) | number:1}}</td>
+        <td>{{vm.ingredient.carbohydrates * (vm.quantity / vm.ingredient.portionSize) | number:1}}</td>
+        <td>{{vm.ingredient.protein * (vm.quantity / vm.ingredient.portionSize) | number:1}}</td>
+        <td ng-init="quantity = vm.ingredient.portionSize"><input type="text" value="{{vm.ingredient.portionSize * (vm.quantity / vm.ingredient.portionSize)}}"
+                   ng-model="vm.quantity"></td>
+        <td>{{vm.ingredient.measurement.name}}</td>
+    </tr>
+</table>

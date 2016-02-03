@@ -65,7 +65,7 @@ module.exports = function(app, db) {
 
     app.get('/api/ingredient/:id', function(req, res) {
         var ingredientId = parseInt(req.params.id, 10);
-        db.ingredient.findById(ingredientId)
+        db.ingredient.findById(ingredientId, { include: [{ model: db.measurement }] })
             .then(function(ingredient) {
                 if (ingredient) {
                     res.json(ingredient);
@@ -214,13 +214,13 @@ module.exports = function(app, db) {
             .then(function(meals) {
                 if (meals.length > 0) {
                     meals[0].update({
-                        name: body.name
-                    })
-                    .then(function(response){
-                        res.json(response);
-                    }, function(error){
-                        res.status(500).send('Unable to rename meal with id ' + mealId + '.');
-                    });
+                            name: body.name
+                        })
+                        .then(function(response) {
+                            res.json(response);
+                        }, function(error) {
+                            res.status(500).send('Unable to rename meal with id ' + mealId + '.');
+                        });
                 }
                 else {
                     res.status(404).send('No such meal.');

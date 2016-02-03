@@ -49,6 +49,7 @@
         vm.deleteIngredientFromMeal = function(ingredientId) {
             mealsService.deleteIngredientFromMeal(vm.mealId, ingredientId)
                 .then(function() {
+                    Notification.info('Deleted.');
                     init();
                 }, function(data) {
                     Notification.error(data.statusText);

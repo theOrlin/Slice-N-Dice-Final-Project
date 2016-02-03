@@ -1,8 +1,9 @@
 (function() {
     'use strict';
 
-    var MainController = function(authService) {
+    var MainController = function(authService, ingredientsService, $location) {
         var vm = this;
+        vm.loggedItem = null;
 
         authService.checkForLogin()
         .then(function(success){
@@ -11,7 +12,17 @@
             vm.globalUserIsAuthenticated = false;
         });
 
-        //vm.globalUserIsAuthenticated = localStorage.getItem('auth_token') !== null;
+        vm.globalGetIngredientsByName = function(ingredientName) {
+            return ingredientsService.getIngredientByName(ingredientName)
+                .then(function(response) {
+                    return response.data;
+                });
+        };
+
+        vm.redirectToIngredient = function(ingredientId) {
+            vm.loggedItem = null;
+            $location.path('/ingredient/' + ingredientId);
+        };
 
         vm.updateLoginStatus = function(isLoggedIn) {
             if (typeof isLoggedIn === 'boolean') {
@@ -20,7 +31,7 @@
         };
     };
 
-    MainController.$inject = ['authService'];
+    MainController.$inject = ['authService', 'ingredientsService', '$location'];
 
     angular.module('foodApp')
         .controller('MainController', MainController);

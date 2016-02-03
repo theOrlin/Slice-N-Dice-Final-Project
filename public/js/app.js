@@ -32,6 +32,11 @@
                 controller: 'IngredientsController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+            .when('/ingredient/:id', {
+                templateUrl: 'views/ingredient.html',
+                controller: 'IngredientController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             .when('/editingredient/:id', {
                 templateUrl: 'views/edit-ingredient.html',
                 controller: 'EditIngredientController',
