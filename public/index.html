@@ -3,21 +3,24 @@
 <head>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/angular-ui-notification.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <base href="/"/>
     <meta charset="UTF-8">
     <title>Food App Home Page</title>
 </head>
 <body>
+<nav class="navbar navbar-default">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <a class="navbar-brand" href="/" id="logo">Lean<span class="golden">R</span></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Food App</a>
     </div>
-    <div class="navbar-collapse collapse">
+    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-left">
             <!--<li data-ng-hide="token"><a ng-href="/getingredients">Ingredients</a></li>-->
             <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addmeasurement">Add Measurement</a></li>
@@ -28,8 +31,6 @@
             <li data-ng-hide="tvm.globalUserIsAuthenticated"><a ng-href="/register">Register</a></li>
             <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/logout">Logout</a></li>
         </ul>
-
-
         <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search ingredients" ng-model="tvm.loggedItem"
@@ -38,34 +39,37 @@
             </div>
         </form>
     </div>
-    <div class="container" ng-view>
+</nav>
+<div class="container" ng-view>
 
-    </div>
-    <!--<script src="/js/test.js"></script>-->
-    <script src="lib/angular.js"></script>
-    <script src="lib/angular-route.js"></script>
-    <script src="lib/angular-animate.js"></script>
-    <script src="lib/ui-bootstrap-tpls-1.1.1.js"></script>
-    <script src="lib/angular-ui-notification.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers/main-controller.js"></script>
-    <script src="js/controllers/home-controller.js"></script>
-    <script src="js/controllers/register-controller.js"></script>
-    <script src="js/controllers/login-controller.js"></script>
-    <script src="js/controllers/ingredients-controller.js"></script>
-    <script src="js/controllers/add-ingredient-controller.js"></script>
-    <script src="js/controllers/measurements-controller.js"></script>
-    <script src="js/controllers/meals-controller.js"></script>
-    <script src="js/controllers/add-meal-controller.js"></script>
-    <script src="js/controllers/meal-controller.js"></script>
-    <script src="js/controllers/edit-ingredient-controller.js"></script>
-    <script src="js/controllers/rename-meal-controller.js"></script>
-    <script src="js/controllers/logout-controller.js"></script>
-    <script src="js/controllers/ingredient-controller.js"></script>
-    <script src="js/services/ingredients-service.js"></script>
-    <script src="js/services/auth-service.js"></script>
-    <script src="js/services/auth-interceptor-service.js"></script>
-    <script src="js/services/measurements-service.js"></script>
-    <script src="js/services/meals-service.js"></script>
+</div>
+<!--<script src="/js/test.js"></script>-->
+<script src="lib/angular.js"></script>
+<script src="lib/angular-route.js"></script>
+<script src="lib/angular-animate.js"></script>
+<script src="lib/ui-bootstrap-tpls-1.1.1.js"></script>
+<script src="lib/angular-ui-notification.js"></script>
+<script src="lib/jquery-2.2.0.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/main-controller.js"></script>
+<script src="js/controllers/home-controller.js"></script>
+<script src="js/controllers/register-controller.js"></script>
+<script src="js/controllers/login-controller.js"></script>
+<script src="js/controllers/ingredients-controller.js"></script>
+<script src="js/controllers/add-ingredient-controller.js"></script>
+<script src="js/controllers/measurements-controller.js"></script>
+<script src="js/controllers/meals-controller.js"></script>
+<script src="js/controllers/add-meal-controller.js"></script>
+<script src="js/controllers/meal-controller.js"></script>
+<script src="js/controllers/edit-ingredient-controller.js"></script>
+<script src="js/controllers/rename-meal-controller.js"></script>
+<script src="js/controllers/logout-controller.js"></script>
+<script src="js/controllers/ingredient-controller.js"></script>
+<script src="js/services/ingredients-service.js"></script>
+<script src="js/services/auth-service.js"></script>
+<script src="js/services/auth-interceptor-service.js"></script>
+<script src="js/services/measurements-service.js"></script>
+<script src="js/services/meals-service.js"></script>
 </body>
 </html>

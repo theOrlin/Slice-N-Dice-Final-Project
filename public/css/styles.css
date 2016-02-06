@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'yanone_kaffeesatzregular';
+    src: url('../fonts/yanonekaffeesatz-regular-webfont.eot');
+    src: url('../fonts/yanonekaffeesatz-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/yanonekaffeesatz-regular-webfont.woff2') format('woff2'),
+    url('../fonts/yanonekaffeesatz-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.navbar-header {
+    float: none;
+}
+
+.navbar-header .navbar-brand {
+    line-height: 1em;
+    height: 1em;
+}
+
+.navbar {
+    background-color: #d9d9d9;
+}
+
+
+a#logo {
+    font-size: 7.5em;
+    text-transform: uppercase;
+    font-family: 'yanone_kaffeesatzregular';
+    color: white;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+}
+
+a#logo .golden {
+    color: #dcc08e;
+}
