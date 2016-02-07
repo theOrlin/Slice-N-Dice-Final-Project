@@ -77,6 +77,6 @@
 
     angular.module('foodApp.controllers', []);
 
-    angular.module('foodApp', ['ngRoute', 'foodApp.controllers', 'ui.bootstrap', 'ui-notification'])
+    angular.module('foodApp', ['ngRoute', 'foodApp.controllers', 'ui.bootstrap', 'ui-notification', 'ngAnimate'])
         .config(['$routeProvider', '$locationProvider', config]);
 })();
