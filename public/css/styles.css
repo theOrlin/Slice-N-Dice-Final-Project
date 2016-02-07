@@ -19,6 +19,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 .navbar-header {
     float: none;
 }
@@ -33,7 +34,6 @@
     border-radius: 0;
     box-shadow: 0 1px 1px #000000;
 }
-
 
 a#logo {
     font-size: 7.5em;
@@ -56,4 +56,68 @@ ul.nav li a {
 
 .navbar-default .navbar-nav > li > a:hover {
     color: #9a1d0d;
+}
+
+.top-search-form {
+    position: relative;
+}
+
+.top-search-form input {
+    border: 1px inset #fbfbfb;
+    background-color: #CACACA;
+    /*box-shadow: inset 0 1px 0px #c2c2c2;*/
+    color: #2c2c2c;
+    font-style: italic;
+}
+
+.top-search-form input[type="search"]:focus {
+    box-shadow: none;
+    outline: 0 none;
+
+}
+
+.searchbar {
+    border-radius: 0;
+    background-color: #cacaca;
+    color: #444343;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+.top-search-glyph {
+    font-weight: bold;
+    font-size: 0.85em;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+    transform: scaleX(-1);
+    color: #9a1d0d;
+    position: absolute;
+    top: .75em;
+    right: 0.6em;
+}
+
+.dropdown-menu {
+    background-color: #b7b7b7;
+    border-radius: 0;
+}
+
+.dropdown-menu a {
+    font-family: 'league_gothicregular', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+    background-color: #b7b7b7;
+}
+
+.dropdown-menu > .active > a {
+    color: #9a1d0d;
+    text-transform: uppercase;
+    background-color: #b7b7b7;
+}
+
+.dropdown-menu > .active > a:hover {
+    color: #9a1d0d;
+    text-transform: uppercase;
+    background-color: #b7b7b7;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+
 }

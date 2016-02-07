@@ -35,10 +35,12 @@
             <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/logout">Logout</a></li>
         </ul>
         <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search ingredients" ng-model="tvm.loggedItem"
+            <div class="form-group top-search-form">
+                <input type="search" class="form-control input-sm searchbar" placeholder="Search ingredients..."
+                       ng-model="tvm.loggedItem"
                        uib-typeahead="ingredient as ingredient.name for ingredient in tvm.globalGetIngredientsByName($viewValue)"
                        typeahead-on-select="tvm.redirectToIngredient($item.id)">
+                <span class="glyphicon top-search-glyph glyphicon-search" aria-hidden="true"></span>
             </div>
         </form>
     </div>
