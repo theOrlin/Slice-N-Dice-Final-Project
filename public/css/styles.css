@@ -73,7 +73,6 @@ ul.nav li a {
 .top-search-form input[type="search"]:focus {
     box-shadow: none;
     outline: 0 none;
-
 }
 
 .searchbar {
