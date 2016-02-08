@@ -1,15 +1,27 @@
 <div class="nutritional-values-container">
-    <div class="calories"><div class="nutrient-label">Calories</div>{{vm.totals.calories | number:0}}</div>
-    <div class="fat"><div class="nutrient-label">Fat</div>{{vm.totals.fat | number:1}}</div>
-    <div class="carbs"><div class="nutrient-label">Carbohydrates</div>{{vm.totals.carbohydrates | number:1}}</div>
-    <div class="protein"><div class="nutrient-label">Protein</div>{{vm.totals.protein | number:1}}</div>
+    <div class="calories">
+        <div class="nutrient-label">Calories</div>
+        <div class="nutrient-value">{{vm.totals.calories | number:0}}</div>
+    </div>
+    <div class="fat">
+        <div class="nutrient-label">Fat</div>
+        <div class="nutrient-value">{{vm.totals.fat | number:1}}</div>
+    </div>
+    <div class="carbs">
+        <div class="nutrient-label">Carbohydrates</div>
+        <div class="nutrient-value">{{vm.totals.carbohydrates | number:1}}</div>
+    </div>
+    <div class="protein">
+        <div class="nutrient-label">Protein</div>
+        <div class="nutrient-value">{{vm.totals.protein | number:1}}</div>
+    </div>
 </div>
 <!--<div id="totals">-->
-    <!--<h4>Totals</h4>-->
-    <!--<h5>Calories: </h5>-->
-    <!--<h5>Fat: </h5>-->
-    <!--<h5>Carbohydrates: </h5>-->
-    <!--<h5>Protein: </h5>-->
+<!--<h4>Totals</h4>-->
+<!--<h5>Calories: </h5>-->
+<!--<h5>Fat: </h5>-->
+<!--<h5>Carbohydrates: </h5>-->
+<!--<h5>Protein: </h5>-->
 <!--</div>-->
 <div ng-repeat="meal in vm.meals">
     <h3><a href="/meal/{{meal.id}}">{{meal.name}}</a>

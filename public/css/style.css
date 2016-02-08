@@ -112,22 +112,22 @@ ul.nav li > a {
   margin-top: 0;
   display: flex;
   justify-content: space-around;
-  padding-bottom: 20px;
+  padding: 20px 100px;
   box-shadow: 0 1px 1px #8a8a8a; }
   .nutritional-values-container > div {
     position: relative;
     background-color: white;
     margin: 0 20px;
     flex: 1;
-    height: 50px;
-    box-shadow: inset 0 0 5px #000000; }
+    height: 135px;
+    box-shadow: inset 0 0 5px #444343; }
     .nutritional-values-container > div.calories {
-      flex: 2; }
+      flex: 1; }
     .nutritional-values-container > div > .nutrient-label {
+      position: absolute;
       font-size: 1.8rem;
       padding: 0 5px;
       letter-spacing: .1em;
-      position: absolute;
       top: 0;
       right: 0;
       text-align: right;
@@ -135,6 +135,17 @@ ul.nav li > a {
       font-family: 'league_gothicregular', sans-serif;
       text-transform: uppercase;
       background-color: #9a1d0d;
+      text-shadow: 0 1px 1px black; }
+    .nutritional-values-container > div > .nutrient-value {
+      margin: 0;
+      line-height: 10.2rem;
+      position: absolute;
+      font-family: 'league_gothicregular', sans-serif;
+      font-size: 10rem;
+      bottom: 0;
+      right: 10px;
+      text-align: right;
+      color: #dcc08e;
       text-shadow: 0 1px 1px black; }
 
 /*# sourceMappingURL=style.css.map */
