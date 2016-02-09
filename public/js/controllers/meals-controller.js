@@ -38,7 +38,7 @@
                 .then(function(response) {
                     vm.selectedIngredient = null;
 
-                    Notification.info('Added.');
+                    Notification.info('Saved.');
                     init();
                 }, function(data, status, headers, config, statusText) {
                     Notification.error(statusText);

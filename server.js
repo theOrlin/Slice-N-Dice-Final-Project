@@ -14,6 +14,7 @@ app.use('/js',express.static(__dirname + '/public/js'));
 app.use('/views',express.static(__dirname + '/public/views'));
 app.use('/css',express.static(__dirname + '/public/css'));
 app.use('/fonts',express.static(__dirname + '/public/fonts'));
+app.use('/img',express.static(__dirname + '/public/img'));
 //app.use('/js/controllers/',express.static(__dirname + '/public/js/controllers/'));
 
 

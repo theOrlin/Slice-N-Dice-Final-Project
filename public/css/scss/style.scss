@@ -20,6 +20,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'droid_sansregular';
+  src: url('../fonts/droidsans-webfont.eot');
+  src: url('../fonts/droidsans-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/droidsans-webfont.woff2') format('woff2'),
+  url('../fonts/droidsans-webfont.woff') format('woff'),
+  url('../fonts/droidsans-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $mainGray: #d9d9d9;
 $golden: #dcc08e;
 $crimson: #9a1d0d;
@@ -27,15 +38,23 @@ $darkerGray: #444343;
 $darkerMainGray: #CACACA;
 $dropdownBackground: #b7b7b7;
 $footerBackground: #b8b8b8;
+$darkText: #212121;
+$lightText: #8c8787;
 
 body {
+  font-family: 'droid_sansregular', sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  .container {
+  .angular-container {
     flex: 1;
   }
+  nav {
+    padding-top: 125px;
+    padding-left: 70px;
+  }
   .footer {
+    flex: none;
     min-height: 100px;
     background-color: $footerBackground;
     box-shadow: 0 -1px 1px #b1b1b1;
@@ -68,10 +87,22 @@ a#logo {
   font-size: 1.8rem;
   margin-bottom: 0;
   border: none;
+  .navbar-toggle {
+    background-color: $mainGray;
+    border-radius: 0;
+    border: 1px solid $darkerMainGray;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    span.icon-bar {
+      background-color: $crimson;
+      box-shadow: 0 1px 1px #8a8a8a;
+    }
+  }
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: $darkerGray;
+.navbar-default {
+  .navbar-nav > li > a {
+    color: $darkerGray;
+  }
 }
 
 ul.nav li > a {
@@ -145,15 +176,17 @@ ul.nav li > a {
 }
 
 .nutritional-values-container {
+  border: none;
   position: relative;
   z-index: 100;
-  background-color: $mainGray;
   margin-top: 0;
+  background-color: $mainGray;
   display: flex;
-  justify-content: space-around;
-  padding: 20px 100px;
-  box-shadow: 0 1px 1px #8a8a8a;
+  justify-content: center;
+  padding: 20px 7%;
+  box-shadow: 0 2px 1px $darkerMainGray;
   > div {
+    overflow: hidden;
     position: relative;
     background-color: white;
     margin: 0 20px;
@@ -189,5 +222,79 @@ ul.nav li > a {
       color: $golden;
       text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
     }
+  }
+}
+
+.main-container {
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'droid_sansregular', sans-serif;
+  h3 {
+    font-family: 'league_gothicregular', sans-serif;
+    text-transform: uppercase;
+    a {
+      color: $crimson;
+    }
+  }
+  table.table {
+    border: none;
+    //background: url("../img/grid_bg.gif") bottom left repeat-x;
+    th {
+      color: $darkText;
+      font-family: 'league_gothicregular', sans-serif;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 1px dotted $mainGray;
+    }
+    tr {
+      border-top: none;
+      border-bottom: none;
+    }
+    td {
+      color: $lightText;
+      border: none;
+    }
+    td:not(:first-child) {
+      text-align: center;
+      width: 10%;
+    }
+    td:nth-last-child(2) {
+      width: 2%;
+    }
+    font-family: 'droid_sansregular', sans-serif;
+    a {
+      //font-weight: bold;
+      color: $darkText;
+    }
+    input {
+      width: 60%;
+      background-color: $mainGray;
+      color: $lightText;
+      border: 1px inset #fbfbfb;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+      text-align: center;
+    }
+  }
+  button.btn {
+    font-family: 'league_gothicregular', sans-serif;
+    margin-bottom: 5px;
+    font-size: 2rem;
+    padding: 2px 8px;
+    border-radius: 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+    box-shadow: 0 1px 1px #8a8a8a;
+    &:hover {
+      background-color: $crimson;
+    }
+  }
+  button.btn-warning {
+    background-color: $golden;
+    border: none;
+  }
+  button.btn-primary {
+    background-color: $mainGray;
+    border: none;
   }
 }

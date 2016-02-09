@@ -10,13 +10,24 @@
   src: url("../fonts/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/leaguegothic-regular-webfont.woff2") format("woff2"), url("../fonts/leaguegothic-regular-webfont.woff") format("woff"), url("../fonts/leaguegothic-regular-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: 'droid_sansregular';
+  src: url("../fonts/droidsans-webfont.eot");
+  src: url("../fonts/droidsans-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/droidsans-webfont.woff2") format("woff2"), url("../fonts/droidsans-webfont.woff") format("woff"), url("../fonts/droidsans-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 body {
+  font-family: 'droid_sansregular', sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: column; }
-  body .container {
+  body .angular-container {
     flex: 1; }
+  body nav {
+    padding-top: 125px;
+    padding-left: 70px; }
   body .footer {
+    flex: none;
     min-height: 100px;
     background-color: #b8b8b8;
     box-shadow: 0 -1px 1px #b1b1b1; }
@@ -43,6 +54,14 @@ a#logo {
   font-size: 1.8rem;
   margin-bottom: 0;
   border: none; }
+  .navbar .navbar-toggle {
+    background-color: #d9d9d9;
+    border-radius: 0;
+    border: 1px solid #CACACA;
+    box-shadow: 0 1px 1px black; }
+    .navbar .navbar-toggle span.icon-bar {
+      background-color: #9a1d0d;
+      box-shadow: 0 1px 1px #8a8a8a; }
 
 .navbar-default .navbar-nav > li > a {
   color: #444343; }
@@ -106,15 +125,17 @@ ul.nav li > a {
   margin-top: 0; }
 
 .nutritional-values-container {
+  border: none;
   position: relative;
   z-index: 100;
-  background-color: #d9d9d9;
   margin-top: 0;
+  background-color: #d9d9d9;
   display: flex;
-  justify-content: space-around;
-  padding: 20px 100px;
-  box-shadow: 0 1px 1px #8a8a8a; }
+  justify-content: center;
+  padding: 20px 7%;
+  box-shadow: 0 2px 1px #CACACA; }
   .nutritional-values-container > div {
+    overflow: hidden;
     position: relative;
     background-color: white;
     margin: 0 20px;
@@ -147,5 +168,62 @@ ul.nav li > a {
       text-align: right;
       color: #dcc08e;
       text-shadow: 0 1px 1px black; }
+
+.main-container {
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'droid_sansregular', sans-serif; }
+  .main-container h3 {
+    font-family: 'league_gothicregular', sans-serif;
+    text-transform: uppercase; }
+    .main-container h3 a {
+      color: #9a1d0d; }
+  .main-container table.table {
+    border: none;
+    font-family: 'droid_sansregular', sans-serif; }
+    .main-container table.table th {
+      color: #212121;
+      font-family: 'league_gothicregular', sans-serif;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 1px dotted #d9d9d9; }
+    .main-container table.table tr {
+      border-top: none;
+      border-bottom: none; }
+    .main-container table.table td {
+      color: #8c8787;
+      border: none; }
+    .main-container table.table td:not(:first-child) {
+      text-align: center;
+      width: 10%; }
+    .main-container table.table td:nth-last-child(2) {
+      width: 2%; }
+    .main-container table.table a {
+      color: #212121; }
+    .main-container table.table input {
+      width: 60%;
+      background-color: #d9d9d9;
+      color: #8c8787;
+      border: 1px inset #fbfbfb;
+      text-shadow: 0 1px 1px white;
+      text-align: center; }
+  .main-container button.btn {
+    font-family: 'league_gothicregular', sans-serif;
+    margin-bottom: 5px;
+    font-size: 2rem;
+    padding: 2px 8px;
+    border-radius: 0;
+    text-shadow: 0 1px 1px black;
+    text-transform: uppercase;
+    box-shadow: 0 1px 1px #8a8a8a; }
+    .main-container button.btn:hover {
+      background-color: #9a1d0d; }
+  .main-container button.btn-warning {
+    background-color: #dcc08e;
+    border: none; }
+  .main-container button.btn-primary {
+    background-color: #d9d9d9;
+    border: none; }
 
 /*# sourceMappingURL=style.css.map */
