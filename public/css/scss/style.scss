@@ -91,7 +91,7 @@ a#logo {
   border: none;
   .navbar-toggle {
     background-color: $mainGray;
-    border-radius: 0;
+    border-radius: 5px;
     border: 1px solid $darkerMainGray;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 1);
     span.icon-bar {
@@ -199,7 +199,7 @@ ul.nav li > a {
       > .nutrient-label {
         position: absolute;
         font-size: 1.8rem;
-        padding: 0 5px;
+        padding: 0 5px 0 7px;
         letter-spacing: .1em;
         top: 0;
         right: 0;
@@ -252,6 +252,9 @@ ul.nav li > a {
       border-top: none;
       border-bottom: none;
     }
+    tfoot tr td {
+      border-top: 1px dotted $mainGray;
+    }
     td {
       color: $lightText;
       border: none;
@@ -274,11 +277,15 @@ ul.nav li > a {
     }
     input {
       width: 60%;
+      //background-color: $mainGray;
       background-color: $mainGray;
-      color: $lightText;
+      color: $darkText;
       border: 1px inset #fbfbfb;
       text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
       text-align: center;
+      &:focus {
+        background-color: white;
+      }
     }
   }
   button.btn {
@@ -295,11 +302,12 @@ ul.nav li > a {
     }
   }
   button.btn-warning {
-    background-color: $golden;
+    background-color: $darkerMainGray;
+    background-color: $mainGray;
     border: none;
   }
   button.btn-primary {
-    background-color: $mainGray;
+    background-color: $golden;
     border: none;
   }
 }

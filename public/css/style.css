@@ -57,7 +57,7 @@ a#logo {
   border: none; }
   .navbar .navbar-toggle {
     background-color: #d9d9d9;
-    border-radius: 0;
+    border-radius: 5px;
     border: 1px solid #CACACA;
     box-shadow: 0 1px 1px black; }
     .navbar .navbar-toggle span.icon-bar {
@@ -146,7 +146,7 @@ ul.nav li > a {
       .angular-container .nutritional-values-container > div > .nutrient-label {
         position: absolute;
         font-size: 1.8rem;
-        padding: 0 5px;
+        padding: 0 5px 0 7px;
         letter-spacing: .1em;
         top: 0;
         right: 0;
@@ -190,6 +190,8 @@ ul.nav li > a {
     .main-container table.table tr {
       border-top: none;
       border-bottom: none; }
+    .main-container table.table tfoot tr td {
+      border-top: 1px dotted #d9d9d9; }
     .main-container table.table td {
       color: #8c8787;
       border: none; }
@@ -205,10 +207,12 @@ ul.nav li > a {
     .main-container table.table input {
       width: 60%;
       background-color: #d9d9d9;
-      color: #8c8787;
+      color: #212121;
       border: 1px inset #fbfbfb;
       text-shadow: 0 1px 1px white;
       text-align: center; }
+      .main-container table.table input:focus {
+        background-color: white; }
   .main-container button.btn {
     font-family: 'league_gothicregular', sans-serif;
     margin-bottom: 5px;
@@ -221,10 +225,11 @@ ul.nav li > a {
     .main-container button.btn:hover {
       background-color: #9a1d0d; }
   .main-container button.btn-warning {
-    background-color: #dcc08e;
+    background-color: #CACACA;
+    background-color: #d9d9d9;
     border: none; }
   .main-container button.btn-primary {
-    background-color: #d9d9d9;
+    background-color: #dcc08e;
     border: none; }
 
 /*# sourceMappingURL=style.css.map */
