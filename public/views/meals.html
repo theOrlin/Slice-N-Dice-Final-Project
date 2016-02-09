@@ -1,3 +1,28 @@
+<!--<div class="nutritional-values-container">-->
+    <!--<div class="calories">-->
+        <!--<div class="nutrient-label">Calories</div>-->
+        <!--<div class="nutrient-value">{{vm.totals.calories | number:0}}</div>-->
+    <!--</div>-->
+    <!--<div class="fat">-->
+        <!--<div class="nutrient-label">Fat</div>-->
+        <!--<div class="nutrient-value">{{vm.totals.fat | number:1}}</div>-->
+    <!--</div>-->
+    <!--<div class="carbs">-->
+        <!--<div class="nutrient-label">Carbohydrates</div>-->
+        <!--<div class="nutrient-value">{{vm.totals.carbohydrates | number:1}}</div>-->
+    <!--</div>-->
+    <!--<div class="protein">-->
+        <!--<div class="nutrient-label">Protein</div>-->
+        <!--<div class="nutrient-value">{{vm.totals.protein | number:1}}</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div id="totals">-->
+<!--<h4>Totals</h4>-->
+<!--<h5>Calories: </h5>-->
+<!--<h5>Fat: </h5>-->
+<!--<h5>Carbohydrates: </h5>-->
+<!--<h5>Protein: </h5>-->
+<!--</div>-->
 <div class="nutritional-values-container">
     <div class="calories">
         <div class="nutrient-label">Calories</div>
@@ -16,18 +41,11 @@
         <div class="nutrient-value">{{vm.totals.protein | number:1}}</div>
     </div>
 </div>
-<!--<div id="totals">-->
-<!--<h4>Totals</h4>-->
-<!--<h5>Calories: </h5>-->
-<!--<h5>Fat: </h5>-->
-<!--<h5>Carbohydrates: </h5>-->
-<!--<h5>Protein: </h5>-->
-<!--</div>-->
 <div class="main-container">
     <div ng-repeat="meal in vm.meals">
         <h3><a href="/meal/{{meal.id}}">{{meal.name}}</a>
             <button class="btn btn-warning"
-                    ng-click="vm.deleteMeal(meal.id)">X
+                    ng-click="vm.deleteMeal(meal.id)">Delete
             </button>
         </h3>
         <table class="table">
@@ -67,7 +85,7 @@
                     </td>
                     <td>
                         <button class="btn btn-warning"
-                                ng-click="vm.deleteIngredientFromMeal(meal.id, ingredient.id)">X
+                                ng-click="vm.deleteIngredientFromMeal(meal.id, ingredient.id)">Delete
                         </button>
                     </td>
                     <td class="with-hidden-button">
@@ -91,11 +109,11 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td>Total</td>
-                    <td>{{meal.sums.calories | number:0}}</td>
-                    <td>{{meal.sums.fat | number:1}}</td>
-                    <td>{{meal.sums.carbohydrates | number:1}}</td>
-                    <td>{{meal.sums.protein | number:1}}</td>
+                    <td><em>Total</em></td>
+                    <td><em>{{meal.sums.calories | number:0}}</em></td>
+                    <td><em>{{meal.sums.fat | number:1}}</em></td>
+                    <td><em>{{meal.sums.carbohydrates | number:1}}</em></td>
+                    <td><em>{{meal.sums.protein | number:1}}</em></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
