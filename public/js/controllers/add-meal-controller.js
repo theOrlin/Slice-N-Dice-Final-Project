@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var AddMealController = function(mealsService, $location, Notification) {
+    var AddMealController = function(mealsService, $location, $window, Notification) {
         var vm = this;
         vm.meal = {};
 
@@ -14,9 +14,13 @@
                     Notification.error(data.statusText);
                 });
         };
+
+        vm.goBack = function() {
+            $window.history.back();
+        };
     };
 
-    AddMealController.$inject = ['mealsService', '$location', 'Notification'];
+    AddMealController.$inject = ['mealsService', '$location', '$window', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('AddMealController', AddMealController);
