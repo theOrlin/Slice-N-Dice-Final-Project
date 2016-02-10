@@ -1,25 +1,27 @@
-<form class="form-horizontal" name="loginForm" novalidate>
-    <fieldset>
-        <legend>Log In</legend>
-        <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-            <div class="col-lg-10">
-                <input class="form-control" id="inputEmail" placeholder="Email" type="text" required="required"
-                       ng-model="vm.user.email">
+<div class="content-container">
+    <h3>Log In</h3>
+    <form class="form-horizontal" name="loginForm" novalidate>
+        <fieldset>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input class="medium" id="inputEmail" placeholder="Email" type="text" required="required"
+                           ng-model="vm.user.email">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-            <div class="col-lg-10">
-                <input class="form-control" id="inputPassword" placeholder="Password" type="password"
-                       required="required" ng-model="vm.user.password">
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input class="medium" id="inputPassword" placeholder="Password" type="password"
+                           required="required" ng-model="vm.user.password">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <!--<button class="btn btn-primary" ng-click="vm.register(user, registrationForm)" ng-disabled="registrationForm.$invalid || user.password != user.confirmPassword">Log In</button>-->
-                <button class="btn btn-primary" ng-click="vm.login()">Log In</button>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2 bottom-row">
+                    <!--<button class="btn btn-primary" ng-click="vm.register(user, registrationForm)" ng-disabled="registrationForm.$invalid || user.password != user.confirmPassword">Log In</button>-->
+                    <button class="btn btn-primary" ng-click="vm.login()">Log In</button>
+                </div>
             </div>
-        </div>
-    </fieldset>
-</form>
+        </fieldset>
+    </form>
+</div>

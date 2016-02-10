@@ -55,6 +55,7 @@ $bottomRowMarginTop: 40px;
 $formMarginTop: 40px;
 $inputShortWidth: 10rem;
 $inputLongWidth: 100%;
+$inputMediumWidth: 40%;
 $formInputPaddingLeft: 5px;
 
 //Borders
@@ -311,6 +312,9 @@ ul.nav li > a {
       }
       &.long {
         width: $inputLongWidth;
+      }
+      &.medium {
+        width: $inputMediumWidth;
       }
       &:focus {
         background-color: white;
