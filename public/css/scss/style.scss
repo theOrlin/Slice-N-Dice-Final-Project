@@ -1,3 +1,61 @@
+//Colors
+$mainGray: #d9d9d9;
+$menuDarkGray: #444343;
+$golden: #dcc08e;
+$crimson: #9a1d0d;
+$searchBarBackgroundGrayColor: #CACACA;
+$dropdownBackgroundColor: #b7b7b7;
+$footerBackgroundColor: #b8b8b8;
+$darkMainBodyTextColor: #212121;
+$lightMainBodyTextColor: #8c8787;
+$topSearchFormInputTextColor: #2c2c2c;
+
+//Fonts
+$logoFont: 'yanone_kaffeesatzregular', sans-serif;
+$contentFont: 'droid_sansregular', sans-serif;
+$menuTitlesFont: 'league_gothicregular', sans-serif;
+
+//Font Sizes
+$logoSize: 11.7rem;
+$searchGlyphSize: 1.3rem;
+$topSearchMenuFontSize: 1.75rem;
+$navbarFontSize: 2.4rem;
+$nutrientLabelFontSize: 1.8rem;
+$nutrientLabelLetterSpacing: .1em;
+$nutrientValueFontSize: 10rem;
+$nutrientValueLineHeight: 10.2rem;
+$h3FontSize: 3em;
+$thFontSize: 2rem;
+$contentFontSize: 2rem;
+$buttonFontSize: 2.2rem;
+$buttonLetterSpacing: 0.1rem;
+
+//Shadows
+$blackShadow: 0 1px 1px black;
+$darkGrayShadow: 0 1px 1px #8a8a8a;
+$whiteShadow: 0 1px 1px white;
+$angularContainerShadow: 3px 3px 5px 0 $lightMainBodyTextColor;
+$nutrientValueContainerInsetShadow: inset 0 0 5px $menuDarkGray;
+
+//Container Sizes
+$contentWidth: 90%;
+$navPaddingTop: 125px;
+$angularContainerVerticalMargin: 60px;
+$nutrientValueContainerHeight: 135px;
+$nutrientValueContainerHorizontalMargin: 4px;
+$nutrientLabelPadding: 0 5px 0 7px;
+$nutrientValueRightPosition: 10px;
+$tdWidth: 10%;
+$lastTdWidth: 5%;
+$tableInputWidth: 60%;
+$buttonPadding: 2px 15px;
+$h3MarginTop: 60px;
+
+//Borders
+$InputInsetBorder: 1px inset #fbfbfb;
+$dottedLightGrayBorder: 1px dotted $mainGray;
+$thinWhiteBorder: 1px solid white;
+
 @font-face {
   font-family: 'yanone_kaffeesatzregular';
   src: url('../fonts/yanonekaffeesatz-regular-webfont.eot');
@@ -31,18 +89,8 @@
   font-style: normal;
 }
 
-$mainGray: #d9d9d9;
-$golden: #dcc08e;
-$crimson: #9a1d0d;
-$darkerGray: #444343;
-$darkerMainGray: #CACACA;
-$dropdownBackground: #b7b7b7;
-$footerBackground: #b8b8b8;
-$darkText: #212121;
-$lightText: #8c8787;
-
 body {
-  font-family: 'droid_sansregular', sans-serif;
+  font-family: $contentFont;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -51,25 +99,25 @@ body {
     flex: 1;
   }
   nav {
-    padding-top: 125px;
-    width: 90%;
+    padding-top: $navPaddingTop;
+    width: $contentWidth;
     margin: auto;
   }
   .footer {
     flex: none;
     min-height: 100px;
-    background-color: $footerBackground;
+    background-color: $footerBackgroundColor;
     box-shadow: 0 -1px 1px #b1b1b1;
   }
 }
 
 a#logo {
   float: none;
-  font-size: 11.7rem;
+  font-size: $logoSize;
   text-transform: uppercase;
-  font-family: 'yanone_kaffeesatzregular', sans-serif;
+  font-family: $logoFont;
   color: white;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+  text-shadow: $blackShadow;
   > .golden {
     color: $golden;
   }
@@ -86,30 +134,30 @@ a#logo {
   background-color: $mainGray;
   border-radius: 0;
   //box-shadow: 0 1px 1px #8a8a8a;
-  font-size: 1.8rem;
+  font-size: $navbarFontSize;
   margin-bottom: 0;
   border: none;
   .navbar-toggle {
     background-color: $mainGray;
     border-radius: 5px;
-    border: 1px solid $darkerMainGray;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    border: 1px solid $searchBarBackgroundGrayColor;
+    box-shadow: $blackShadow;
     span.icon-bar {
       background-color: $crimson;
-      box-shadow: 0 1px 1px #8a8a8a;
+      box-shadow: $darkGrayShadow;
     }
   }
 }
 
 .navbar-default {
   .navbar-nav > li > a {
-    color: $darkerGray;
+    color: $menuDarkGray;
   }
 }
 
 ul.nav li > a {
   font-family: 'league_gothicregular', sans-serif;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+  text-shadow: $whiteShadow;
   text-transform: uppercase;
 }
 
@@ -120,10 +168,9 @@ ul.nav li > a {
 .top-search-form {
   position: relative;
   input {
-    border: 1px inset #fbfbfb;
-    background-color: $darkerMainGray;
-    /*box-shadow: inset 0 1px 0px #c2c2c2;*/
-    color: #2c2c2c;
+    border: $InputInsetBorder;
+    background-color: $searchBarBackgroundGrayColor;
+    color: $topSearchFormInputTextColor;
     font-style: italic;
     &[type="search"]:focus {
       box-shadow: none;
@@ -134,154 +181,159 @@ ul.nav li > a {
 
 .searchbar {
   border-radius: 0;
-  background-color: $darkerMainGray;
-  color: $darkerGray;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+  background-color: $searchBarBackgroundGrayColor;
+  color: $menuDarkGray;
+  text-shadow: $whiteShadow;
 }
 
 .top-search-glyph {
   font-weight: bold;
-  font-size: 1.3rem;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+  font-size: $searchGlyphSize;
+  text-shadow: $whiteShadow;
   transform: scaleX(-1);
-  color: #9a1d0d;
+  color: $crimson;
   position: absolute;
   top: .9rem;
   right: 0.75rem;
 }
 
 .dropdown-menu {
-  font-size: 1.75rem;
+  font-size: $topSearchMenuFontSize;
   font-weight: bold;
-  background-color: $dropdownBackground;
+  background-color: $dropdownBackgroundColor;
   border-radius: 0;
   a {
     font-family: 'league_gothicregular', sans-serif;
     text-transform: uppercase;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
-    background-color: $dropdownBackground;
+    text-shadow: $whiteShadow;
+    background-color: $dropdownBackgroundColor;
   }
   > .active > a {
-    color: #9a1d0d;
+    color: $crimson;
     text-transform: uppercase;
-    background-color: $dropdownBackground;
+    background-color: $dropdownBackgroundColor;
     &:hover {
-      color: #9a1d0d;
+      color: $crimson;
       text-transform: uppercase;
-      background-color: $dropdownBackground;
+      background-color: $dropdownBackgroundColor;
     }
   }
 }
 
 .angular-container {
-  box-shadow: 3px 3px 5px 0 $lightText;
+  font-size: $contentFontSize;
+  box-shadow: $angularContainerShadow;
   padding-top: 4px;
-  width: 90%;
+  width: $contentWidth;
   background: white url("../img/container-bottom-bg.png") bottom repeat-x;
-  margin: 60px auto;
-  border: 1px solid white;
+  margin: $angularContainerVerticalMargin auto;
+  border: $thinWhiteBorder;
   .nutritional-values-container {
     border: none;
     margin-top: 0;
+    margin-bottom: 60px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
     > div {
       overflow: hidden;
       position: relative;
-      background-color: white;
-      margin: 0 4px;
+      margin: 0 $nutrientValueContainerHorizontalMargin;
       flex: 1;
-      height: 135px;
-      box-shadow: inset 0 0 5px $darkerGray;
+      height: $nutrientValueContainerHeight;
+      box-shadow: $nutrientValueContainerInsetShadow;
       &.calories {
       }
       > .nutrient-label {
         position: absolute;
-        font-size: 1.8rem;
-        padding: 0 5px 0 7px;
-        letter-spacing: .1em;
+        font-size: $nutrientLabelFontSize;
+        padding: $nutrientLabelPadding;
+        letter-spacing: $nutrientLabelLetterSpacing;
         top: 0;
         right: 0;
         text-align: right;
         color: white;
-        font-family: 'league_gothicregular', sans-serif;
+        font-family: $menuTitlesFont;
         text-transform: uppercase;
         background-color: $crimson;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+        text-shadow: $blackShadow;
       }
       > .nutrient-value {
         margin: 0;
-        line-height: 10.2rem;
+        line-height: $nutrientValueLineHeight;
         position: absolute;
-        font-family: 'league_gothicregular', sans-serif;
-        font-size: 10rem;
+        font-family: $menuTitlesFont;
+        font-size: $nutrientValueFontSize;
         bottom: 0;
-        right: 10px;
+        right: $nutrientValueRightPosition;
         text-align: right;
         color: $golden;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+        text-shadow: $blackShadow;
       }
     }
   }
 }
 
-.main-container {
-  width: 90%;
+.content-container {
+  width: $contentWidth;
   margin: 0 auto;
-  font-family: 'droid_sansregular', sans-serif;
+  font-family: $contentFont;
   h3 {
-    font-family: 'league_gothicregular', sans-serif;
+    margin-top: $h3MarginTop;
+    font-family: $menuTitlesFont;
+    font-size: $h3FontSize;
     text-transform: uppercase;
     a {
       color: $crimson;
+      &:hover {
+        text-shadow: $darkGrayShadow;
+        text-decoration: none;
+      }
     }
   }
   table.table {
     border: none;
-    //background: url("../img/grid_bg.gif") bottom left repeat-x;
     th {
-      color: $darkText;
-      font-family: 'league_gothicregular', sans-serif;
-      font-size: 1.6rem;
+      color: $darkMainBodyTextColor;
+      font-family: $menuTitlesFont;
+      font-size: $thFontSize;
       text-transform: uppercase;
       text-align: center;
-      border-bottom: 1px dotted $mainGray;
+      border-bottom: $dottedLightGrayBorder;
     }
     tr {
       border-top: none;
       border-bottom: none;
     }
     tfoot tr td {
-      border-top: 1px dotted $mainGray;
+      border-top: $dottedLightGrayBorder;
     }
     td {
-      color: $lightText;
+      color: $darkMainBodyTextColor;
       border: none;
     }
     td:not(:first-child) {
+      color: $lightMainBodyTextColor;
       text-align: center;
-      width: 10%;
+      width: $tdWidth;
     }
     td:nth-last-child(2) {
-      width: 2%;
+      width: $lastTdWidth;
     }
-    font-family: 'droid_sansregular', sans-serif;
+    font-family: $contentFont;
     a {
-      //font-weight: bold;
-      color: $darkText;
-      //text-decoration: underline;
+      color: $darkMainBodyTextColor;
+      text-shadow: $darkGrayShadow;
       &:hover {
         color: $crimson;
       }
     }
     input {
-      width: 60%;
+      width: $tableInputWidth;
       //background-color: $mainGray;
       background-color: $mainGray;
-      color: $darkText;
-      border: 1px inset #fbfbfb;
-      text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+      color: $darkMainBodyTextColor;
+      border: $InputInsetBorder;
+      text-shadow: $whiteShadow;
       text-align: center;
       &:focus {
         background-color: white;
@@ -289,21 +341,21 @@ ul.nav li > a {
     }
   }
   button.btn {
-    font-family: 'league_gothicregular', sans-serif;
+    font-family: $menuTitlesFont;
+    letter-spacing: $buttonLetterSpacing;
     margin-bottom: 5px;
-    font-size: 1.5rem;
-    padding: 2px 15px;
+    font-size: $buttonFontSize;
+    padding: $buttonPadding;
     border-radius: 5px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    text-shadow: $blackShadow;
     text-transform: uppercase;
-    box-shadow: 0 1px 1px #8a8a8a;
+    box-shadow: $blackShadow;
     &:hover {
       background-color: $crimson;
     }
   }
   button.btn-warning {
-    background-color: $darkerMainGray;
-    background-color: $mainGray;
+    background-color: $footerBackgroundColor;
     border: none;
   }
   button.btn-primary {
