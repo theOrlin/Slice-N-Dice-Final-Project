@@ -1,19 +1,19 @@
-<form class="form-horizontal" name="measurementForm" novalidate>
-    <fieldset>
-        <legend>Add New Measurement</legend>
-        <div class="form-group">
-            <label for="measurementName" class="col-lg-2 control-label">Measurement Name</label>
-            <div class="col-lg-10">
-                <input class="form-control" id="measurementName" placeholder="measurement name, plural" type="text"
-                       required="required"
-                       ng-model="vm.measurement.name">
+<div class="content-container">
+    <h3>Add New Measurement</h3>
+    <form class="form-horizontal" name="measurementForm" novalidate>
+        <fieldset>
+            <div class="form-group">
+                <label for="measurementName" class="col-lg-2 control-label">Measurement Name</label>
+                <div class="col-lg-10">
+                    <input class="long" id="measurementName" placeholder="measurement name, abbreviated" type="text"
+                           required="required"
+                           ng-model="vm.measurement.name">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <!--<button class="btn btn-primary" ng-click="vm.register(user, registrationForm)" ng-disabled="registrationForm.$invalid || user.password != user.confirmPassword">Log In</button>-->
-                <button class="btn btn-primary" ng-click="vm.addMeasurement()">Add Measurement</button>
-            </div>
-        </div>
-    </fieldset>
-</form>
+        </fieldset>
+    </form>
+    <div class="bottom-row">
+        <button class="btn btn-primary" ng-click="vm.addMeasurement()">Add Measurement</button>
+        <button class="btn btn-warning" ng-click="vm.goBack()">Cancel</button>
+    </div>
+</div>

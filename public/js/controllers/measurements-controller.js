@@ -14,6 +14,10 @@
                     Notification.error(data.statusText);
                 });
         };
+
+        vm.goBack = function() {
+            $window.history.back();
+        };
     };
 
     MeasurementsController.$inject = ['measurementsService', '$window', 'Notification'];

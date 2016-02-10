@@ -1,33 +1,33 @@
-<form class="form-horizontal" name="registrationForm">
-    <fieldset>
-        <legend>Register New User</legend>
-        <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-            <div class="col-lg-10">
-                <input class="form-control" id="inputEmail" placeholder="Email" type="text" required="required"
-                       ng-model="user.email">
+<div class="content-container">
+    <h3>Register New User</h3>
+    <form class="form-horizontal" name="registrationForm">
+        <fieldset>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input class="md-long" id="inputEmail" placeholder="Email" type="text" required="required"
+                           ng-model="vm.user.email">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-            <div class="col-lg-10">
-                <input class="form-control" id="inputPassword" placeholder="Password" type="password"
-                       required="required" ng-model="user.password">
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input class="md-long" id="inputPassword" placeholder="Password" type="password"
+                           required="required" ng-model="vm.user.password">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="confirmPassword" class="col-lg-2 control-label">Password</label>
-            <div class="col-lg-10">
-                <input class="form-control" id="confirmPassword" placeholder="Confirm Password" type="password"
-                       required="required" ng-model="user.confirmPassword">
+            <div class="form-group">
+                <label for="confirmPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input class="md-long" id="confirmPassword" placeholder="Confirm Password" type="password"
+                           required="required" ng-model="vm.user.confirmPassword">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <button class="btn btn-primary" ng-click="vm.register(user, registrationForm)"
-                        ng-disabled="registrationForm.$invalid || user.password != user.confirmPassword">Submit
-                </button>
-            </div>
-        </div>
-    </fieldset>
-</form>
+        </fieldset>
+    </form>
+    <div class="bottom-row">
+        <button class="btn btn-primary" ng-click="vm.register()"
+                ng-disabled="registrationForm.$invalid || vm.user.password != vm.user.confirmPassword">Submit
+        </button>
+    </div>
+</div>

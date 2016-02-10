@@ -1,20 +1,19 @@
-<form class="form-horizontal" name="measurementForm" novalidate>
-    <fieldset>
-        <legend>Rename Meal</legend>
-        <div class="form-group">
-            <label for="measurementName" class="col-lg-2 control-label">Meal Name</label>
-            <div class="col-lg-10">
-                <input class="form-control" id="measurementName" placeholder="meal name" type="text"
-                       required="required"
-                       ng-model="vm.meal.name">
+<div class="content-container">
+    <h3>Rename Meal</h3>
+    <form class="form-horizontal" name="measurementForm" novalidate>
+        <fieldset>
+            <div class="form-group">
+                <label for="measurementName" class="col-lg-2 control-label">Meal Name</label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="measurementName" placeholder="meal name" type="text"
+                           required="required"
+                           ng-model="vm.meal.name">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <!--<button class="btn btn-primary" ng-click="vm.register(user, registrationForm)" ng-disabled="registrationForm.$invalid || user.password != user.confirmPassword">Log In</button>-->
-                <button class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
-                <button class="btn btn-primary" ng-click="vm.renameMeal()">Rename</button>
-            </div>
-        </div>
-    </fieldset>
-</form>
+        </fieldset>
+    </form>
+    <div class="bottom-row">
+        <button class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
+        <button class="btn btn-primary" ng-click="vm.renameMeal()">Rename</button>
+    </div>
+</div>

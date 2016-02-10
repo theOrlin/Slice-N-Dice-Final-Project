@@ -55,6 +55,7 @@ $bottomRowMarginTop: 40px;
 $formMarginTop: 40px;
 $inputShortWidth: 10rem;
 $inputLongWidth: 100%;
+$inputMdLongWidth: 80%;
 $inputMediumWidth: 40%;
 $formInputPaddingLeft: 5px;
 $angularContainerWithinScreenWidth: 80%;
@@ -316,6 +317,9 @@ ul.nav li > a {
       }
       &.medium {
         width: $inputMediumWidth;
+      }
+      &.md-long {
+        width: $inputMdLongWidth;
       }
       &:focus {
         background-color: white;

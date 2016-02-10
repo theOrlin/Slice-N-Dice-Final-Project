@@ -12,11 +12,10 @@
                 .then(function(ingredient) {
                     vm.ingredient = ingredient.data;
                     vm.verifiedIngredientId = vm.ingredient.id;
+                    return measurementsService.getMeasurements();
                 }, function(data) {
                     Notification.error(data.statusText);
-                });
-
-            measurementsService.getMeasurements()
+                })
                 .then(function(measurements) {
                     vm.measurements = measurements.data;
                     for (var i = 0; i < measurements.data.length; i++) {
@@ -29,6 +28,20 @@
                 }, function(data) {
                     Notification.error(data.statusText);
                 });
+
+            //measurementsService.getMeasurements()
+            //    .then(function(measurements) {
+            //        vm.measurements = measurements.data;
+            //        for (var i = 0; i < measurements.data.length; i++) {
+            //            var measurement = measurements.data[i];
+            //            if (measurement.id === vm.ingredient.measurement_id) {
+            //                vm.selectedMeasurement = measurement;
+            //                break;
+            //            }
+            //        }
+            //    }, function(data) {
+            //        Notification.error(data.statusText);
+            //    });
         }
 
         init();
