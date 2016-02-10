@@ -199,12 +199,13 @@ ul.nav li > a {
         width: 40%; }
       .content-container form input:focus {
         background-color: white; }
-    .content-container form .bottom-row {
-      margin-top: 40px; }
     .content-container form label {
       font-size: 1.8rem;
       text-transform: uppercase;
       font-family: "league_gothicregular", sans-serif; }
+  .content-container .bottom-row {
+    text-align: center;
+    margin-top: 40px; }
   .content-container table.table {
     border: none;
     font-family: "droid_sansregular", sans-serif; }
@@ -263,5 +264,52 @@ ul.nav li > a {
   .content-container button.btn-primary {
     background-color: #dcc08e;
     border: none; }
+  .content-container .ingredient-adder input {
+    width: 40%;
+    background-color: #d9d9d9;
+    color: #212121;
+    border: 1px inset #fbfbfb;
+    text-shadow: 0 1px 1px white;
+    padding: 0 0 0 5px;
+    text-align: left; }
+  .content-container .screen {
+    background: url("../img/screen_bg.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; }
+    .content-container .screen div {
+      opacity: 1;
+      flex: 1; }
+    .content-container .screen .angular-container {
+      width: 80%; }
+      .content-container .screen .angular-container table.table {
+        width: 90%;
+        border: none;
+        margin: auto; }
+        .content-container .screen .angular-container table.table th {
+          color: #212121;
+          font-family: "league_gothicregular", sans-serif;
+          font-size: 2rem;
+          text-transform: uppercase;
+          text-align: center;
+          border-top: none;
+          border-bottom: 1px dotted #d9d9d9; }
+        .content-container .screen .angular-container table.table tr {
+          border-top: none;
+          border-bottom: none; }
+        .content-container .screen .angular-container table.table tfoot tr td {
+          border-top: 1px dotted #d9d9d9; }
+        .content-container .screen .angular-container table.table td {
+          color: #212121;
+          border: none; }
+        .content-container .screen .angular-container table.table td:not(:first-child) {
+          color: #8c8787;
+          text-align: center;
+          width: 10%; }
 
 /*# sourceMappingURL=style.css.map */

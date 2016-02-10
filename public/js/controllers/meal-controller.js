@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var MealController = function(mealsService, $routeParams, ingredientsService, Notification) {
+    var MealController = function(mealsService, $routeParams, ingredientsService, $window, Notification) {
         var vm = this;
         vm.mealId = $routeParams.id;
         vm.selectedIngredient = null;
@@ -59,9 +59,13 @@
         vm.calculateSums = function(meal) {
             mealsService.calculateSums(meal);
         };
+
+        vm.goBack = function() {
+            $window.history.back();
+        };
     };
 
-    MealController.$inject = ['mealsService', '$routeParams', 'ingredientsService', 'Notification'];
+    MealController.$inject = ['mealsService', '$routeParams', 'ingredientsService', '$window', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('MealController', MealController);

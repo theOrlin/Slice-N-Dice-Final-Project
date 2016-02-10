@@ -57,6 +57,7 @@ $inputShortWidth: 10rem;
 $inputLongWidth: 100%;
 $inputMediumWidth: 40%;
 $formInputPaddingLeft: 5px;
+$angularContainerWithinScreenWidth: 80%;
 
 //Borders
 $InputInsetBorder: 1px inset #fbfbfb;
@@ -320,14 +321,15 @@ ul.nav li > a {
         background-color: white;
       }
     }
-    .bottom-row {
-      margin-top: $bottomRowMarginTop;
-    }
     label {
       font-size: $labelFontSize;
       text-transform: uppercase;
       font-family: $menuTitlesFont;
     }
+  }
+  .bottom-row {
+    text-align: center;
+    margin-top: $bottomRowMarginTop;
   }
   table.table {
     border: none;
@@ -402,5 +404,68 @@ ul.nav li > a {
   button.btn-primary {
     background-color: $golden;
     border: none;
+  }
+  .ingredient-adder {
+    input {
+      width: $inputMediumWidth;
+      //background-color: $mainGray;
+      background-color: $mainGray;
+      color: $darkMainBodyTextColor;
+      border: $InputInsetBorder;
+      text-shadow: $whiteShadow;
+      padding: 0 0 0 5px;
+      text-align: left;
+      &:focus {
+        //background-color: white;
+      }
+    }
+  }
+  .screen {
+    background: url("../img/screen_bg.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    div {
+      opacity: 1;
+      flex: 1;
+    }
+    .angular-container {
+      width: $angularContainerWithinScreenWidth;
+      table.table {
+        width: 90%;
+        border: none;
+        margin: auto;
+        th {
+          color: $darkMainBodyTextColor;
+          font-family: $menuTitlesFont;
+          font-size: $thFontSize;
+          text-transform: uppercase;
+          text-align: center;
+          border-top: none;
+          border-bottom: $dottedLightGrayBorder;
+        }
+        tr {
+          border-top: none;
+          border-bottom: none;
+        }
+        tfoot tr td {
+          border-top: $dottedLightGrayBorder;
+        }
+        td {
+          color: $darkMainBodyTextColor;
+          border: none;
+        }
+        td:not(:first-child) {
+          color: $lightMainBodyTextColor;
+          text-align: center;
+          width: $tdWidth;
+        }
+      }
+    }
   }
 }

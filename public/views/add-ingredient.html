@@ -52,20 +52,16 @@
             </div>
             <div>
                 <label for="measurementSelect" class="col-lg-2 control-label">Measurement Unit</label>
-                <div class="col-lg-10">
                     <select name="measurementSelect" id="measurementSelect"
                             ng-options="option.name for option in vm.ingredients track by option.id"
                             ng-model="vm.ingredient.measurement_id">
                     </select>
                     <button class="btn btn-warning" ng-click="vm.goToNewMeasurement()">New Measurement</button>
-                </div>
             </div>
             <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2 bottom-row">
+                <div class="bottom-row">
                     <button class="btn btn-warning" ng-click="vm.goBack()">Cancel</button>
                     <button class="btn btn-primary" ng-click="vm.addIngredient()">Add Ingredient</button>
-                    <!--<button class="btn btn-primary" ng-click="vm.register(user, registrationForm)" ng-disabled="registrationForm.$invalid || user.password != user.confirmPassword">Log In</button>-->
-
                 </div>
             </div>
         </fieldset>
