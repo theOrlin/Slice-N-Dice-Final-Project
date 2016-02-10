@@ -182,6 +182,26 @@ ul.nav li > a {
       .content-container h3 a:hover {
         text-shadow: 0 1px 1px #8a8a8a;
         text-decoration: none; }
+  .content-container form {
+    margin-top: 40px; }
+    .content-container form input {
+      background-color: #d9d9d9;
+      color: #212121;
+      border: 1px inset #fbfbfb;
+      text-shadow: 0 1px 1px white;
+      text-align: left; }
+      .content-container form input.short {
+        width: 10rem; }
+      .content-container form input.long {
+        width: 100%; }
+      .content-container form input:focus {
+        background-color: white; }
+    .content-container form .bottom-row {
+      margin-top: 40px; }
+    .content-container form label {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      font-family: "league_gothicregular", sans-serif; }
   .content-container table.table {
     border: none;
     font-family: "droid_sansregular", sans-serif; }

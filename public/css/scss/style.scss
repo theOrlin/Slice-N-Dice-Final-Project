@@ -29,6 +29,7 @@ $thFontSize: 2rem;
 $contentFontSize: 2rem;
 $buttonFontSize: 2.2rem;
 $buttonLetterSpacing: 0.1rem;
+$labelFontSize: 1.8rem;
 
 //Shadows
 $blackShadow: 0 1px 1px black;
@@ -40,7 +41,7 @@ $nutrientValueContainerInsetShadow: inset 0 0 5px $menuDarkGray;
 //Container Sizes
 $contentWidth: 90%;
 $navPaddingTop: 125px;
-$angularContainerVerticalMargin: 60px;
+$angularContainerMargin: 60px auto;
 $nutrientValueContainerHeight: 135px;
 $nutrientValueContainerHorizontalMargin: 4px;
 $nutrientLabelPadding: 0 5px 0 7px;
@@ -50,6 +51,10 @@ $lastTdWidth: 5%;
 $tableInputWidth: 60%;
 $buttonPadding: 2px 15px;
 $h3MarginTop: 60px;
+$bottomRowMarginTop: 40px;
+$formMarginTop: 40px;
+$inputShortWidth: 10rem;
+$inputLongWidth: 100%;
 
 //Borders
 $InputInsetBorder: 1px inset #fbfbfb;
@@ -227,7 +232,7 @@ ul.nav li > a {
   padding-bottom: 45px;
   width: $contentWidth;
   background: white url("../img/container-bottom-bg.png") bottom repeat-x;
-  margin: $angularContainerVerticalMargin auto;
+  margin: $angularContainerMargin;
   border: $thinWhiteBorder;
   .nutritional-values-container {
     border: none;
@@ -289,6 +294,33 @@ ul.nav li > a {
         text-shadow: $darkGrayShadow;
         text-decoration: none;
       }
+    }
+  }
+  form {
+    margin-top: $formMarginTop;
+    input {
+      background-color: $mainGray;
+      color: $darkMainBodyTextColor;
+      border: $InputInsetBorder;
+      text-shadow: $whiteShadow;
+      text-align: left;
+      &.short {
+        width: $inputShortWidth;
+      }
+      &.long {
+        width: $inputLongWidth;
+      }
+      &:focus {
+        background-color: white;
+      }
+    }
+    .bottom-row {
+      margin-top: $bottomRowMarginTop;
+    }
+    label {
+      font-size: $labelFontSize;
+      text-transform: uppercase;
+      font-family: $menuTitlesFont;
     }
   }
   table.table {

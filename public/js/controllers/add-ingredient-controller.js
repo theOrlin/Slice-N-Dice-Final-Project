@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    function AddIngredientController(measurementsService, ingredientsService, $location, Notification) {
+    function AddIngredientController(measurementsService, ingredientsService, $location, $window, Notification) {
         var vm = this;
         vm.ingredient = {};
 
@@ -29,14 +29,21 @@
             ingredientsService.addIngr(ingredientToAdd)
                 .then(function(ingredient) {
                     Notification.info('Added.');
-                    $location.path('/getingredients');
+                    $window.history.back();
                 }, function(data) {
                     Notification.error(data.statusText);
                 });
         };
+        vm.goToNewMeasurement = function() {
+            $location.path( '/addmeasurement' );
+        };
+
+        vm.goBack = function() {
+            $window.history.back();
+        };
     }
 
-    AddIngredientController.$inject = ['measurementsService', 'ingredientsService', '$location', 'Notification'];
+    AddIngredientController.$inject = ['measurementsService', 'ingredientsService', '$location', '$window', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('AddIngredientController', AddIngredientController);
