@@ -333,6 +333,7 @@ ul.nav li > a {
       font-size: $thFontSize;
       text-transform: uppercase;
       text-align: center;
+      border-top: none;
       border-bottom: $dottedLightGrayBorder;
     }
     tr {
@@ -363,6 +364,7 @@ ul.nav li > a {
       }
     }
     input {
+      padding: 0;
       width: $tableInputWidth;
       //background-color: $mainGray;
       background-color: $mainGray;

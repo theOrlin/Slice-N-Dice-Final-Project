@@ -212,6 +212,7 @@ ul.nav li > a {
       font-size: 2rem;
       text-transform: uppercase;
       text-align: center;
+      border-top: none;
       border-bottom: 1px dotted #d9d9d9; }
     .content-container table.table tr {
       border-top: none;
@@ -233,6 +234,7 @@ ul.nav li > a {
       .content-container table.table a:hover {
         color: #9a1d0d; }
     .content-container table.table input {
+      padding: 0;
       width: 60%;
       background-color: #d9d9d9;
       color: #212121;
