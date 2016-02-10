@@ -55,6 +55,7 @@ $bottomRowMarginTop: 40px;
 $formMarginTop: 40px;
 $inputShortWidth: 10rem;
 $inputLongWidth: 100%;
+$formInputPaddingLeft: 5px;
 
 //Borders
 $InputInsetBorder: 1px inset #fbfbfb;
@@ -198,7 +199,7 @@ ul.nav li > a {
   transform: scaleX(-1);
   color: $crimson;
   position: absolute;
-  top: .9rem;
+  top: 1.4rem;
   right: 0.75rem;
 }
 
@@ -304,6 +305,7 @@ ul.nav li > a {
       border: $InputInsetBorder;
       text-shadow: $whiteShadow;
       text-align: left;
+      padding-left: $formInputPaddingLeft;
       &.short {
         width: $inputShortWidth;
       }

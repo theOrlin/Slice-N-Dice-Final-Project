@@ -53,7 +53,7 @@
                 });
         };
 
-        vm.cancel = function() {
+        vm.goBack = function() {
             $window.history.back();
         };
     };
