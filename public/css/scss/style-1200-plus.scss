@@ -139,6 +139,7 @@ body {
   }
   nav {
     -webkit-flex-shrink: 0;
+    flex-shrink: 0;
     padding-top: $navPaddingTop;
     width: $contentWidth;
     margin: auto;
