@@ -1,331 +1,46 @@
-@font-face {
-  font-family: 'yanone_kaffeesatzregular';
-  src: url("../fonts/yanonekaffeesatz-regular-webfont.eot");
-  src: url("../fonts/yanonekaffeesatz-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/yanonekaffeesatz-regular-webfont.woff2") format("woff2"), url("../fonts/yanonekaffeesatz-regular-webfont.woff") format("woff"), url("../fonts/yanonekaffeesatz-regular-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'league_gothicregular';
-  src: url("../fonts/leaguegothic-regular-webfont.eot");
-  src: url("../fonts/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/leaguegothic-regular-webfont.woff2") format("woff2"), url("../fonts/leaguegothic-regular-webfont.woff") format("woff"), url("../fonts/leaguegothic-regular-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'droid_sansregular';
-  src: url("../fonts/droidsans-webfont.eot");
-  src: url("../fonts/droidsans-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/droidsans-webfont.woff2") format("woff2"), url("../fonts/droidsans-webfont.woff") format("woff"), url("../fonts/droidsans-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-html {
-  font-size: 7.5pt; }
+/*
+Error: Invalid CSS after "//Shadows": expected ":", was "$blackShadow: 0..."
+        on line 37 of style-767.scss
 
-a {
-  color: #9a1d0d;
-  text-decoration: none; }
-  a:hover {
-    color: #9a1d0d;
-    text-decoration: underline; }
+32: $buttonLetterSpacing: 0.1rem;
+33: $labelFontSize: 1.8rem;
+34: $footerFontSize
+35: 
+36: //Shadows
+37: $blackShadow: 0 1px 1px black;
+38: $darkGrayShadow: 0 1px 1px #8a8a8a;
+39: $whiteShadow: 0 1px 1px white;
+40: $angularContainerShadow: 3px 3px 5px 0 $lightMainBodyTextColor;
+41: $nutrientValueContainerInsetShadow: inset 0 0 5px $menuDarkGray;
+42: $footerShadow: 0 -1px 1px #b1b1b1;
 
-body {
-  font-family: "droid_sansregular", sans-serif;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  background-color: #d9d9d9; }
-  body .angular-container {
-    flex: 1; }
-  body nav {
-    padding-top: 10px;
-    width: 90%;
-    margin: auto; }
-  body .footer {
-    flex: none;
-    min-height: 100px;
-    background-color: #b8b8b8;
-    box-shadow: 0 -1px 1px #b1b1b1; }
-
-a#logo {
-  line-height: 3rem;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  font-family: "yanone_kaffeesatzregular", sans-serif;
-  color: white;
-  text-shadow: 0 1px 1px black; }
-  a#logo > .golden {
-    color: #dcc08e; }
-
-.navbar-header {
-  float: none; }
-  .navbar-header > .navbar-brand {
-    line-height: normal; }
-
-.navbar {
-  background-color: #d9d9d9;
-  border-radius: 0;
-  font-size: 2.4rem;
-  margin-bottom: 0;
-  border: none; }
-  .navbar .navbar-toggle {
-    background-color: #d9d9d9;
-    border-radius: 5px;
-    border: 1px solid #CACACA;
-    box-shadow: 0 1px 1px black; }
-    .navbar .navbar-toggle span.icon-bar {
-      background-color: #9a1d0d;
-      box-shadow: 0 1px 1px #8a8a8a; }
-
-.navbar-default .navbar-nav > li > a {
-  color: #444343; }
-  .navbar-default .navbar-nav > li > a:hover {
-    color: #9a1d0d; }
-
-ul.nav li > a {
-  font-family: 'league_gothicregular', sans-serif;
-  text-shadow: 0 1px 1px white;
-  text-transform: uppercase; }
-
-.top-search-form {
-  position: relative; }
-  .top-search-form input {
-    border: 1px inset #fbfbfb;
-    background-color: #CACACA;
-    color: #2c2c2c;
-    font-style: italic; }
-    .top-search-form input[type="search"]:focus {
-      box-shadow: none;
-      outline: 0 none; }
-      .top-search-form input[type="search"]:focus.searchbar {
-        border-radius: 0;
-        background-color: #CACACA;
-        color: #444343;
-        text-shadow: 0 1px 1px white; }
-  .top-search-form .top-search-glyph {
-    font-weight: bold;
-    font-size: 1.3rem;
-    text-shadow: 0 1px 1px white;
-    transform: scaleX(-1);
-    color: #9a1d0d;
-    position: absolute;
-    top: 1.4rem;
-    right: 0.75rem; }
-
-.dropdown-menu {
-  font-size: 1.75rem;
-  font-weight: bold;
-  background-color: #b7b7b7;
-  border-radius: 0;
-  overflow: hidden; }
-  .dropdown-menu a {
-    font-family: 'league_gothicregular', sans-serif;
-    text-transform: uppercase;
-    text-shadow: 0 1px 1px white;
-    background-color: #b7b7b7; }
-  .dropdown-menu > .active > a {
-    color: #9a1d0d;
-    text-transform: uppercase;
-    background-color: #b7b7b7; }
-    .dropdown-menu > .active > a:hover {
-      color: #9a1d0d;
-      text-transform: uppercase;
-      background-color: #b7b7b7; }
-
-.angular-container {
-  font-size: 1.5rem;
-  box-shadow: 3px 3px 5px 0 #8c8787;
-  padding-top: 4px;
-  padding-bottom: 45px;
-  width: 90%;
-  background: white url("../img/container-bottom-bg.png") bottom repeat-x;
-  margin: 10px auto;
-  border: 1px solid white; }
-  .angular-container .nutritional-values-container {
-    border: none;
-    margin-top: 0;
-    margin-bottom: 60px;
-    display: flex;
-    justify-content: space-between; }
-    .angular-container .nutritional-values-container > div {
-      overflow: hidden;
-      position: relative;
-      margin: 0 4px;
-      flex: 1;
-      height: 95px;
-      box-shadow: inset 0 0 5px #444343; }
-      .angular-container .nutritional-values-container > div > .nutrient-label {
-        position: absolute;
-        font-size: 1.8rem;
-        padding: 0 5px 0 7px;
-        letter-spacing: 0.1em;
-        top: 0;
-        right: 0;
-        text-align: right;
-        color: white;
-        font-family: "league_gothicregular", sans-serif;
-        text-transform: uppercase;
-        background-color: #9a1d0d;
-        text-shadow: 0 1px 1px black; }
-      .angular-container .nutritional-values-container > div > .nutrient-value {
-        margin: 0;
-        line-height: 6.2rem;
-        position: absolute;
-        font-family: "league_gothicregular", sans-serif;
-        font-size: 6rem;
-        bottom: 0;
-        right: 10px;
-        text-align: right;
-        color: #dcc08e;
-        text-shadow: 0 1px 1px black; }
-
-.content-container {
-  width: 90%;
-  margin: 0 auto;
-  font-family: "droid_sansregular", sans-serif; }
-  .content-container p {
-    color: #8c8787; }
-  .content-container h3 {
-    margin-top: 60px;
-    font-family: "league_gothicregular", sans-serif;
-    font-size: 3em;
-    text-transform: uppercase; }
-    .content-container h3 a {
-      color: #9a1d0d; }
-      .content-container h3 a:hover {
-        text-shadow: 0 1px 1px #8a8a8a;
-        text-decoration: none; }
-  .content-container form {
-    margin-top: 40px; }
-    .content-container form input {
-      background-color: #d9d9d9;
-      color: #212121;
-      border: 1px inset #fbfbfb;
-      text-shadow: 0 1px 1px white;
-      text-align: left;
-      padding-left: 5px; }
-      .content-container form input.short {
-        width: 10rem; }
-      .content-container form input.long {
-        width: 100%; }
-      .content-container form input.medium {
-        width: 40%; }
-      .content-container form input.md-long {
-        width: 80%; }
-      .content-container form input:focus {
-        background-color: #dcc08e; }
-    .content-container form label {
-      font-size: 1.8rem;
-      text-transform: uppercase;
-      font-family: "league_gothicregular", sans-serif; }
-  .content-container .bottom-row {
-    text-align: center;
-    margin-top: 40px; }
-  .content-container table.table {
-    border: none;
-    font-family: "droid_sansregular", sans-serif; }
-    .content-container table.table th {
-      color: #212121;
-      font-family: "league_gothicregular", sans-serif;
-      font-size: 2rem;
-      text-transform: uppercase;
-      text-align: center;
-      border-top: none;
-      border-bottom: 1px dotted #d9d9d9; }
-    .content-container table.table tr {
-      border-top: none;
-      border-bottom: none; }
-    .content-container table.table tfoot tr td {
-      border-top: 1px dotted #d9d9d9; }
-    .content-container table.table td {
-      color: #212121;
-      border: none; }
-    .content-container table.table td:not(:first-child) {
-      color: #8c8787;
-      text-align: center; }
-    .content-container table.table td:nth-last-child(1) {
-      width: 80px; }
-    .content-container table.table a {
-      color: #212121;
-      text-shadow: 0 1px 1px #8a8a8a; }
-      .content-container table.table a:hover {
-        color: #9a1d0d; }
-    .content-container table.table input {
-      padding: 0;
-      width: 4rem;
-      background-color: #d9d9d9;
-      color: #212121;
-      border: 1px inset #fbfbfb;
-      text-shadow: 0 1px 1px white;
-      text-align: center; }
-      .content-container table.table input:focus {
-        background-color: #dcc08e; }
-    .content-container table.table .measurement-cell {
-      text-align: center;
-      min-width: 100px; }
-  .content-container button.btn {
-    font-family: "league_gothicregular", sans-serif;
-    letter-spacing: 0.1rem;
-    margin-bottom: 5px;
-    font-size: 1.7rem;
-    padding: 2px 15px;
-    border-radius: 5px;
-    text-shadow: 0 1px 1px black;
-    text-transform: uppercase;
-    box-shadow: 0 1px 1px black; }
-    .content-container button.btn:hover {
-      background-color: #9a1d0d; }
-  .content-container button.btn-warning {
-    background-color: #b8b8b8;
-    border: none; }
-  .content-container button.btn-primary {
-    background-color: #dcc08e;
-    border: none; }
-  .content-container .ingredient-adder input {
-    width: 40%;
-    background-color: #d9d9d9;
-    color: #212121;
-    border: 1px inset #fbfbfb;
-    text-shadow: 0 1px 1px white;
-    padding: 0 0 0 5px;
-    text-align: left; }
-    .content-container .ingredient-adder input:focus {
-      background-color: #dcc08e; }
-  .content-container .screen {
-    background: url("../img/screen_bg.png");
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh; }
-    .content-container .screen div {
-      opacity: 1;
-      flex: 1; }
-    .content-container .screen .angular-container {
-      width: 80%; }
-      .content-container .screen .angular-container table.table {
-        width: 90%;
-        border: none;
-        margin: auto; }
-        .content-container .screen .angular-container table.table th {
-          color: #212121;
-          font-family: "league_gothicregular", sans-serif;
-          font-size: 2rem;
-          text-transform: uppercase;
-          text-align: center;
-          border-top: none;
-          border-bottom: 1px dotted #d9d9d9; }
-        .content-container .screen .angular-container table.table tr {
-          border-top: none;
-          border-bottom: none; }
-        .content-container .screen .angular-container table.table tfoot tr td {
-          border-top: 1px dotted #d9d9d9; }
-        .content-container .screen .angular-container table.table td {
-          color: #212121;
-          border: none; }
-        .content-container .screen .angular-container table.table td:not(:first-child) {
-          color: #8c8787;
-          text-align: center;
-          width: 11rem; }
-
-/*# sourceMappingURL=style-767.css.map */
+Backtrace:
+style-767.scss:37
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1179:in `expected'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1115:in `expected'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1110:in `tok!'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:617:in `variable'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:673:in `block_child'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:666:in `block_contents'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:123:in `stylesheet'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:39:in `parse'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/engine.rb:403:in `_to_tree'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:363:in `watch_or_update'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/bin/sass:13:in `<top (required)>'
+C:/Ruby22-x64/bin/sass:23:in `load'
+C:/Ruby22-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"//Shadows\": expected \":\", was \"$blackShadow: 0...\"\A         on line 37 of style-767.scss\A \A 32: $buttonLetterSpacing: 0.1rem;\A 33: $labelFontSize: 1.8rem;\A 34: $footerFontSize\A 35: \A 36: //Shadows\A 37: $blackShadow: 0 1px 1px black;\A 38: $darkGrayShadow: 0 1px 1px #8a8a8a;\A 39: $whiteShadow: 0 1px 1px white;\A 40: $angularContainerShadow: 3px 3px 5px 0 $lightMainBodyTextColor;\A 41: $nutrientValueContainerInsetShadow: inset 0 0 5px $menuDarkGray;\A 42: $footerShadow: 0 -1px 1px #b1b1b1;"; }

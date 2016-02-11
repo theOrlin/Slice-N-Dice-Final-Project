@@ -31,6 +31,7 @@ $contentFontSize: 1.5rem;
 $buttonFontSize: 1.7rem;
 $buttonLetterSpacing: 0.1rem;
 $labelFontSize: 1.8rem;
+$footerFontSize
 
 //Shadows
 $blackShadow: 0 1px 1px black;
@@ -64,7 +65,9 @@ $inputMdLongWidth: 80%;
 $inputMediumWidth: 40%;
 $formInputPaddingLeft: 5px;
 $angularContainerWithinScreenWidth: 80%;
-$footerHeight: 100px;
+$footerPaddingTop: 50px;
+$footerPaddingBottom: 20px;
+$footerParagraphWidth: 80%;
 
 //Borders
 $InputInsetBorder: 1px inset #fbfbfb;
@@ -119,23 +122,41 @@ a {
 
 body {
   font-family: $contentFont;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  -webkit-flex-direction: column;
   flex-direction: column;
   background-color: $mainGray;
   .angular-container {
-    flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
   }
   nav {
+    flex-shrink: 0;
     padding-top: $navPaddingTop;
     width: $contentWidth;
     margin: auto;
   }
   .footer {
-    flex: none;
-    min-height: $footerHeight;
+    flex-shrink: 0;
     background-color: $footerBackgroundColor;
     box-shadow: $footerShadow;
+    padding-top: $footerPaddingTop;
+    padding-bottom: $footerPaddingBottom;
+    p{
+      color: $darkMainBodyTextColor;
+      font-size: $footerFontSize;
+      width: $footerParagraphWidth;
+      margin: auto;
+      text-shadow: $whiteShadow;
+    }
   }
 }
 
@@ -260,12 +281,21 @@ ul.nav li > a {
     border: none;
     margin-top: 0;
     margin-bottom: $nutritionalValuesContainerMarginBottom;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     > div {
       overflow: hidden;
       position: relative;
       margin: 0 $nutrientValueContainerHorizontalMargin;
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
       flex: 1;
       height: $nutrientValueContainerHeight;
       box-shadow: $nutrientValueContainerInsetShadow;
