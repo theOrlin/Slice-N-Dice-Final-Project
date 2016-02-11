@@ -3,7 +3,8 @@
 <head>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/angular-ui-notification.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" media="all and (min-width: 1201px)" href="/css/style-1200-plus.css">
+    <link rel="stylesheet" media="all and (min-width: 860px) and (max-width: 1200px)" href="/css/style-860-plus.css">
     <base href="/"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,15 +26,15 @@
         </div>
         <div class="navbar-collapse collapse" uib-collapse="navCollapsed">
             <ul class="nav navbar-nav navbar-left">
+                <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/meals">Meals</a></li>
                 <!--<li data-ng-hide="token"><a ng-href="/getingredients">Ingredients</a></li>-->
-                <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addmeasurement">Add Measurement</a>
-                </li>
+                <!--<li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addmeal">Add Meal</a></li>-->
                 <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addingredient">Add Ingredient</a>
                 </li>
-                <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addmeal">Add Meal</a></li>
-                <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/meals">All Meals</a></li>
+                <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addmeasurement">Add Measurement</a>
+                </li>
                 <li data-ng-hide="tvm.globalUserIsAuthenticated"><a ng-href="/login">Log in</a></li>
-                <li data-ng-hide="tvm.globalUserIsAuthenticated"><a ng-href="/register">Register</a></li>
+                <li data-ng-hide="tvm.globalUserIsAuthenticated"><a ng-href="/register">Sign Up</a></li>
                 <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/logout">Logout</a></li>
             </ul>
             <form class="navbar-form navbar-right" role="search">

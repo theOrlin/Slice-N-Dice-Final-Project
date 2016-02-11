@@ -1,25 +1,25 @@
-<div class="content-container">
+<div class="content-container container">
     <h3>Register New User</h3>
     <form class="form-horizontal" name="registrationForm">
         <fieldset>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                <div class="col-lg-10">
-                    <input class="md-long" id="inputEmail" placeholder="Email" type="text" required="required"
+            <div class="form-group row">
+                <label for="inputEmail" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Email</label>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-md-4 col-lg-4">
+                    <input class="col-xs-12" id="inputEmail" placeholder="Email" type="text" required="required"
                            ng-model="vm.user.email">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-10">
-                    <input class="md-long" id="inputPassword" placeholder="Password" type="password"
+                <label for="inputPassword" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Password</label>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-md-4 col-lg-4">
+                    <input class="col-xs-12" id="inputPassword" placeholder="Password" type="password"
                            required="required" ng-model="vm.user.password">
                 </div>
             </div>
             <div class="form-group">
-                <label for="confirmPassword" class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-10">
-                    <input class="md-long" id="confirmPassword" placeholder="Confirm Password" type="password"
+                <label for="confirmPassword" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Password</label>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-md-4 col-lg-4">
+                    <input class="col-xs-12" id="confirmPassword" placeholder="Confirm Password" type="password"
                            required="required" ng-model="vm.user.confirmPassword">
                 </div>
             </div>

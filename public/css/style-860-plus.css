@@ -16,6 +16,9 @@
   src: url("../fonts/droidsans-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/droidsans-webfont.woff2") format("woff2"), url("../fonts/droidsans-webfont.woff") format("woff"), url("../fonts/droidsans-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+html {
+  font-size: 7.5pt; }
+
 body {
   font-family: "droid_sansregular", sans-serif;
   display: flex;
@@ -98,25 +101,26 @@ ul.nav li > a {
     position: absolute;
     top: 1.4rem;
     right: 0.75rem; }
-  .top-search-form .dropdown-menu {
-    font-size: 1.75rem;
-    font-weight: bold;
-    background-color: #b7b7b7;
-    border-radius: 0;
-    overflow: hidden; }
-    .top-search-form .dropdown-menu a {
-      font-family: 'league_gothicregular', sans-serif;
-      text-transform: uppercase;
-      text-shadow: 0 1px 1px white;
-      background-color: #b7b7b7; }
-    .top-search-form .dropdown-menu > .active > a {
+
+.dropdown-menu {
+  font-size: 1.75rem;
+  font-weight: bold;
+  background-color: #b7b7b7;
+  border-radius: 0;
+  overflow: hidden; }
+  .dropdown-menu a {
+    font-family: 'league_gothicregular', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px white;
+    background-color: #b7b7b7; }
+  .dropdown-menu > .active > a {
+    color: #9a1d0d;
+    text-transform: uppercase;
+    background-color: #b7b7b7; }
+    .dropdown-menu > .active > a:hover {
       color: #9a1d0d;
       text-transform: uppercase;
       background-color: #b7b7b7; }
-      .top-search-form .dropdown-menu > .active > a:hover {
-        color: #9a1d0d;
-        text-transform: uppercase;
-        background-color: #b7b7b7; }
 
 .angular-container {
   font-size: 2rem;
@@ -169,6 +173,8 @@ ul.nav li > a {
   width: 90%;
   margin: 0 auto;
   font-family: "droid_sansregular", sans-serif; }
+  .content-container p {
+    color: #8c8787; }
   .content-container h3 {
     margin-top: 60px;
     font-family: "league_gothicregular", sans-serif;
@@ -197,7 +203,7 @@ ul.nav li > a {
       .content-container form input.md-long {
         width: 80%; }
       .content-container form input:focus {
-        background-color: white; }
+        background-color: #dcc08e; }
     .content-container form label {
       font-size: 1.8rem;
       text-transform: uppercase;
@@ -227,9 +233,9 @@ ul.nav li > a {
     .content-container table.table td:not(:first-child) {
       color: #8c8787;
       text-align: center;
-      width: 10%; }
+      width: 11rem; }
     .content-container table.table td:nth-last-child(2) {
-      width: 5%; }
+      width: 5rem; }
     .content-container table.table a {
       color: #212121;
       text-shadow: 0 1px 1px #8a8a8a; }
@@ -237,14 +243,14 @@ ul.nav li > a {
         color: #9a1d0d; }
     .content-container table.table input {
       padding: 0;
-      width: 60%;
+      width: 6rem;
       background-color: #d9d9d9;
       color: #212121;
       border: 1px inset #fbfbfb;
       text-shadow: 0 1px 1px white;
       text-align: center; }
       .content-container table.table input:focus {
-        background-color: white; }
+        background-color: #dcc08e; }
   .content-container button.btn {
     font-family: "league_gothicregular", sans-serif;
     letter-spacing: 0.1rem;
@@ -271,6 +277,8 @@ ul.nav li > a {
     text-shadow: 0 1px 1px white;
     padding: 0 0 0 5px;
     text-align: left; }
+    .content-container .ingredient-adder input:focus {
+      background-color: #dcc08e; }
   .content-container .screen {
     background: url("../img/screen_bg.png");
     display: flex;
@@ -309,6 +317,6 @@ ul.nav li > a {
         .content-container .screen .angular-container table.table td:not(:first-child) {
           color: #8c8787;
           text-align: center;
-          width: 10%; }
+          width: 11rem; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style-860-plus.css.map */

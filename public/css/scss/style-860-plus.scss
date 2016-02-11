@@ -9,6 +9,7 @@ $footerBackgroundColor: #b8b8b8;
 $darkMainBodyTextColor: #212121;
 $lightMainBodyTextColor: #8c8787;
 $topSearchFormInputTextColor: #2c2c2c;
+$inputFocusColor: $golden;
 
 //Fonts
 $logoFont: 'yanone_kaffeesatzregular', sans-serif;
@@ -46,9 +47,9 @@ $nutrientValueContainerHeight: 135px;
 $nutrientValueContainerHorizontalMargin: 4px;
 $nutrientLabelPadding: 0 5px 0 7px;
 $nutrientValueRightPosition: 10px;
-$tdWidth: 10%;
-$lastTdWidth: 5%;
-$tableInputWidth: 60%;
+$tdWidth: 11rem;
+$lastTdWidth: 5rem;
+$tableInputWidth: 6rem;
 $buttonPadding: 2px 15px;
 $h3MarginTop: 60px;
 $bottomRowMarginTop: 40px;
@@ -96,6 +97,10 @@ $thinWhiteBorder: 1px solid white;
   url('../fonts/droidsans-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+html {
+  font-size: 7.5pt;
 }
 
 body {
@@ -161,6 +166,9 @@ a#logo {
 .navbar-default {
   .navbar-nav > li > a {
     color: $menuDarkGray;
+    &:hover {
+      color: $crimson;
+    }
   }
 }
 
@@ -170,9 +178,6 @@ ul.nav li > a {
   text-transform: uppercase;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
-  color: $crimson;
-}
 
 .top-search-form {
   position: relative;
@@ -184,26 +189,25 @@ ul.nav li > a {
     &[type="search"]:focus {
       box-shadow: none;
       outline: 0 none;
+      &.searchbar {
+        border-radius: 0;
+        background-color: $searchBarBackgroundGrayColor;
+        color: $menuDarkGray;
+        text-shadow: $whiteShadow;
+      }
     }
   }
-}
+  .top-search-glyph {
+    font-weight: bold;
+    font-size: $searchGlyphSize;
+    text-shadow: $whiteShadow;
+    transform: scaleX(-1);
+    color: $crimson;
+    position: absolute;
+    top: 1.4rem;
+    right: 0.75rem;
+  }
 
-.searchbar {
-  border-radius: 0;
-  background-color: $searchBarBackgroundGrayColor;
-  color: $menuDarkGray;
-  text-shadow: $whiteShadow;
-}
-
-.top-search-glyph {
-  font-weight: bold;
-  font-size: $searchGlyphSize;
-  text-shadow: $whiteShadow;
-  transform: scaleX(-1);
-  color: $crimson;
-  position: absolute;
-  top: 1.4rem;
-  right: 0.75rem;
 }
 
 .dropdown-menu {
@@ -229,6 +233,10 @@ ul.nav li > a {
     }
   }
 }
+
+
+
+
 
 .angular-container {
   font-size: $contentFontSize;
@@ -288,6 +296,9 @@ ul.nav li > a {
   width: $contentWidth;
   margin: 0 auto;
   font-family: $contentFont;
+  p{
+    color: $lightMainBodyTextColor;
+  }
   h3 {
     margin-top: $h3MarginTop;
     font-family: $menuTitlesFont;
@@ -323,7 +334,7 @@ ul.nav li > a {
         width: $inputMdLongWidth;
       }
       &:focus {
-        background-color: white;
+        background-color: $inputFocusColor;
       }
     }
     label {
@@ -384,7 +395,7 @@ ul.nav li > a {
       text-shadow: $whiteShadow;
       text-align: center;
       &:focus {
-        background-color: white;
+        background-color: $inputFocusColor;
       }
     }
   }
@@ -421,7 +432,7 @@ ul.nav li > a {
       padding: 0 0 0 5px;
       text-align: left;
       &:focus {
-        //background-color: white;
+        background-color: $inputFocusColor;
       }
     }
   }

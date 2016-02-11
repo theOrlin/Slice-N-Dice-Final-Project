@@ -11,7 +11,7 @@
                     localStorage.setItem('auth_token', data.headers('Auth'));
                     $scope.tvm.updateLoginStatus(true);
                     Notification.success('Logged in.');
-                    $location.path('/');
+                    $location.path('/meals');
                 }, function(data) {
                     Notification.error(data.statusText);
                 });

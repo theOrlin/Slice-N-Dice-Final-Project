@@ -1,0 +1,491 @@
+//Colors
+$mainGray: #d9d9d9;
+$menuDarkGray: #444343;
+$golden: #dcc08e;
+$crimson: #9a1d0d;
+$searchBarBackgroundGrayColor: #CACACA;
+$dropdownBackgroundColor: #b7b7b7;
+$footerBackgroundColor: #b8b8b8;
+$darkMainBodyTextColor: #212121;
+$lightMainBodyTextColor: #8c8787;
+$topSearchFormInputTextColor: #2c2c2c;
+$inputFocusColor: $golden;
+
+//Fonts
+$logoFont: 'yanone_kaffeesatzregular', sans-serif;
+$contentFont: 'droid_sansregular', sans-serif;
+$menuTitlesFont: 'league_gothicregular', sans-serif;
+
+//Font Sizes
+$logoSize: 11.7rem;
+$searchGlyphSize: 1.3rem;
+$topSearchMenuFontSize: 1.75rem;
+$navbarFontSize: 2.4rem;
+$nutrientLabelFontSize: 1.8rem;
+$nutrientLabelLetterSpacing: .1em;
+$nutrientValueFontSize: 10rem;
+$nutrientValueLineHeight: 10.2rem;
+$h3FontSize: 3em;
+$thFontSize: 2rem;
+$contentFontSize: 2rem;
+$buttonFontSize: 2.2rem;
+$buttonLetterSpacing: 0.1rem;
+$labelFontSize: 1.8rem;
+
+//Shadows
+$blackShadow: 0 1px 1px black;
+$darkGrayShadow: 0 1px 1px #8a8a8a;
+$whiteShadow: 0 1px 1px white;
+$angularContainerShadow: 3px 3px 5px 0 $lightMainBodyTextColor;
+$nutrientValueContainerInsetShadow: inset 0 0 5px $menuDarkGray;
+
+//Container Sizes
+$contentWidth: 90%;
+$navPaddingTop: 125px;
+$angularContainerMargin: 60px auto;
+$nutrientValueContainerHeight: 135px;
+$nutrientValueContainerHorizontalMargin: 4px;
+$nutrientLabelPadding: 0 5px 0 7px;
+$nutrientValueRightPosition: 10px;
+$tdWidth: 11rem;
+$lastTdWidth: 5rem;
+$tableInputWidth: 6rem;
+$buttonPadding: 2px 15px;
+$h3MarginTop: 60px;
+$bottomRowMarginTop: 40px;
+$formMarginTop: 40px;
+$inputShortWidth: 10rem;
+$inputLongWidth: 100%;
+$inputMdLongWidth: 80%;
+$inputMediumWidth: 40%;
+$formInputPaddingLeft: 5px;
+$angularContainerWithinScreenWidth: 80%;
+
+//Borders
+$InputInsetBorder: 1px inset #fbfbfb;
+$dottedLightGrayBorder: 1px dotted $mainGray;
+$thinWhiteBorder: 1px solid white;
+
+@font-face {
+  font-family: 'yanone_kaffeesatzregular';
+  src: url('../fonts/yanonekaffeesatz-regular-webfont.eot');
+  src: url('../fonts/yanonekaffeesatz-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/yanonekaffeesatz-regular-webfont.woff2') format('woff2'),
+  url('../fonts/yanonekaffeesatz-regular-webfont.woff') format('woff'),
+  url('../fonts/yanonekaffeesatz-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'league_gothicregular';
+  src: url('../fonts/leaguegothic-regular-webfont.eot');
+  src: url('../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/leaguegothic-regular-webfont.woff2') format('woff2'),
+  url('../fonts/leaguegothic-regular-webfont.woff') format('woff'),
+  url('../fonts/leaguegothic-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'droid_sansregular';
+  src: url('../fonts/droidsans-webfont.eot');
+  src: url('../fonts/droidsans-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/droidsans-webfont.woff2') format('woff2'),
+  url('../fonts/droidsans-webfont.woff') format('woff'),
+  url('../fonts/droidsans-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 7.5pt;
+}
+
+a {
+  color: $crimson;
+  text-decoration: none;
+  &:hover {
+    color: $crimson;
+    text-decoration: underline;
+  }
+}
+
+body {
+  font-family: $contentFont;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: $mainGray;
+  .angular-container {
+    flex: 1;
+  }
+  nav {
+    padding-top: $navPaddingTop;
+    width: $contentWidth;
+    margin: auto;
+  }
+  .footer {
+    flex: none;
+    min-height: 100px;
+    background-color: $footerBackgroundColor;
+    box-shadow: 0 -1px 1px #b1b1b1;
+  }
+}
+
+a#logo {
+  float: none;
+  font-size: $logoSize;
+  text-transform: uppercase;
+  font-family: $logoFont;
+  color: white;
+  text-shadow: $blackShadow;
+  > .golden {
+    color: $golden;
+  }
+}
+
+.navbar-header {
+  float: none;
+  > .navbar-brand {
+    line-height: normal;
+  }
+}
+
+.navbar {
+  background-color: $mainGray;
+  border-radius: 0;
+  //box-shadow: 0 1px 1px #8a8a8a;
+  font-size: $navbarFontSize;
+  margin-bottom: 0;
+  border: none;
+  .navbar-toggle {
+    background-color: $mainGray;
+    border-radius: 5px;
+    border: 1px solid $searchBarBackgroundGrayColor;
+    box-shadow: $blackShadow;
+    span.icon-bar {
+      background-color: $crimson;
+      box-shadow: $darkGrayShadow;
+    }
+  }
+}
+
+.navbar-default {
+  .navbar-nav > li > a {
+    color: $menuDarkGray;
+    &:hover {
+      color: $crimson;
+    }
+  }
+}
+
+ul.nav li > a {
+  font-family: 'league_gothicregular', sans-serif;
+  text-shadow: $whiteShadow;
+  text-transform: uppercase;
+}
+
+.top-search-form {
+  position: relative;
+  input {
+    border: $InputInsetBorder;
+    background-color: $searchBarBackgroundGrayColor;
+    color: $topSearchFormInputTextColor;
+    font-style: italic;
+    &[type="search"]:focus {
+      box-shadow: none;
+      outline: 0 none;
+      &.searchbar {
+        border-radius: 0;
+        background-color: $searchBarBackgroundGrayColor;
+        color: $menuDarkGray;
+        text-shadow: $whiteShadow;
+      }
+    }
+  }
+  .top-search-glyph {
+    font-weight: bold;
+    font-size: $searchGlyphSize;
+    text-shadow: $whiteShadow;
+    transform: scaleX(-1);
+    color: $crimson;
+    position: absolute;
+    top: 1.4rem;
+    right: 0.75rem;
+  }
+
+}
+
+.dropdown-menu {
+  font-size: $topSearchMenuFontSize;
+  font-weight: bold;
+  background-color: $dropdownBackgroundColor;
+  border-radius: 0;
+  overflow: hidden;
+  a {
+    font-family: 'league_gothicregular', sans-serif;
+    text-transform: uppercase;
+    text-shadow: $whiteShadow;
+    background-color: $dropdownBackgroundColor;
+  }
+  > .active > a {
+    color: $crimson;
+    text-transform: uppercase;
+    background-color: $dropdownBackgroundColor;
+    &:hover {
+      color: $crimson;
+      text-transform: uppercase;
+      background-color: $dropdownBackgroundColor;
+    }
+  }
+}
+
+.angular-container {
+  font-size: $contentFontSize;
+  box-shadow: $angularContainerShadow;
+  padding-top: 4px;
+  padding-bottom: 45px;
+  width: $contentWidth;
+  background: white url("../img/container-bottom-bg.png") bottom repeat-x;
+  margin: $angularContainerMargin;
+  border: $thinWhiteBorder;
+  .nutritional-values-container {
+    border: none;
+    margin-top: 0;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    > div {
+      overflow: hidden;
+      position: relative;
+      margin: 0 $nutrientValueContainerHorizontalMargin;
+      flex: 1;
+      height: $nutrientValueContainerHeight;
+      box-shadow: $nutrientValueContainerInsetShadow;
+      &.calories {
+      }
+      > .nutrient-label {
+        position: absolute;
+        font-size: $nutrientLabelFontSize;
+        padding: $nutrientLabelPadding;
+        letter-spacing: $nutrientLabelLetterSpacing;
+        top: 0;
+        right: 0;
+        text-align: right;
+        color: white;
+        font-family: $menuTitlesFont;
+        text-transform: uppercase;
+        background-color: $crimson;
+        text-shadow: $blackShadow;
+      }
+      > .nutrient-value {
+        margin: 0;
+        line-height: $nutrientValueLineHeight;
+        position: absolute;
+        font-family: $menuTitlesFont;
+        font-size: $nutrientValueFontSize;
+        bottom: 0;
+        right: $nutrientValueRightPosition;
+        text-align: right;
+        color: $golden;
+        text-shadow: $blackShadow;
+      }
+    }
+  }
+}
+
+.content-container {
+  width: $contentWidth;
+  margin: 0 auto;
+  font-family: $contentFont;
+  p {
+    color: $lightMainBodyTextColor;
+  }
+  h3 {
+    margin-top: $h3MarginTop;
+    font-family: $menuTitlesFont;
+    font-size: $h3FontSize;
+    text-transform: uppercase;
+    a {
+      color: $crimson;
+      &:hover {
+        text-shadow: $darkGrayShadow;
+        text-decoration: none;
+      }
+    }
+  }
+  form {
+    margin-top: $formMarginTop;
+    input {
+      background-color: $mainGray;
+      color: $darkMainBodyTextColor;
+      border: $InputInsetBorder;
+      text-shadow: $whiteShadow;
+      text-align: left;
+      padding-left: $formInputPaddingLeft;
+      &.short {
+        width: $inputShortWidth;
+      }
+      &.long {
+        width: $inputLongWidth;
+      }
+      &.medium {
+        width: $inputMediumWidth;
+      }
+      &.md-long {
+        width: $inputMdLongWidth;
+      }
+      &:focus {
+        background-color: $inputFocusColor;
+      }
+    }
+    label {
+      font-size: $labelFontSize;
+      text-transform: uppercase;
+      font-family: $menuTitlesFont;
+    }
+  }
+  .bottom-row {
+    text-align: center;
+    margin-top: $bottomRowMarginTop;
+  }
+  table.table {
+    border: none;
+    th {
+      color: $darkMainBodyTextColor;
+      font-family: $menuTitlesFont;
+      font-size: $thFontSize;
+      text-transform: uppercase;
+      text-align: center;
+      border-top: none;
+      border-bottom: $dottedLightGrayBorder;
+    }
+    tr {
+      border-top: none;
+      border-bottom: none;
+    }
+    tfoot tr td {
+      border-top: $dottedLightGrayBorder;
+    }
+    td {
+      color: $darkMainBodyTextColor;
+      border: none;
+    }
+    td:not(:first-child) {
+      color: $lightMainBodyTextColor;
+      text-align: center;
+      width: $tdWidth;
+    }
+    td:nth-last-child(2) {
+      width: $lastTdWidth;
+    }
+    font-family: $contentFont;
+    a {
+      color: $darkMainBodyTextColor;
+      text-shadow: $darkGrayShadow;
+      &:hover {
+        color: $crimson;
+      }
+    }
+    input {
+      padding: 0;
+      width: $tableInputWidth;
+      //background-color: $mainGray;
+      background-color: $mainGray;
+      color: $darkMainBodyTextColor;
+      border: $InputInsetBorder;
+      text-shadow: $whiteShadow;
+      text-align: center;
+      &:focus {
+        background-color: $inputFocusColor;
+      }
+    }
+  }
+  button.btn {
+    font-family: $menuTitlesFont;
+    letter-spacing: $buttonLetterSpacing;
+    margin-bottom: 5px;
+    font-size: $buttonFontSize;
+    padding: $buttonPadding;
+    border-radius: 5px;
+    text-shadow: $blackShadow;
+    text-transform: uppercase;
+    box-shadow: $blackShadow;
+    &:hover {
+      background-color: $crimson;
+    }
+  }
+  button.btn-warning {
+    background-color: $footerBackgroundColor;
+    border: none;
+  }
+  button.btn-primary {
+    background-color: $golden;
+    border: none;
+  }
+  .ingredient-adder {
+    input {
+      width: $inputMediumWidth;
+      //background-color: $mainGray;
+      background-color: $mainGray;
+      color: $darkMainBodyTextColor;
+      border: $InputInsetBorder;
+      text-shadow: $whiteShadow;
+      padding: 0 0 0 5px;
+      text-align: left;
+      &:focus {
+        background-color: $inputFocusColor;
+      }
+    }
+  }
+  .screen {
+    background: url("../img/screen_bg.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    div {
+      opacity: 1;
+      flex: 1;
+    }
+    .angular-container {
+      width: $angularContainerWithinScreenWidth;
+      table.table {
+        width: 90%;
+        border: none;
+        margin: auto;
+        th {
+          color: $darkMainBodyTextColor;
+          font-family: $menuTitlesFont;
+          font-size: $thFontSize;
+          text-transform: uppercase;
+          text-align: center;
+          border-top: none;
+          border-bottom: $dottedLightGrayBorder;
+        }
+        tr {
+          border-top: none;
+          border-bottom: none;
+        }
+        tfoot tr td {
+          border-top: $dottedLightGrayBorder;
+        }
+        td {
+          color: $darkMainBodyTextColor;
+          border: none;
+        }
+        td:not(:first-child) {
+          color: $lightMainBodyTextColor;
+          text-align: center;
+          width: $tdWidth;
+        }
+      }
+    }
+  }
+}

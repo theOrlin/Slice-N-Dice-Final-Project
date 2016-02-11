@@ -64,17 +64,17 @@
 .ui-notification.error
 {
     color: #fff;
-    background: #9a1d0d;
+    background: #d9534f;
 }
 .ui-notification.success
 {
-    color: white;
-    background: #dcc08e;
+    color: #fff;
+    background: #5cb85c;
 }
 .ui-notification.info
 {
-    color: white;
-    background: #444343;
+    color: #fff;
+    background: #5bc0de;
 }
 .ui-notification:hover
 {

@@ -1,22 +1,22 @@
-<div class="content-container">
+<div class="content-container container">
     <h3>Log In</h3>
     <form class="form-horizontal" name="loginForm" novalidate>
         <fieldset>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                <div class="col-lg-10">
-                    <input class="medium" id="inputEmail" placeholder="Email" type="text" required="required"
+            <div class="form-group row">
+                <label for="inputEmail" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Email</label>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-md-4 col-lg-4">
+                    <input class="col-xs-12" id="inputEmail" placeholder="Email" type="text" required="required"
                            ng-model="vm.user.email">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-10">
-                    <input class="medium" id="inputPassword" placeholder="Password" type="password"
+            <div class="form-group row">
+                <label for="inputPassword" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Password</label>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-md-4 col-lg-4">
+                    <input class="col-xs-12" id="inputPassword" placeholder="Password" type="password"
                            required="required" ng-model="vm.user.password">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group row">
                 <div class="bottom-row">
                     <!--<button class="btn btn-primary" ng-click="vm.register(user, registrationForm)" ng-disabled="registrationForm.$invalid || user.password != user.confirmPassword">Log In</button>-->
                     <button class="btn btn-primary" ng-click="vm.login()">Log In</button>
