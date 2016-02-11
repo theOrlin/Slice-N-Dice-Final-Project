@@ -35,7 +35,7 @@ body {
   body .angular-container {
     flex: 1; }
   body nav {
-    padding-top: 125px;
+    padding-top: 10px;
     width: 90%;
     margin: auto; }
   body .footer {
@@ -45,8 +45,8 @@ body {
     box-shadow: 0 -1px 1px #b1b1b1; }
 
 a#logo {
-  float: none;
-  font-size: 11.7rem;
+  line-height: 3rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   font-family: "yanone_kaffeesatzregular", sans-serif;
   color: white;
@@ -130,13 +130,13 @@ ul.nav li > a {
       background-color: #b7b7b7; }
 
 .angular-container {
-  font-size: 2rem;
+  font-size: 1.5rem;
   box-shadow: 3px 3px 5px 0 #8c8787;
   padding-top: 4px;
   padding-bottom: 45px;
   width: 90%;
   background: white url("../img/container-bottom-bg.png") bottom repeat-x;
-  margin: 60px auto;
+  margin: 10px auto;
   border: 1px solid white; }
   .angular-container .nutritional-values-container {
     border: none;
@@ -149,7 +149,7 @@ ul.nav li > a {
       position: relative;
       margin: 0 4px;
       flex: 1;
-      height: 135px;
+      height: 95px;
       box-shadow: inset 0 0 5px #444343; }
       .angular-container .nutritional-values-container > div > .nutrient-label {
         position: absolute;
@@ -166,10 +166,10 @@ ul.nav li > a {
         text-shadow: 0 1px 1px black; }
       .angular-container .nutritional-values-container > div > .nutrient-value {
         margin: 0;
-        line-height: 10.2rem;
+        line-height: 6.2rem;
         position: absolute;
         font-family: "league_gothicregular", sans-serif;
-        font-size: 10rem;
+        font-size: 6rem;
         bottom: 0;
         right: 10px;
         text-align: right;
@@ -249,7 +249,7 @@ ul.nav li > a {
         color: #9a1d0d; }
     .content-container table.table input {
       padding: 0;
-      width: 6rem;
+      width: 4rem;
       background-color: #d9d9d9;
       color: #212121;
       border: 1px inset #fbfbfb;
@@ -264,7 +264,7 @@ ul.nav li > a {
     font-family: "league_gothicregular", sans-serif;
     letter-spacing: 0.1rem;
     margin-bottom: 5px;
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     padding: 2px 15px;
     border-radius: 5px;
     text-shadow: 0 1px 1px black;
@@ -328,4 +328,4 @@ ul.nav li > a {
           text-align: center;
           width: 11rem; }
 
-/*# sourceMappingURL=style-1200-plus.css.map */
+/*# sourceMappingURL=style-767.css.map */

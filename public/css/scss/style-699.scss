@@ -17,18 +17,18 @@ $contentFont: 'droid_sansregular', sans-serif;
 $menuTitlesFont: 'league_gothicregular', sans-serif;
 
 //Font Sizes
-$logoSize: 11.7rem;
+$logoFontSize: 3.5rem;
 $searchGlyphSize: 1.3rem;
 $topSearchMenuFontSize: 1.75rem;
 $navbarFontSize: 2.4rem;
-$nutrientLabelFontSize: 1.8rem;
-$nutrientLabelLetterSpacing: .1em;
-$nutrientValueFontSize: 10rem;
-$nutrientValueLineHeight: 10.2rem;
-$h3FontSize: 3em;
+$nutrientLabelFontSize: 1.2rem;
+$nutrientLabelLetterSpacing: 0;
+$nutrientValueFontSize: 3.4rem;
+$nutrientValueLineHeight: 3.6rem;
+$h3FontSize: 2em;
 $thFontSize: 2rem;
-$contentFontSize: 2rem;
-$buttonFontSize: 2.2rem;
+$contentFontSize: 1.5rem;
+$buttonFontSize: 1.7rem;
 $buttonLetterSpacing: 0.1rem;
 $labelFontSize: 1.8rem;
 
@@ -38,20 +38,24 @@ $darkGrayShadow: 0 1px 1px #8a8a8a;
 $whiteShadow: 0 1px 1px white;
 $angularContainerShadow: 3px 3px 5px 0 $lightMainBodyTextColor;
 $nutrientValueContainerInsetShadow: inset 0 0 5px $menuDarkGray;
+$footerShadow: 0 -1px 1px #b1b1b1;
 
 //Container Sizes
 $contentWidth: 90%;
-$navPaddingTop: 125px;
-$angularContainerMargin: 60px auto;
-$nutrientValueContainerHeight: 135px;
+$logoLineHeight: 3rem;
+$navPaddingTop: 10px;
+$angularContainerMargin: 10px auto;
+$nutrientValueContainerHeight: 55px;
 $nutrientValueContainerHorizontalMargin: 4px;
 $nutrientLabelPadding: 0 5px 0 7px;
-$nutrientValueRightPosition: 10px;
+$nutrientValueRightPosition: 5px;
+$nutritionalValuesContainerMarginBottom: 20px;
 $tdWidth: 11rem;
-$lastTdWidth: 5rem;
-$tableInputWidth: 6rem;
+$lastTdWidth: 80px;
+$measurementCellWidth: 100px;
+$tableInputWidth: 4rem;
 $buttonPadding: 2px 15px;
-$h3MarginTop: 60px;
+$h3MarginTop: 10px;
 $bottomRowMarginTop: 40px;
 $formMarginTop: 40px;
 $inputShortWidth: 10rem;
@@ -60,6 +64,7 @@ $inputMdLongWidth: 80%;
 $inputMediumWidth: 40%;
 $formInputPaddingLeft: 5px;
 $angularContainerWithinScreenWidth: 80%;
+$footerHeight: 100px;
 
 //Borders
 $InputInsetBorder: 1px inset #fbfbfb;
@@ -103,6 +108,15 @@ html {
   font-size: 7.5pt;
 }
 
+a {
+  color: $crimson;
+  text-decoration: none;
+  &:hover {
+    color: $crimson;
+    text-decoration: underline;
+  }
+}
+
 body {
   font-family: $contentFont;
   display: flex;
@@ -119,15 +133,47 @@ body {
   }
   .footer {
     flex: none;
-    min-height: 100px;
+    min-height: $footerHeight;
     background-color: $footerBackgroundColor;
-    box-shadow: 0 -1px 1px #b1b1b1;
+    box-shadow: $footerShadow;
   }
 }
 
+//table, thead, tbody, th, td, tr {
+//  display: block;
+//}
+//thead tr {
+//  position: absolute;
+//  top: -9999px;
+//  left: -9999px;
+//}
+//td {
+//  /* Behave  like a "row" */
+//  position: relative;
+//  padding-left: 50%;
+//}
+//td:before {
+//  /* Now like a table header */
+//  position: absolute;
+//  /* Top/left values mimic padding */
+//  top: 6px;
+//  left: 6px;
+//  width: 45%;
+//  padding-right: 10px;
+//  white-space: nowrap;
+//}
+//td:nth-of-type(1):before { content: ""; }
+//td:nth-of-type(2):before { content: "Calories"; }
+//td:nth-of-type(3):before { content: "Fat"; }
+//td:nth-of-type(4):before { content: "Carbs"; }
+//td:nth-of-type(5):before { content: "Protein"; }
+//td:nth-of-type(6):before { content: "Quantity"; }
+//td:nth-of-type(7):before { content: ""; }
+//td:nth-of-type(8):before { content: ""; }
+
 a#logo {
-  float: none;
-  font-size: $logoSize;
+  line-height: $logoLineHeight;
+  font-size: $logoFontSize;
   text-transform: uppercase;
   font-family: $logoFont;
   color: white;
@@ -177,7 +223,6 @@ ul.nav li > a {
   text-shadow: $whiteShadow;
   text-transform: uppercase;
 }
-
 
 .top-search-form {
   position: relative;
@@ -234,10 +279,6 @@ ul.nav li > a {
   }
 }
 
-
-
-
-
 .angular-container {
   font-size: $contentFontSize;
   box-shadow: $angularContainerShadow;
@@ -250,7 +291,7 @@ ul.nav li > a {
   .nutritional-values-container {
     border: none;
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: $nutritionalValuesContainerMarginBottom;
     display: flex;
     justify-content: space-between;
     > div {
@@ -296,7 +337,7 @@ ul.nav li > a {
   width: $contentWidth;
   margin: 0 auto;
   font-family: $contentFont;
-  p{
+  p {
     color: $lightMainBodyTextColor;
   }
   h3 {
@@ -349,34 +390,69 @@ ul.nav li > a {
   }
   table.table {
     border: none;
-    th {
-      color: $darkMainBodyTextColor;
-      font-family: $menuTitlesFont;
-      font-size: $thFontSize;
-      text-transform: uppercase;
-      text-align: center;
-      border-top: none;
-      border-bottom: $dottedLightGrayBorder;
+    thead {
+      display: none;
+    }
+    tbody{
+      display: block;
     }
     tr {
+      display: block;
       border-top: none;
       border-bottom: none;
     }
-    tfoot tr td {
-      border-top: $dottedLightGrayBorder;
-    }
+    //th {
+    //  color: $darkMainBodyTextColor;
+    //  font-family: $menuTitlesFont;
+    //  font-size: $thFontSize;
+    //  text-transform: uppercase;
+    //  text-align: center;
+    //  border-top: none;
+    //  border-bottom: $dottedLightGrayBorder;
+    //}
+    //tfoot tr td {
+    //  border-top: $dottedLightGrayBorder;
+    //}
     td {
+      display: block;
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
+
       color: $darkMainBodyTextColor;
       border: none;
+      &:before {
+        text-align: left;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+      }
+      &:nth-of-type(1) {
+        text-align: left;
+        padding-left: 0;
+      }
+      &:nth-of-type(1):before { content: ""; }
+      &:nth-of-type(2):before { content: "Calories"; }
+      &:nth-of-type(3):before { content: "Fat"; }
+      &:nth-of-type(4):before { content: "Carbs"; }
+      &:nth-of-type(5):before { content: "Protein"; }
+      &:nth-of-type(6):before { content: "Quantity"; }
+      &:nth-of-type(7):before { content: ""; }
+      &:nth-of-type(8):before { content: ""; }
     }
-    td:not(:first-child) {
-      color: $lightMainBodyTextColor;
-      text-align: center;
-      width: $tdWidth;
-    }
-    td:nth-last-child(2) {
-      width: $lastTdWidth;
-    }
+
+
+
+    //td:not(:first-child) {
+    //  color: $lightMainBodyTextColor;
+    //  text-align: center;
+    //}
+    //td:nth-last-child(1) {
+    //  width: $lastTdWidth;
+    //}
     font-family: $contentFont;
     a {
       color: $darkMainBodyTextColor;
@@ -397,6 +473,10 @@ ul.nav li > a {
       &:focus {
         background-color: $inputFocusColor;
       }
+    }
+    .measurement-cell {
+      text-align: left;
+      min-width: $measurementCellWidth;
     }
   }
   button.btn {

@@ -17,18 +17,18 @@ $contentFont: 'droid_sansregular', sans-serif;
 $menuTitlesFont: 'league_gothicregular', sans-serif;
 
 //Font Sizes
-$logoSize: 11.7rem;
+$logoFontSize: 3.5rem;
 $searchGlyphSize: 1.3rem;
 $topSearchMenuFontSize: 1.75rem;
 $navbarFontSize: 2.4rem;
 $nutrientLabelFontSize: 1.8rem;
 $nutrientLabelLetterSpacing: .1em;
-$nutrientValueFontSize: 10rem;
-$nutrientValueLineHeight: 10.2rem;
+$nutrientValueFontSize: 6rem;
+$nutrientValueLineHeight: 6.2rem;
 $h3FontSize: 3em;
 $thFontSize: 2rem;
-$contentFontSize: 2rem;
-$buttonFontSize: 2.2rem;
+$contentFontSize: 1.5rem;
+$buttonFontSize: 1.7rem;
 $buttonLetterSpacing: 0.1rem;
 $labelFontSize: 1.8rem;
 
@@ -42,9 +42,10 @@ $footerShadow: 0 -1px 1px #b1b1b1;
 
 //Container Sizes
 $contentWidth: 90%;
-$navPaddingTop: 125px;
-$angularContainerMargin: 60px auto;
-$nutrientValueContainerHeight: 135px;
+$logoLineHeight: 3rem;
+$navPaddingTop: 10px;
+$angularContainerMargin: 10px auto;
+$nutrientValueContainerHeight: 95px;
 $nutrientValueContainerHorizontalMargin: 4px;
 $nutrientLabelPadding: 0 5px 0 7px;
 $nutrientValueRightPosition: 10px;
@@ -52,7 +53,7 @@ $nutritionalValuesContainerMarginBottom: 60px;
 $tdWidth: 11rem;
 $lastTdWidth: 80px;
 $measurementCellWidth: 100px;
-$tableInputWidth: 6rem;
+$tableInputWidth: 4rem;
 $buttonPadding: 2px 15px;
 $h3MarginTop: 60px;
 $bottomRowMarginTop: 40px;
@@ -139,8 +140,8 @@ body {
 }
 
 a#logo {
-  float: none;
-  font-size: $logoSize;
+  line-height: $logoLineHeight;
+  font-size: $logoFontSize;
   text-transform: uppercase;
   font-family: $logoFont;
   color: white;
@@ -380,7 +381,6 @@ ul.nav li > a {
     td:not(:first-child) {
       color: $lightMainBodyTextColor;
       text-align: center;
-      //width: $tdWidth;
     }
     td:nth-last-child(1) {
       width: $lastTdWidth;

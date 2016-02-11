@@ -87,10 +87,12 @@
                 <td>{{ingredient.protein * (ingredient.ingredientMeals.quantity / ingredient.portionSize) | number:1}}
                 </td>
                 <td>
-                    <input ng-form="quantityInput" type="text"
-                           value="{{ingredient.ingredientMeals.quantity}}"
-                           ng-model="vm.originalMeal.ingredients[$index].ingredientMeals.quantity"
-                           ng-change="vm.calculateSums(vm.originalMeal)"> {{ingredient.measurement.name}}
+                    <div class="measurement-cell">
+                        <input ng-form="quantityInput" type="text"
+                               value="{{ingredient.ingredientMeals.quantity}}"
+                               ng-model="vm.originalMeal.ingredients[$index].ingredientMeals.quantity"
+                               ng-change="vm.calculateSums(vm.originalMeal)"> {{ingredient.measurement.name}}
+                    </div>
                 </td>
                 <td>
                     <button class="btn btn-warning"

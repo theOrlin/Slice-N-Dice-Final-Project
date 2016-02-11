@@ -1,20 +1,20 @@
 <!--<div class="nutritional-values-container">-->
-    <!--<div class="calories">-->
-        <!--<div class="nutrient-label">Calories</div>-->
-        <!--<div class="nutrient-value">{{vm.totals.calories | number:0}}</div>-->
-    <!--</div>-->
-    <!--<div class="fat">-->
-        <!--<div class="nutrient-label">Fat</div>-->
-        <!--<div class="nutrient-value">{{vm.totals.fat | number:1}}</div>-->
-    <!--</div>-->
-    <!--<div class="carbs">-->
-        <!--<div class="nutrient-label">Carbohydrates</div>-->
-        <!--<div class="nutrient-value">{{vm.totals.carbohydrates | number:1}}</div>-->
-    <!--</div>-->
-    <!--<div class="protein">-->
-        <!--<div class="nutrient-label">Protein</div>-->
-        <!--<div class="nutrient-value">{{vm.totals.protein | number:1}}</div>-->
-    <!--</div>-->
+<!--<div class="calories">-->
+<!--<div class="nutrient-label">Calories</div>-->
+<!--<div class="nutrient-value">{{vm.totals.calories | number:0}}</div>-->
+<!--</div>-->
+<!--<div class="fat">-->
+<!--<div class="nutrient-label">Fat</div>-->
+<!--<div class="nutrient-value">{{vm.totals.fat | number:1}}</div>-->
+<!--</div>-->
+<!--<div class="carbs">-->
+<!--<div class="nutrient-label">Carbohydrates</div>-->
+<!--<div class="nutrient-value">{{vm.totals.carbohydrates | number:1}}</div>-->
+<!--</div>-->
+<!--<div class="protein">-->
+<!--<div class="nutrient-label">Protein</div>-->
+<!--<div class="nutrient-value">{{vm.totals.protein | number:1}}</div>-->
+<!--</div>-->
 <!--</div>-->
 <!--<div id="totals">-->
 <!--<h4>Totals</h4>-->
@@ -77,11 +77,13 @@
                         number:1}}
                     </td>
                     <td>
-                        <input ng-form="quantityInput" type="text"
-                               value="{{ingredient.ingredientMeals.quantity}}"
-                               ng-model="vm.meals[$parent.$index].ingredients[$index].ingredientMeals.quantity"
-                               ng-change="vm.calculateSums(meal)">
-                        {{ingredient.measurement.name}}
+                        <div class="measurement-cell">
+                            <input ng-form="quantityInput" type="text"
+                                   value="{{ingredient.ingredientMeals.quantity}}"
+                                   ng-model="vm.meals[$parent.$index].ingredients[$index].ingredientMeals.quantity"
+                                   ng-change="vm.calculateSums(meal)">
+                            {{ingredient.measurement.name}}
+                        </div>
                     </td>
                     <td>
                         <button class="btn btn-warning"
@@ -89,10 +91,10 @@
                         </button>
                     </td>
                     <td class="with-hidden-button">
-                        <button class="btn btn-primary" ng-show="quantityInput.$dirty"
-                                ng-click="vm.addIngredient(meal.id, ingredient, ingredient.ingredientMeals.quantity)">
-                            Save
-                        </button>
+                            <button class="btn btn-primary" ng-show="quantityInput.$dirty"
+                                    ng-click="vm.addIngredient(meal.id, ingredient, ingredient.ingredientMeals.quantity)">
+                                Save
+                            </button>
                     </td>
                 </tr>
                 <!--<tr ng-repeat="ingredient in meal.ingredients" ng-init="quantity=ingredient.ingredientMeals.quantity">-->

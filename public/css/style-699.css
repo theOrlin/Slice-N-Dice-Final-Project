@@ -19,6 +19,13 @@
 html {
   font-size: 7.5pt; }
 
+a {
+  color: #9a1d0d;
+  text-decoration: none; }
+  a:hover {
+    color: #9a1d0d;
+    text-decoration: underline; }
+
 body {
   font-family: "droid_sansregular", sans-serif;
   display: flex;
@@ -28,7 +35,7 @@ body {
   body .angular-container {
     flex: 1; }
   body nav {
-    padding-top: 125px;
+    padding-top: 10px;
     width: 90%;
     margin: auto; }
   body .footer {
@@ -38,8 +45,8 @@ body {
     box-shadow: 0 -1px 1px #b1b1b1; }
 
 a#logo {
-  float: none;
-  font-size: 11.7rem;
+  line-height: 3rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   font-family: "yanone_kaffeesatzregular", sans-serif;
   color: white;
@@ -123,18 +130,18 @@ ul.nav li > a {
       background-color: #b7b7b7; }
 
 .angular-container {
-  font-size: 2rem;
+  font-size: 1.5rem;
   box-shadow: 3px 3px 5px 0 #8c8787;
   padding-top: 4px;
   padding-bottom: 45px;
   width: 90%;
   background: white url("../img/container-bottom-bg.png") bottom repeat-x;
-  margin: 60px auto;
+  margin: 10px auto;
   border: 1px solid white; }
   .angular-container .nutritional-values-container {
     border: none;
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between; }
     .angular-container .nutritional-values-container > div {
@@ -142,13 +149,13 @@ ul.nav li > a {
       position: relative;
       margin: 0 4px;
       flex: 1;
-      height: 135px;
+      height: 55px;
       box-shadow: inset 0 0 5px #444343; }
       .angular-container .nutritional-values-container > div > .nutrient-label {
         position: absolute;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         padding: 0 5px 0 7px;
-        letter-spacing: 0.1em;
+        letter-spacing: 0;
         top: 0;
         right: 0;
         text-align: right;
@@ -159,12 +166,12 @@ ul.nav li > a {
         text-shadow: 0 1px 1px black; }
       .angular-container .nutritional-values-container > div > .nutrient-value {
         margin: 0;
-        line-height: 10.2rem;
+        line-height: 3.6rem;
         position: absolute;
         font-family: "league_gothicregular", sans-serif;
-        font-size: 10rem;
+        font-size: 3.4rem;
         bottom: 0;
-        right: 10px;
+        right: 5px;
         text-align: right;
         color: #dcc08e;
         text-shadow: 0 1px 1px black; }
@@ -176,9 +183,9 @@ ul.nav li > a {
   .content-container p {
     color: #8c8787; }
   .content-container h3 {
-    margin-top: 60px;
+    margin-top: 10px;
     font-family: "league_gothicregular", sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     text-transform: uppercase; }
     .content-container h3 a {
       color: #9a1d0d; }
@@ -214,28 +221,48 @@ ul.nav li > a {
   .content-container table.table {
     border: none;
     font-family: "droid_sansregular", sans-serif; }
-    .content-container table.table th {
-      color: #212121;
-      font-family: "league_gothicregular", sans-serif;
-      font-size: 2rem;
-      text-transform: uppercase;
-      text-align: center;
-      border-top: none;
-      border-bottom: 1px dotted #d9d9d9; }
+    .content-container table.table thead {
+      display: none; }
+    .content-container table.table tbody {
+      display: block; }
     .content-container table.table tr {
+      display: block;
       border-top: none;
       border-bottom: none; }
-    .content-container table.table tfoot tr td {
-      border-top: 1px dotted #d9d9d9; }
     .content-container table.table td {
+      display: block;
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
       color: #212121;
       border: none; }
-    .content-container table.table td:not(:first-child) {
-      color: #8c8787;
-      text-align: center;
-      width: 11rem; }
-    .content-container table.table td:nth-last-child(2) {
-      width: 5rem; }
+      .content-container table.table td:before {
+        text-align: left;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap; }
+      .content-container table.table td:nth-of-type(1) {
+        text-align: left;
+        padding-left: 0; }
+      .content-container table.table td:nth-of-type(1):before {
+        content: ""; }
+      .content-container table.table td:nth-of-type(2):before {
+        content: "Calories"; }
+      .content-container table.table td:nth-of-type(3):before {
+        content: "Fat"; }
+      .content-container table.table td:nth-of-type(4):before {
+        content: "Carbs"; }
+      .content-container table.table td:nth-of-type(5):before {
+        content: "Protein"; }
+      .content-container table.table td:nth-of-type(6):before {
+        content: "Quantity"; }
+      .content-container table.table td:nth-of-type(7):before {
+        content: ""; }
+      .content-container table.table td:nth-of-type(8):before {
+        content: ""; }
     .content-container table.table a {
       color: #212121;
       text-shadow: 0 1px 1px #8a8a8a; }
@@ -243,7 +270,7 @@ ul.nav li > a {
         color: #9a1d0d; }
     .content-container table.table input {
       padding: 0;
-      width: 6rem;
+      width: 4rem;
       background-color: #d9d9d9;
       color: #212121;
       border: 1px inset #fbfbfb;
@@ -251,11 +278,14 @@ ul.nav li > a {
       text-align: center; }
       .content-container table.table input:focus {
         background-color: #dcc08e; }
+    .content-container table.table .measurement-cell {
+      text-align: left;
+      min-width: 100px; }
   .content-container button.btn {
     font-family: "league_gothicregular", sans-serif;
     letter-spacing: 0.1rem;
     margin-bottom: 5px;
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     padding: 2px 15px;
     border-radius: 5px;
     text-shadow: 0 1px 1px black;
@@ -319,4 +349,4 @@ ul.nav li > a {
           text-align: center;
           width: 11rem; }
 
-/*# sourceMappingURL=style-860-plus.css.map */
+/*# sourceMappingURL=style-699.css.map */
