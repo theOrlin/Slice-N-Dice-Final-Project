@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var MealsController = function(mealsService, Notification) {
+    var MealsController = function(mealsService, $location, Notification) {
         var vm = this;
         vm.meals = [];
         vm.totals = {
@@ -79,9 +79,13 @@
                 vm.totals.protein += meal.sums.protein;
             });
         };
+
+        vm.addMeal = function() {
+            $location.path('/addmeal');
+        };
     };
 
-    MealsController.$inject = ['mealsService', 'Notification'];
+    MealsController.$inject = ['mealsService', '$location', 'Notification'];
 
     angular.module('foodApp.controllers')
         .controller('MealsController', MealsController);

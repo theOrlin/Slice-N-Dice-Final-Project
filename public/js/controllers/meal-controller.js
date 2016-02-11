@@ -34,12 +34,19 @@
             console.log(ingredient.id);
         };
 
-        vm.addIngredient = function(ingredient, quantity) {
+        vm.addIngredient = function(ingredient, quantity, method) {
             mealsService.addIngredient(vm.mealId, ingredient.id, quantity)
                 .then(function(response) {
                     vm.selectedIngredient = null;
-
-                    Notification.info('Added.');
+                    if (method == 'save') {
+                        Notification.info('Saved.');
+                    }
+                    else if (method == 'add') {
+                        Notification.info('Added.');
+                    }
+                    else {
+                        Notification.info('Done.');
+                    }
                     init();
                 }, function(data, status, headers, config, statusText) {
                     Notification.error(statusText);

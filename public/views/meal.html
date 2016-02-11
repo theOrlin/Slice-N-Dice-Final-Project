@@ -10,46 +10,51 @@
     <div class="screen" ng-show="vm.selectedIngredient.name">
         <div></div>
         <div class="angular-container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Calories</th>
-                        <th>Fat</th>
-                        <th>Carbs</th>
-                        <th>Protein</th>
-                        <th>Quantity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{vm.selectedIngredient.name}}</td>
-                        <td>{{vm.selectedIngredient.calories * (vm.tempQuantity / vm.selectedIngredient.portionSize) |
-                            number:0}}
-                        </td>
-                        <td>{{vm.selectedIngredient.fat * (vm.tempQuantity / vm.selectedIngredient.portionSize) |
-                            number:1}}
-                        </td>
-                        <td>{{vm.selectedIngredient.carbohydrates * (vm.tempQuantity /
-                            vm.selectedIngredient.portionSize) |
-                            number:1}}
-                        </td>
-                        <td>{{vm.selectedIngredient.protein * (vm.tempQuantity / vm.selectedIngredient.portionSize) |
-                            number:1}}
-                        </td>
-                        <td><input type="text" ng-model="vm.tempQuantity"> {{vm.selectedIngredient.measurement.name}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <form ng-submit="vm.addIngredient(vm.selectedIngredient, vm.tempQuantity, 'add')">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Calories</th>
+                            <th>Fat</th>
+                            <th>Carbs</th>
+                            <th>Protein</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{vm.selectedIngredient.name}}</td>
+                            <td>{{vm.selectedIngredient.calories * (vm.tempQuantity / vm.selectedIngredient.portionSize)
+                                |
+                                number:0}}
+                            </td>
+                            <td>{{vm.selectedIngredient.fat * (vm.tempQuantity / vm.selectedIngredient.portionSize) |
+                                number:1}}
+                            </td>
+                            <td>{{vm.selectedIngredient.carbohydrates * (vm.tempQuantity /
+                                vm.selectedIngredient.portionSize) |
+                                number:1}}
+                            </td>
+                            <td>{{vm.selectedIngredient.protein * (vm.tempQuantity / vm.selectedIngredient.portionSize)
+                                |
+                                number:1}}
+                            </td>
+                            <td><input type="text" ng-model="vm.tempQuantity">
+                                {{vm.selectedIngredient.measurement.name}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
             <div>
                 <div class="bottom-row">
                     <!--<button class="btn btn-primary" ng-click="vm.register(user, registrationForm)" ng-disabled="registrationForm.$invalid || user.password != user.confirmPassword">Log In</button>-->
-                    <button class="btn btn-warning" ng-click="vm.selectedIngredient = null">Cancel</button>
                     <button class="btn btn-primary"
-                            ng-click="vm.addIngredient(vm.selectedIngredient, vm.tempQuantity)">
+                            ng-click="vm.addIngredient(vm.selectedIngredient, vm.tempQuantity, 'add')">
                         Add
                     </button>
+                    <button class="btn btn-warning" ng-click="vm.selectedIngredient = null">Cancel</button>
                 </div>
             </div>
         </div>
@@ -94,7 +99,7 @@
                 </td>
                 <td>
                     <button class="btn btn-primary" ng-show="quantityInput.$dirty"
-                            ng-click="vm.addIngredient(ingredient, ingredient.ingredientMeals.quantity)">Save
+                            ng-click="vm.addIngredient(ingredient, ingredient.ingredientMeals.quantity, 'save')">Save
                     </button>
                 </td>
             </tr>
@@ -102,12 +107,10 @@
         <tfoot>
             <tr>
                 <td><em></em>Total</td>
-                </td>
                 <td><em>{{vm.originalMeal.sums.calories | number:0}}</em></td>
                 <td><em>{{vm.originalMeal.sums.fat | number:1}}</em></td>
                 <td><em>{{vm.originalMeal.sums.carbohydrates | number:1}}</em></td>
                 <td><em>{{vm.originalMeal.sums.protein | number:1}}</em></td>
-                <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

@@ -48,7 +48,7 @@
                     ng-click="vm.deleteMeal(meal.id)">Delete
             </button>
         </h3>
-        <table class="table">
+        <table class="table" ng-show="meal.ingredients.length > 0">
             <thead>
                 <tr>
                     <th>&nbsp;</th>
@@ -120,5 +120,8 @@
                 </tr>
             </tfoot>
         </table>
+    </div>
+    <div class="bottom-row">
+        <button class="btn btn-warning" ng-click="vm.addMeal()">Add Meal</button>
     </div>
 </div>
