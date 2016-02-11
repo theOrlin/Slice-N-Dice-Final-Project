@@ -138,12 +138,13 @@ body {
     flex: 1 0 auto;
   }
   nav {
-    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
     padding-top: $navPaddingTop;
     width: $contentWidth;
     margin: auto;
   }
   .footer {
+    -webkit-flex-shrink: 0;
     flex-shrink: 0;
     background-color: $footerBackgroundColor;
     box-shadow: $footerShadow;
