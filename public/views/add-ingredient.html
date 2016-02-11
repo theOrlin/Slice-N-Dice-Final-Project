@@ -3,7 +3,9 @@
     <form class="form-horizontal" name="addIngredientForm" novalidate>
         <fieldset>
             <div class="form-group row">
-                <label for="ingredientName" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Ingredient Name</label>
+                <label for="ingredientName"
+                       class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Ingredient
+                    Name</label>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                     <input class="col-xs-12" id="ingredientName" type="text"
                            required="required"
@@ -11,7 +13,8 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="ingredientCalories" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Calories</label>
+                <label for="ingredientCalories"
+                       class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Calories</label>
                 <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <input class="col-xs-12" id="ingredientCalories" type="text"
                            required="required"
@@ -19,7 +22,8 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="ingredientFat" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Fat</label>
+                <label for="ingredientFat"
+                       class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Fat</label>
                 <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <input class="col-xs-12" id="ingredientFat" type="text"
                            required="required"
@@ -27,7 +31,8 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="ingredientCarbs" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Carbohydrates</label>
+                <label for="ingredientCarbs"
+                       class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Carbohydrates</label>
                 <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <input class="col-xs-12" id="ingredientCarbs" type="text"
                            required="required"
@@ -35,7 +40,8 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="ingredientProtein" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Protein</label>
+                <label for="ingredientProtein"
+                       class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Protein</label>
                 <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <input class="col-xs-12" id="ingredientProtein" type="text"
                            required="required"
@@ -43,7 +49,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="ingredientPortionSize" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Portion Size</label>
+                <label for="ingredientPortionSize"
+                       class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Portion
+                    Size</label>
                 <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <input class="col-xs-12" id="ingredientPortionSize" type="text"
                            required="required"
@@ -51,11 +59,15 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="measurementSelect" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Measurement Unit</label>
-                <select name="measurementSelect" id="measurementSelect"
-                        ng-options="option.name for option in vm.ingredients track by option.id"
-                        ng-model="vm.ingredient.measurement_id">
-                </select>
+                <label for="measurementSelect"
+                       class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Measurement
+                    Unit</label>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <select name="measurementSelect" id="measurementSelect"
+                            ng-options="option.name for option in vm.ingredients track by option.id"
+                            ng-model="vm.ingredient.measurement_id">
+                    </select>
+                </div>
                 <button class="btn btn-warning" ng-click="vm.goToNewMeasurement()">New Measurement</button>
             </div>
             <div class="form-group row">

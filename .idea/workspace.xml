@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e3157bf-e2b1-4da5-940e-1d5cca08e48d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/style-699.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/style-1200-plus.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/style-699.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/style-699.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/style-767.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/style-860-plus.scss" afterPath="$PROJECT_DIR$/public/css/scss/style-767.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/style-860-plus.css" afterPath="$PROJECT_DIR$/public/css/style-767.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/food-api.sqlite" afterPath="$PROJECT_DIR$/data/food-api.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/scss/style-1200-plus.scss" afterPath="$PROJECT_DIR$/public/css/scss/style-1200-plus.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style-1200-plus.css" afterPath="$PROJECT_DIR$/public/css/style-1200-plus.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/meal.html" afterPath="$PROJECT_DIR$/public/views/meal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/meals.html" afterPath="$PROJECT_DIR$/public/views/meals.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/add-ingredient.html" afterPath="$PROJECT_DIR$/public/views/add-ingredient.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/edit-ingredient.html" afterPath="$PROJECT_DIR$/public/views/edit-ingredient.html" />
     </list>
     <ignored path="Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,6 +37,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="add-ingredient.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/views/add-ingredient.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.6519722">
+                  <caret line="65" column="75" selection-start-line="65" selection-start-column="75" selection-end-line="65" selection-end-column="75" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="style-767.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/css/scss/style-767.scss">
               <provider selected="true" editor-type-id="text-editor">
@@ -58,10 +57,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="style-699.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="style-699.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/css/scss/style-699.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5800464">
+                <state vertical-scroll-proportion="-7.352941">
                   <caret line="167" column="45" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
                   <folding />
                 </state>
@@ -100,6 +99,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="edit-ingredient.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/views/edit-ingredient.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-11.205882">
+                  <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -107,7 +116,7 @@
           <file leaf-file-name="style-1200-plus.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/css/scss/style-1200-plus.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.237792">
+                <state vertical-scroll-proportion="-1.3269639">
                   <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="39" />
                   <folding />
                 </state>
@@ -195,8 +204,6 @@
         <option value="$PROJECT_DIR$/public/views/login.html" />
         <option value="$PROJECT_DIR$/public/views/register.html" />
         <option value="$PROJECT_DIR$/public/views/measurement.html" />
-        <option value="$PROJECT_DIR$/public/views/add-ingredient.html" />
-        <option value="$PROJECT_DIR$/public/views/edit-ingredient.html" />
         <option value="$PROJECT_DIR$/public/views/home.html" />
         <option value="$PROJECT_DIR$/public/views/meals.html" />
         <option value="$PROJECT_DIR$/public/views/meal.html" />
@@ -204,6 +211,8 @@
         <option value="$PROJECT_DIR$/public/css/scss/style-699.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/style-767.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/style-1200-plus.scss" />
+        <option value="$PROJECT_DIR$/public/views/edit-ingredient.html" />
+        <option value="$PROJECT_DIR$/public/views/add-ingredient.html" />
       </list>
     </option>
   </component>
@@ -788,14 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/edit-ingredient.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-44.117645">
-          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/measurement.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.4117646">
@@ -824,14 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.88709676">
           <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/add-ingredient.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.147059">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -899,8 +892,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/scss/style-699.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5800464">
+        <state vertical-scroll-proportion="-7.352941">
           <caret line="167" column="45" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/edit-ingredient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.205882">
+          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/add-ingredient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6519722">
+          <caret line="65" column="75" selection-start-line="65" selection-start-column="75" selection-end-line="65" selection-end-column="75" />
           <folding />
         </state>
       </provider>
