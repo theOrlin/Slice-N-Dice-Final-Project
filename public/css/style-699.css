@@ -292,7 +292,7 @@ ul.nav li > a {
       .content-container table.table td:nth-of-type(8):before {
         content: ""; }
     .content-container table.table a {
-      color: #212121;
+      color: #9a1d0d;
       text-shadow: 0 1px 1px #8a8a8a; }
       .content-container table.table a:hover {
         color: #9a1d0d; }
