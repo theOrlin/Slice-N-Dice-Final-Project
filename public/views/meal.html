@@ -7,7 +7,7 @@
                typeahead-on-select="vm.onSelect($item, $model, $label)" typeahead-no-results="vm.noResults">
     </div>
     <div ng-show="vm.noResults" class="notfound">
-        <i class="glyphicon glyphicon-remove"></i> No ingredients found
+        <i class="glyphicon glyphicon-remove"></i> No ingredients found. <a href="/addingredient">Create new</a>?
     </div>
     <br/>
     <div class="screen" ng-show="vm.selectedIngredient.name">
