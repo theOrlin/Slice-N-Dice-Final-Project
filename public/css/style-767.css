@@ -168,6 +168,16 @@ ul.nav li > a {
     display: flex;
     -webkit-justify-content: space-between;
     justify-content: space-between; }
+    .angular-container .nutritional-values-container.sticky {
+      top: 0;
+      position: fixed;
+      z-index: 100;
+      width: 89.9%;
+      margin-top: 0;
+      margin-bottom: 60px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: white; }
     .angular-container .nutritional-values-container > div {
       overflow: hidden;
       position: relative;
@@ -316,7 +326,7 @@ ul.nav li > a {
     text-align: left; }
     .content-container .ingredient-adder input:focus {
       background-color: #dcc08e; }
-  .content-container .notfound i {
+  .content-container .notfound {
     color: #9a1d0d; }
   .content-container .screen {
     background: url("../img/screen_bg.png");

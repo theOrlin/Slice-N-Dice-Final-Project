@@ -290,6 +290,17 @@ ul.nav li > a {
     display: flex;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+    &.sticky {
+      top: 0;
+      position: fixed;
+      z-index: 100;
+      width: $contentWidth - 0.1%;
+      margin-top: 0;
+      margin-bottom: $nutritionalValuesContainerMarginBottom;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: white;
+    }
     > div {
       overflow: hidden;
       position: relative;
@@ -480,7 +491,7 @@ ul.nav li > a {
       }
     }
   }
-  .notfound i {
+  .notfound {
     color: $crimson;
   }
   .screen {
