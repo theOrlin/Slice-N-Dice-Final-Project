@@ -3,7 +3,13 @@
 
     function AddIngredientController(measurementsService, ingredientsService, $location, $window, Notification) {
         var vm = this;
-        vm.ingredient = {};
+        vm.ingredient = {
+            calories: 0,
+            fat: 0,
+            carbohydrates: 0,
+            protein: 0,
+            portionSize: 0
+        };
 
         function init() {
             measurementsService.getMeasurements()
@@ -35,7 +41,7 @@
                 });
         };
         vm.goToNewMeasurement = function() {
-            $location.path( '/addmeasurement' );
+            $location.path('/addmeasurement');
         };
 
         vm.goBack = function() {

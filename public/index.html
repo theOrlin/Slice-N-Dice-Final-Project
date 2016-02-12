@@ -10,7 +10,7 @@
     <base href="/"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Food App Home Page</title>
+    <title>LEANR - A Nutrition Calculation App</title>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -31,7 +31,7 @@
                 <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/meals">Meals</a></li>
                 <!--<li data-ng-hide="token"><a ng-href="/getingredients">Ingredients</a></li>-->
                 <!--<li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addmeal">Add Meal</a></li>-->
-                <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addingredient">Add Ingredient</a>
+                <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addingredient">New Ingredient</a>
                 </li>
                 <li data-ng-hide="!tvm.globalUserIsAuthenticated"><a ng-href="/addmeasurement">Add Measurement</a>
                 </li>
@@ -55,7 +55,8 @@
     </div>
     <div class="footer">
         <p>
-            LeanR is created by Orlin Ivanov as a final project for the <a href="http://telerikacademy.com/">Telerik Software Academy</a>.
+            LEANR is created by Orlin Ivanov as a final project for the <a href="http://telerikacademy.com/">Telerik
+            Software Academy</a>.
         </p>
         <p>
             You may use freely but give credit where it's due.
@@ -64,14 +65,11 @@
             &copy;2016
         </p>
     </div>
-    <!--<script src="/js/test.js"></script>-->
     <script src="lib/angular.js"></script>
     <script src="lib/angular-route.js"></script>
     <script src="lib/angular-animate.js"></script>
     <script src="lib/ui-bootstrap-tpls-1.1.1.js"></script>
     <script src="lib/angular-ui-notification.js"></script>
-    <!--<script src="lib/jquery-2.2.0.js"></script>-->
-    <!--<script src="lib/bootstrap.js"></script>-->
     <script src="js/app.js"></script>
     <script src="js/controllers/main-controller.js"></script>
     <script src="js/controllers/home-controller.js"></script>
@@ -93,5 +91,6 @@
     <script src="js/services/measurements-service.js"></script>
     <script src="js/services/meals-service.js"></script>
     <script src="js/services/register-service.js"></script>
+    <script src="js/directives/make-sticky.js"></script>
 </body>
 </html>
