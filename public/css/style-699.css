@@ -337,6 +337,8 @@ ul.nav li > a {
     text-align: left; }
     .content-container .ingredient-adder input:focus {
       background-color: #dcc08e; }
+  .content-container .notfound i {
+    color: #9a1d0d; }
   .content-container .screen {
     background: url("../img/screen_bg.png");
     display: flex;

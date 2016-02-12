@@ -4,7 +4,10 @@
     <div class="ingredient-adder">
         <input type="text" ng-model="vm.selectedIngredient" placeholder="Add ingredient"
                uib-typeahead="ingredient as ingredient.name for ingredient in vm.getIngredientsByName($viewValue)"
-               typeahead-on-select="vm.onSelect($item, $model, $label)">
+               typeahead-on-select="vm.onSelect($item, $model, $label)" typeahead-no-results="vm.noResults">
+    </div>
+    <div ng-show="vm.noResults" class="notfound">
+        <i class="glyphicon glyphicon-remove"></i> No ingredients found
     </div>
     <br/>
     <div class="screen" ng-show="vm.selectedIngredient.name">

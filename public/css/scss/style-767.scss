@@ -480,6 +480,9 @@ ul.nav li > a {
       }
     }
   }
+  .notfound i {
+    color: $crimson;
+  }
   .screen {
     background: url("../img/screen_bg.png");
     display: flex;
