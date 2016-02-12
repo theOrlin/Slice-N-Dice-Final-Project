@@ -8,7 +8,6 @@
                 var elementOffsetTop = element[0].offsetTop;
 
                 angular.element($window).bind("scroll", function() {
-                    var $win = this;
                     var $el = angular.element(element[0]);
 
                     if ($window.pageYOffset > elementOffsetTop) {
@@ -21,6 +20,6 @@
             }
         };
     };
-    
-    angular.module('foodApp').directive('makeSticky', ['$window', '$compile', makeSticky]);
+
+    angular.module('foodApp').directive('makeSticky', ['$window', makeSticky]);
 })();

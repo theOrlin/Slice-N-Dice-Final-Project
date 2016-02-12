@@ -177,7 +177,10 @@ ul.nav li > a {
       margin-bottom: 20px;
       margin-left: auto;
       margin-right: auto;
-      background-color: white; }
+      background-color: white;
+      border-bottom: 5px solid white;
+      border-top: 5px solid white;
+      box-shadow: 0 1px 1px #8a8a8a; }
     .angular-container .nutritional-values-container > div {
       overflow: hidden;
       position: relative;
