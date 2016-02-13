@@ -285,11 +285,13 @@ ul.nav li > a {
     .content-container table.table td {
       color: #212121;
       border: none; }
-    .content-container table.table td:not(:first-child) {
-      color: #8c8787;
-      text-align: center; }
-    .content-container table.table td:nth-last-child(1) {
-      width: 80px; }
+      .content-container table.table td:first-child {
+        text-transform: capitalize; }
+      .content-container table.table td:not(:first-child) {
+        color: #8c8787;
+        text-align: center; }
+      .content-container table.table td:nth-last-child(1) {
+        width: 80px; }
     .content-container table.table a {
       color: #9a1d0d;
       text-shadow: 0 1px 1px #8a8a8a; }

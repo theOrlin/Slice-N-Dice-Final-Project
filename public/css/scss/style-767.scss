@@ -414,6 +414,7 @@ ul.nav li > a {
   }
   table.table {
     border: none;
+    font-family: $contentFont;
     th {
       color: $darkMainBodyTextColor;
       font-family: $menuTitlesFont;
@@ -433,15 +434,17 @@ ul.nav li > a {
     td {
       color: $darkMainBodyTextColor;
       border: none;
+      &:first-child {
+        text-transform: capitalize;
+      }
+      &:not(:first-child) {
+        color: $lightMainBodyTextColor;
+        text-align: center;
+      }
+      &:nth-last-child(1) {
+        width: $lastTdWidth;
+      }
     }
-    td:not(:first-child) {
-      color: $lightMainBodyTextColor;
-      text-align: center;
-    }
-    td:nth-last-child(1) {
-      width: $lastTdWidth;
-    }
-    font-family: $contentFont;
     a {
       color: $crimson;
       text-shadow: $darkGrayShadow;
