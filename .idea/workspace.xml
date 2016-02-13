@@ -4,15 +4,7 @@
     <list default="true" id="9e3157bf-e2b1-4da5-940e-1d5cca08e48d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/food-api.sqlite" afterPath="$PROJECT_DIR$/data/food-api.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/scss/style-1200-plus.scss" afterPath="$PROJECT_DIR$/public/css/scss/style-1200-plus.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/scss/style-699.scss" afterPath="$PROJECT_DIR$/public/css/scss/style-699.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/scss/style-767.scss" afterPath="$PROJECT_DIR$/public/css/scss/style-767.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style-1200-plus.css" afterPath="$PROJECT_DIR$/public/css/style-1200-plus.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style-1200-plus.css.map" afterPath="$PROJECT_DIR$/public/css/style-1200-plus.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style-699.css" afterPath="$PROJECT_DIR$/public/css/style-699.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style-699.css.map" afterPath="$PROJECT_DIR$/public/css/style-699.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style-767.css" afterPath="$PROJECT_DIR$/public/css/style-767.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style-767.css.map" afterPath="$PROJECT_DIR$/public/css/style-767.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/directives/make-sticky.js" afterPath="$PROJECT_DIR$/public/js/directives/make-sticky.js" />
     </list>
     <ignored path="Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,88 +25,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/views/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.75">
-              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/views/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.75">
-              <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controllers/register-controller.js">
+      <file leaf-file-name="meals-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/controllers/meals-controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spinner.gif" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/img/spinner.gif">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add-ingredient-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controllers/add-ingredient-controller.js">
+      <file leaf-file-name="meals.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/views/meals.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            <state vertical-scroll-proportion="-8.083333">
+              <caret line="42" column="6" selection-start-line="25" selection-start-column="0" selection-end-line="42" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controllers/login-controller.js">
+      <file leaf-file-name="make-sticky.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/directives/make-sticky.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style-699.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/style-699.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39676616">
-              <caret line="447" column="17" selection-start-line="447" selection-start-column="17" selection-end-line="447" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style-767.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/style-767.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.583333">
-              <caret line="416" column="30" selection-start-line="416" selection-start-column="30" selection-end-line="416" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style-1200-plus.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/style-1200-plus.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0555553">
-              <caret line="413" column="0" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.28928572">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -173,10 +108,8 @@
         <option value="$PROJECT_DIR$/public/testing.html" />
         <option value="$PROJECT_DIR$/public/views/add-ingredient.html" />
         <option value="$PROJECT_DIR$/public/js/controllers/add-ingredient-controller.js" />
-        <option value="$PROJECT_DIR$/public/views/meals.html" />
         <option value="$PROJECT_DIR$/public/views/home.html" />
         <option value="$PROJECT_DIR$/public/css/scss/common.scss" />
-        <option value="$PROJECT_DIR$/public/js/directives/make-sticky.js" />
         <option value="$PROJECT_DIR$/public/views/meal.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/css/style-1200-plus.css" />
@@ -188,6 +121,8 @@
         <option value="$PROJECT_DIR$/public/css/scss/style-1200-plus.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/style-767.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/style-699.scss" />
+        <option value="$PROJECT_DIR$/public/views/meals.html" />
+        <option value="$PROJECT_DIR$/public/js/directives/make-sticky.js" />
       </list>
     </option>
   </component>
@@ -292,6 +227,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -716,31 +673,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/meals-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9411072">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47114253">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/controllers/rename-meal-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/meals.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.147059">
-          <caret line="28" column="75" selection-start-line="28" selection-start-column="75" selection-end-line="28" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -762,14 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30674848">
           <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/directives/make-sticky.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -825,51 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.75">
-          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75">
-          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/add-ingredient-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/spinner.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/register-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/login-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/scss/style-1200-plus.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0555553">
@@ -888,8 +771,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/scss/style-699.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39676616">
-          <caret line="447" column="17" selection-start-line="447" selection-start-column="17" selection-end-line="447" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.73258704">
+          <caret line="457" column="21" selection-start-line="457" selection-start-column="21" selection-end-line="457" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/login-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28928572">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/add-ingredient-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.225">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/spinner.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/register-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41785714">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8395522">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9738806">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/meals-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5107143">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/meals.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.083333">
+          <caret line="42" column="6" selection-start-line="25" selection-start-column="0" selection-end-line="42" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/directives/make-sticky.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28928572">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
