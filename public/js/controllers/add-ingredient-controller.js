@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     function AddIngredientController(measurementsService, ingredientsService, $location, $window, Notification) {
@@ -10,19 +10,21 @@
             protein: 0,
             portionSize: 0
         };
+        vm.loading = false;
 
         function init() {
             measurementsService.getMeasurements()
-                .then(function(ingredients) {
+                .then(function (ingredients) {
                     vm.ingredients = ingredients.data;
-                }, function(data) {
+                }, function (data) {
                     Notification.error(data.statusText);
                 });
         }
 
         init();
 
-        vm.addIngredient = function() {
+        vm.addIngredient = function () {
+            vm.loading = true;
             var ingredientToAdd = {
                 name: vm.ingredient.name,
                 calories: parseInt(vm.ingredient.calories),
@@ -33,18 +35,21 @@
                 measurement_id: parseInt(vm.ingredient.measurement_id.id)
             };
             ingredientsService.addIngr(ingredientToAdd)
-                .then(function(ingredient) {
+                .then(function (ingredient) {
                     Notification.info('Added.');
                     $window.history.back();
-                }, function(data) {
+                }, function (data) {
                     Notification.error(data.statusText);
+                })
+                .finally(function () {
+                    vm.loading = false;
                 });
         };
-        vm.goToNewMeasurement = function() {
+        vm.goToNewMeasurement = function () {
             $location.path('/addmeasurement');
         };
 
-        vm.goBack = function() {
+        vm.goBack = function () {
             $window.history.back();
         };
     }
