@@ -310,7 +310,7 @@ ul.nav li > a {
       .content-container table.table input:focus {
         background-color: #dcc08e; }
     .content-container table.table .measurement-cell {
-      text-align: center;
+      text-align: left;
       min-width: 100px; }
   .content-container button.btn {
     font-family: "league_gothicregular", sans-serif;
@@ -369,6 +369,8 @@ ul.nav li > a {
           text-align: center;
           border-top: none;
           border-bottom: 1px dotted #d9d9d9; }
+          .content-container .screen .angular-container table.table th:nth-child(6) {
+            text-align: left; }
         .content-container .screen .angular-container table.table tr {
           border-top: none;
           border-bottom: none; }

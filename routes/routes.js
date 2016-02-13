@@ -334,6 +334,8 @@ module.exports = function(app, db) {
         var body = _.pick(req.body, 'email', 'password');
         var userInstance;
 
+        body.email = body.email.toLowerCase();
+
         db.user.authenticate(body)
             .then(function(user) {
                 var token = user.generateToken('authentication');

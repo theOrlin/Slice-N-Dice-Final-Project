@@ -466,7 +466,7 @@ ul.nav li > a {
       }
     }
     .measurement-cell {
-      text-align: center;
+      text-align: left;
       min-width: $measurementCellWidth;
     }
   }
@@ -538,6 +538,9 @@ ul.nav li > a {
           text-align: center;
           border-top: none;
           border-bottom: $dottedLightGrayBorder;
+          &:nth-child(6) {
+            text-align: left;
+          }
         }
         tr {
           border-top: none;

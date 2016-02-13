@@ -44,7 +44,7 @@ $footerShadow: 0 -1px 1px #b1b1b1;
 //Container Sizes
 $contentWidth: 90%;
 $navPaddingTop: 55px; //was 125px;
-$angularContainerMargin: 60px auto;
+$angularContainerMargin: 15px auto 30px auto;
 $nutrientValueContainerHeight: 135px;
 $nutrientValueContainerHorizontalMargin: 4px;
 $nutrientLabelPadding: 0 5px 0 7px;
@@ -420,6 +420,9 @@ ul.nav li > a {
       text-align: center;
       border-top: none;
       border-bottom: $dottedLightGrayBorder;
+      &:nth-child(6) {
+        text-align: left;
+      }
     }
     tr {
       border-top: none;
@@ -464,7 +467,7 @@ ul.nav li > a {
       }
     }
     .measurement-cell {
-      text-align: center;
+      text-align: left;
       min-width: $measurementCellWidth;
     }
   }
