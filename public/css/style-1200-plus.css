@@ -256,7 +256,16 @@ ul.nav li > a {
       font-family: "league_gothicregular", sans-serif; }
   .content-container .bottom-row {
     text-align: center;
-    margin-top: 40px; }
+    margin-top: 40px;
+    position: relative; }
+    .content-container .bottom-row .spinner-container {
+      padding: 5px;
+      line-height: 10px;
+      display: inline-block;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 0; }
   .content-container table.table {
     border: none;
     font-family: "droid_sansregular", sans-serif; }
