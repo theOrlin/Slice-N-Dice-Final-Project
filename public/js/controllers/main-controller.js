@@ -6,11 +6,11 @@
         vm.loggedItem = null;
 
         authService.checkForLogin()
-        .then(function(success){
-            vm.globalUserIsAuthenticated = true;
-        }, function(error){
-            vm.globalUserIsAuthenticated = false;
-        });
+            .then(function(success) {
+                vm.globalUserIsAuthenticated = true;
+            }, function(error) {
+                vm.globalUserIsAuthenticated = false;
+            });
 
         vm.globalGetIngredientsByName = function(ingredientName) {
             return ingredientsService.getIngredientByName(ingredientName)

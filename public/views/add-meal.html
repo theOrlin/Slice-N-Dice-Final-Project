@@ -1,19 +1,22 @@
 <div class="content-container container">
     <h3>Add New Meal</h3>
-    <form class="form-horizontal" name="measurementForm" novalidate>
+    <form class="form-horizontal" name="newMealForm" novalidate>
         <fieldset>
             <div class="form-group row">
                 <label for="measurementName" class="col-xs-6 col-sm-3 col-md-2 control-label">Meal Name</label>
                 <div class="col-xs-12 col-sm-9 col-md-10">
                     <input class="col-xs-12" id="measurementName" type="text"
                            required="required"
-                           ng-model="vm.meal.name">
+                           ng-model="vm.meal.name" placeholder="ex. Breakfast, Lunch, Snack...">
                 </div>
             </div>
             <div class="form-group">
                 <div class="bottom-row">
-                    <button class="btn btn-primary" ng-click="vm.addMeal()">Add Meal</button>
+                    <button ng-disabled="newMealForm.$invalid" class="btn btn-primary" ng-click="vm.addMeal()">Add Meal</button>
                     <button class="btn btn-warning" ng-click="vm.goBack()">Cancel</button>
+                    <div class="spinner-container" ng-show="vm.loading">
+                        <img src="img/spinner.gif" alt="spinner">
+                    </div>
                 </div>
             </div>
         </fieldset>

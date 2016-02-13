@@ -1,6 +1,6 @@
 <div class="content-container">
     <h3>Rename Meal</h3>
-    <form class="form-horizontal" name="measurementForm" novalidate>
+    <form class="form-horizontal" name="renameMealForm" novalidate>
         <fieldset>
             <div class="form-group">
                 <label for="measurementName" class="col-lg-2 control-label">Meal Name</label>
@@ -11,9 +11,13 @@
                 </div>
             </div>
         </fieldset>
+        <div class="bottom-row">
+            <button ng-disabled="renameMealForm.$invalid" class="btn btn-primary" ng-click="vm.renameMeal()">Rename
+            </button>
+            <button class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
+            <div class="spinner-container" ng-show="vm.loading">
+                <img src="img/spinner.gif" alt="spinner">
+            </div>
+        </div>
     </form>
-    <div class="bottom-row">
-        <button class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
-        <button class="btn btn-primary" ng-click="vm.renameMeal()">Rename</button>
-    </div>
 </div>

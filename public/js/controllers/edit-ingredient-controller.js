@@ -5,9 +5,9 @@
         var vm = this;
         vm.ingredientId = $routeParams.id;
         vm.ingredient = {};
+        vm.loading = false;
 
         function init() {
-
             ingredientsService.getIngredientById(vm.ingredientId)
                 .then(function(ingredient) {
                     vm.ingredient = ingredient.data;
@@ -47,6 +47,7 @@
         init();
 
         vm.saveIngredient = function() {
+            vm.loading = true;
             var ingredientToSave = {
                 name: vm.ingredient.name,
                 calories: parseInt(vm.ingredient.calories),
@@ -63,6 +64,9 @@
                     $window.history.back();
                 }, function(data) {
                     Notification.error(data.statusText);
+                })
+                .finally(function() {
+                    vm.loading = false;
                 });
         };
 

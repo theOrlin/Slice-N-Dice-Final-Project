@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     function LoginController(authService, $location, $scope, Notification) {
@@ -6,18 +6,18 @@
         vm.user = {};
         vm.loading = false;
 
-        vm.login = function () {
+        vm.login = function() {
             vm.loading = true;
             authService.login(vm.user)
-                .then(function (data, status, headers, config) {
+                .then(function(data, status, headers, config) {
                     localStorage.setItem('auth_token', data.headers('Auth'));
                     $scope.tvm.updateLoginStatus(true);
                     Notification.success('Logged in.');
                     $location.path('/meals');
-                }, function (data) {
+                }, function(data) {
                     Notification.error(data.statusText);
                 })
-                .finally(function () {
+                .finally(function() {
                     vm.loading = false;
                 });
         };

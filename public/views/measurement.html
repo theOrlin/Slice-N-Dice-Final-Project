@@ -1,19 +1,27 @@
 <div class="content-container">
     <h3>Add New Measurement</h3>
-    <form class="form-horizontal" name="measurementForm" novalidate>
+    <form class="form-horizontal" name="newMeasurementForm" novalidate>
         <fieldset>
             <div class="form-group row">
-                <label for="measurementName" class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Measurement Name</label>
+                <label for="measurementName"
+                       class="col-xs-6 col-sm-offset-2 col-sm-3 col-md-offset-2 col-md-3 col-lg-3 col-lg-offset-2 control-label">Measurement
+                    Name</label>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <input class="col-xs-12" id="measurementName" placeholder="measurement name, abbreviated" type="text"
+                    <input class="col-xs-12" id="measurementName" placeholder="measurement abbreviation"
+                           type="text"
                            required="required"
                            ng-model="vm.measurement.name">
                 </div>
             </div>
         </fieldset>
+        <div class="bottom-row">
+            <button ng-disabled="newMeasurementForm.$invalid" class="btn btn-primary" ng-click="vm.addMeasurement()">Add
+                Measurement
+            </button>
+            <button class="btn btn-warning" ng-click="vm.goBack()">Cancel</button>
+            <div class="spinner-container" ng-show="vm.loading">
+                <img src="img/spinner.gif" alt="spinner">
+            </div>
+        </div>
     </form>
-    <div class="bottom-row">
-        <button class="btn btn-primary" ng-click="vm.addMeasurement()">Add Measurement</button>
-        <button class="btn btn-warning" ng-click="vm.goBack()">Cancel</button>
-    </div>
 </div>
