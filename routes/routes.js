@@ -319,6 +319,7 @@ module.exports = function(app, db) {
 
     app.post('/api/users', function(req, res) {
         var body = _.pick(req.body, 'email', 'password');
+        body.email = body.email.toLowerCase();
 
         db.user.create(body)
             .then(function(user) {
