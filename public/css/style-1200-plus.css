@@ -281,7 +281,9 @@ ul.nav li > a {
       .content-container table.table th.ingredient-protein {
         width: 10%; }
       .content-container table.table th.ingredient-quantity {
-        width: 15%; }
+        width: 10%; }
+      .content-container table.table th.ingredient-measurement {
+        width: 5%; }
       .content-container table.table th.add-ingredient {
         width: 10%; }
       .content-container table.table th.with-hidden-button {
@@ -312,15 +314,16 @@ ul.nav li > a {
       .content-container table.table td.ingredient-protein {
         width: 10%; }
       .content-container table.table td.ingredient-quantity {
+        padding-right: 0;
         text-align: right;
-        width: 7.5%; }
+        width: 10%; }
       .content-container table.table td.ingredient-measurement {
+        padding-left: 0.2rem;
         vertical-align: baseline;
         line-height: 4rem;
         font-size: 1.6rem;
         color: #8c8787;
-        text-align: left;
-        width: 7.5%; }
+        text-align: left; }
       .content-container table.table td.add-ingredient {
         width: 10%; }
       .content-container table.table td.with-hidden-button {
