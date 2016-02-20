@@ -292,6 +292,10 @@ ul.nav li > a {
       .content-container table.table td:not(:first-child) {
         color: #8c8787;
         text-align: center; }
+      .content-container table.table td:nth-last-child(4) {
+        text-align: right; }
+      .content-container table.table td:nth-last-child(3) {
+        text-align: left; }
       .content-container table.table td:nth-last-child(1) {
         width: 80px; }
     .content-container table.table a {

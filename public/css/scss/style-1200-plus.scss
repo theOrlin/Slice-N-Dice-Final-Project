@@ -420,9 +420,9 @@ ul.nav li > a {
       text-align: center;
       border-top: none;
       border-bottom: $dottedLightGrayBorder;
-      &:nth-child(6) {
-        text-align: left;
-      }
+      //&:nth-child(6) {
+      //  text-align: left;
+      //}
     }
     tr {
       border-top: none;
@@ -441,6 +441,12 @@ ul.nav li > a {
         color: $lightMainBodyTextColor;
         text-align: center;
         //width: $tdWidth;
+      }
+      &:nth-last-child(4) {
+        text-align: right;
+      }
+      &:nth-last-child(3) {
+        text-align: left;
       }
       &:nth-last-child(1) {
         width: $lastTdWidth;

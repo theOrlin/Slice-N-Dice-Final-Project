@@ -277,8 +277,6 @@ ul.nav li > a {
       text-align: center;
       border-top: none;
       border-bottom: 1px dotted #d9d9d9; }
-      .content-container table.table th:nth-child(6) {
-        text-align: left; }
     .content-container table.table tr {
       border-top: none;
       border-bottom: none; }
@@ -292,6 +290,10 @@ ul.nav li > a {
       .content-container table.table td:not(:first-child) {
         color: #8c8787;
         text-align: center; }
+      .content-container table.table td:nth-last-child(4) {
+        text-align: right; }
+      .content-container table.table td:nth-last-child(3) {
+        text-align: left; }
       .content-container table.table td:nth-last-child(1) {
         width: 80px; }
     .content-container table.table a {
