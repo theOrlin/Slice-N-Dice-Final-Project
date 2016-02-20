@@ -240,16 +240,6 @@ ul.nav li > a {
       text-shadow: 0 1px 1px white;
       text-align: left;
       padding-left: 5px; }
-      .content-container form input.short {
-        width: 10rem; }
-      .content-container form input.long {
-        width: 100%; }
-      .content-container form input.medium {
-        width: 40%; }
-      .content-container form input.md-long {
-        width: 80%; }
-      .content-container form input:focus {
-        background-color: #dcc08e; }
     .content-container form label {
       font-size: 1.8rem;
       text-transform: uppercase;
@@ -267,6 +257,9 @@ ul.nav li > a {
       height: 30px;
       top: 0; }
   .content-container table.table {
+    white-space: nowrap;
+    width: 100%;
+    table-layout: fixed;
     border: none;
     font-family: "droid_sansregular", sans-serif; }
     .content-container table.table th {
@@ -277,111 +270,153 @@ ul.nav li > a {
       text-align: center;
       border-top: none;
       border-bottom: 1px dotted #d9d9d9; }
+      .content-container table.table th.ingredient-name {
+        width: 25%; }
+      .content-container table.table th.ingredient-calories {
+        width: 10%; }
+      .content-container table.table th.ingredient-fat {
+        width: 10%; }
+      .content-container table.table th.ingredient-carbs {
+        width: 10%; }
+      .content-container table.table th.ingredient-protein {
+        width: 10%; }
+      .content-container table.table th.ingredient-quantity {
+        width: 15%; }
+      .content-container table.table th.add-ingredient {
+        width: 10%; }
+      .content-container table.table th.with-hidden-button {
+        width: 10%; }
     .content-container table.table tr {
+      width: auto;
       border-top: none;
       border-bottom: none; }
     .content-container table.table tfoot tr td {
-      border-top: 1px dotted #d9d9d9; }
+      border-top: 1px dotted #d9d9d9;
+      color: #8c8787; }
+      .content-container table.table tfoot tr td:first-child {
+        text-align: left; }
     .content-container table.table td {
       color: #212121;
-      border: none; }
-      .content-container table.table td:first-child {
-        text-transform: capitalize; }
-      .content-container table.table td:not(:first-child) {
-        color: #8c8787;
-        text-align: center; }
-      .content-container table.table td:nth-last-child(4) {
-        text-align: right; }
-      .content-container table.table td:nth-last-child(3) {
-        text-align: left; }
-      .content-container table.table td:nth-last-child(1) {
-        width: 80px; }
-    .content-container table.table a {
-      color: #9a1d0d;
-      text-shadow: 0 1px 1px #8a8a8a; }
-      .content-container table.table a:hover {
-        color: #9a1d0d; }
-    .content-container table.table input {
-      padding: 0;
-      width: 6rem;
-      background-color: #d9d9d9;
-      color: #212121;
-      border: 1px inset #fbfbfb;
-      text-shadow: 0 1px 1px white;
+      border: none;
       text-align: center; }
-      .content-container table.table input:focus {
-        background-color: #dcc08e; }
-    .content-container table.table .measurement-cell {
-      text-align: left;
-      min-width: 100px; }
-  .content-container button.btn {
-    font-family: "league_gothicregular", sans-serif;
-    letter-spacing: 0.1rem;
-    margin-bottom: 5px;
-    font-size: 2.2rem;
-    padding: 2px 15px;
-    border-radius: 5px;
-    text-shadow: 0 1px 1px black;
-    text-transform: uppercase;
-    box-shadow: 0 1px 1px black; }
-    .content-container button.btn:hover {
-      background-color: #9a1d0d; }
-  .content-container button.btn-warning {
-    background-color: #b8b8b8;
-    border: none; }
-  .content-container button.btn-primary {
-    background-color: #dcc08e;
-    border: none; }
-  .content-container .ingredient-adder input {
-    width: 40%;
+      .content-container table.table td.ingredient-name {
+        text-align: left;
+        text-transform: capitalize;
+        width: 25%; }
+      .content-container table.table td.ingredient-calories {
+        width: 10%; }
+      .content-container table.table td.ingredient-fat {
+        width: 10%; }
+      .content-container table.table td.ingredient-carbs {
+        width: 10%; }
+      .content-container table.table td.ingredient-protein {
+        width: 10%; }
+      .content-container table.table td.ingredient-quantity {
+        text-align: right;
+        width: 7.5%; }
+      .content-container table.table td.ingredient-measurement {
+        vertical-align: baseline;
+        line-height: 4rem;
+        font-size: 1.6rem;
+        color: #8c8787;
+        text-align: left;
+        width: 7.5%; }
+      .content-container table.table td.add-ingredient {
+        width: 10%; }
+      .content-container table.table td.with-hidden-button {
+        width: 10%; }
+  .content-container a {
+    color: #9a1d0d;
+    text-shadow: 0 1px 1px #8a8a8a; }
+    .content-container a:hover {
+      color: #9a1d0d; }
+  .content-container input {
+    width: 100%;
     background-color: #d9d9d9;
     color: #212121;
     border: 1px inset #fbfbfb;
     text-shadow: 0 1px 1px white;
-    padding: 0 0 0 5px;
-    text-align: left; }
-    .content-container .ingredient-adder input:focus {
+    text-align: right;
+    padding: 0 0.75rem 0 0; }
+    .content-container input:focus {
       background-color: #dcc08e; }
-  .content-container .notfound i {
-    color: #9a1d0d; }
-  .content-container .screen {
-    background: url("../img/screen_bg.png");
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh; }
-    .content-container .screen div {
-      opacity: 1;
-      flex: 1; }
-    .content-container .screen .angular-container {
-      width: 80%; }
-      .content-container .screen .angular-container table.table {
-        width: 90%;
-        border: none;
-        margin: auto; }
-        .content-container .screen .angular-container table.table th {
-          color: #212121;
-          font-family: "league_gothicregular", sans-serif;
-          font-size: 2rem;
-          text-transform: uppercase;
-          text-align: center;
-          border-top: none;
-          border-bottom: 1px dotted #d9d9d9; }
-        .content-container .screen .angular-container table.table tr {
-          border-top: none;
-          border-bottom: none; }
-        .content-container .screen .angular-container table.table tfoot tr td {
-          border-top: 1px dotted #d9d9d9; }
-        .content-container .screen .angular-container table.table td {
-          color: #212121;
-          border: none; }
-        .content-container .screen .angular-container table.table td:not(:first-child) {
-          color: #8c8787;
-          text-align: center;
-          width: 11rem; }
+  .content-container .measurement-cell {
+    text-align: left;
+    min-width: 100px; }
+
+button.btn {
+  font-family: "league_gothicregular", sans-serif;
+  letter-spacing: 0.1rem;
+  margin-bottom: 5px;
+  font-size: 2.2rem;
+  padding: 2px 15px;
+  border-radius: 5px;
+  text-shadow: 0 1px 1px black;
+  text-transform: uppercase;
+  box-shadow: 0 1px 1px black; }
+  button.btn:hover {
+    background-color: #9a1d0d; }
+
+button.btn-warning {
+  background-color: #b8b8b8;
+  border: none; }
+
+button.btn-primary {
+  background-color: #dcc08e;
+  border: none; }
+
+.ingredient-adder input {
+  width: 40%;
+  background-color: #d9d9d9;
+  color: #212121;
+  border: 1px inset #fbfbfb;
+  text-shadow: 0 1px 1px white;
+  padding: 0 0 0 5px;
+  text-align: left; }
+  .ingredient-adder input:focus {
+    background-color: #dcc08e; }
+
+.notfound i {
+  color: #9a1d0d; }
+
+.screen {
+  background: url("../img/screen_bg.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
+  .screen div {
+    opacity: 1;
+    flex: 1; }
+  .screen .angular-container {
+    width: 80%; }
+    .screen .angular-container table.table {
+      width: 90%;
+      border: none;
+      margin: auto; }
+      .screen .angular-container table.table th {
+        color: #212121;
+        font-family: "league_gothicregular", sans-serif;
+        font-size: 2rem;
+        text-transform: uppercase;
+        text-align: center;
+        border-top: none;
+        border-bottom: 1px dotted #d9d9d9; }
+      .screen .angular-container table.table tr {
+        border-top: none;
+        border-bottom: none; }
+      .screen .angular-container table.table tfoot tr td {
+        border-top: 1px dotted #d9d9d9; }
+      .screen .angular-container table.table td {
+        color: #212121;
+        border: none; }
+      .screen .angular-container table.table td:not(:first-child) {
+        color: #8c8787;
+        text-align: center;
+        width: 11rem; }
 
 /*# sourceMappingURL=style-1200-plus.css.map */

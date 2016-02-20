@@ -51,32 +51,32 @@
         <table class="table" ng-show="meal.ingredients.length > 0">
             <thead>
                 <tr>
-                    <th>&nbsp;</th>
-                    <th>Calories</th>
-                    <th>Fat</th>
-                    <th>Carbs</th>
-                    <th>Protein</th>
+                    <th class="ingredient-name">&nbsp;</th>
+                    <th class="ingredient-calories">Calories</th>
+                    <th class="ingredient-fat">Fat</th>
+                    <th class="ingredient-carbs">Carbs</th>
+                    <th class="ingredient-protein">Protein</th>
                     <!--<th>Serving size</th>-->
-                    <th colspan="2">Quantity</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
+                    <th colspan="2" class="ingredient-quantity">Quantity</th>
+                    <th class="add-ingredient">&nbsp;</th>
+                    <th class="with-hidden-button">&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="ingredient in meal.ingredients">
-                    <td><a href="/editingredient/{{ingredient.id}}">{{ingredient.name}}</a></td>
-                    <td>{{ingredient.calories * (ingredient.ingredientMeals.quantity / ingredient.portionSize) |
+                    <td class="ingredient-name"><a href="/editingredient/{{ingredient.id}}">{{ingredient.name}}</a></td>
+                    <td class="ingredient-calories">{{ingredient.calories * (ingredient.ingredientMeals.quantity / ingredient.portionSize) |
                         number:0}}
                     </td>
-                    <td>{{ingredient.fat * (ingredient.ingredientMeals.quantity / ingredient.portionSize) | number:1}}
+                    <td class="ingredient-fat">{{ingredient.fat * (ingredient.ingredientMeals.quantity / ingredient.portionSize) | number:1}}
                     </td>
-                    <td>{{ingredient.carbohydrates * (ingredient.ingredientMeals.quantity / ingredient.portionSize) |
+                    <td class="ingredient-carbs">{{ingredient.carbohydrates * (ingredient.ingredientMeals.quantity / ingredient.portionSize) |
                         number:1}}
                     </td>
-                    <td>{{ingredient.protein * (ingredient.ingredientMeals.quantity / ingredient.portionSize) |
+                    <td class="ingredient-protein">{{ingredient.protein * (ingredient.ingredientMeals.quantity / ingredient.portionSize) |
                         number:1}}
                     </td>
-                    <td>
+                    <td class="ingredient-quantity">
                         <!--<div class="measurement-cell">-->
                             <input ng-form="quantityInput" type="text"
                                    value="{{ingredient.ingredientMeals.quantity}}"
@@ -84,10 +84,10 @@
                                    ng-change="vm.calculateSums(meal)">
                         <!--</div>-->
                     </td>
-                    <td>
+                    <td class="ingredient-measurement">
                         {{ingredient.measurement.name}}
                     </td>
-                    <td>
+                    <td class="add-ingredient">
                         <button class="btn btn-warning"
                                 ng-click="vm.deleteIngredientFromMeal(meal.id, ingredient.id)">Delete
                         </button>
